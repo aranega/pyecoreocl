@@ -11,8 +11,8 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3>")
-        buf.write("\u0161\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3=")
+        buf.write("\u0163\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
         buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31")
@@ -37,97 +37,98 @@ def serializedATN():
         buf.write("\16\u00fe\n\16\3\17\3\17\3\20\3\20\3\20\3\20\7\20\u0106")
         buf.write("\n\20\f\20\16\20\u0109\13\20\3\20\3\20\3\20\3\21\3\21")
         buf.write("\3\21\5\21\u0111\n\21\3\21\3\21\3\21\3\22\3\22\5\22\u0118")
-        buf.write("\n\22\3\23\3\23\3\23\3\23\7\23\u011e\n\23\f\23\16\23\u0121")
-        buf.write("\13\23\3\23\3\23\5\23\u0125\n\23\3\24\3\24\3\24\5\24\u012a")
-        buf.write("\n\24\3\25\3\25\3\25\3\25\3\25\7\25\u0131\n\25\f\25\16")
-        buf.write("\25\u0134\13\25\3\25\3\25\3\25\3\25\3\25\3\25\7\25\u013c")
-        buf.write("\n\25\f\25\16\25\u013f\13\25\3\25\3\25\5\25\u0143\n\25")
-        buf.write("\3\26\3\26\3\26\3\26\3\27\3\27\3\27\3\27\3\27\3\27\3\27")
-        buf.write("\3\27\3\30\3\30\3\31\3\31\3\32\3\32\3\33\3\33\3\34\3\34")
-        buf.write("\3\35\3\35\3\36\3\36\3\37\3\37\3\37\2\3\2 \2\4\6\b\n\f")
-        buf.write("\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668:<\2")
-        buf.write("\6\3\2<=\3\2-.\b\2\7\7\20\23\30\31\35#%%\'8\6\2\7\7\20")
-        buf.write("\23\30\30\'\60\2\u0181\2N\3\2\2\2\4\u00a4\3\2\2\2\6\u00ae")
-        buf.write("\3\2\2\2\b\u00b0\3\2\2\2\n\u00b2\3\2\2\2\f\u00bc\3\2\2")
-        buf.write("\2\16\u00be\3\2\2\2\20\u00ca\3\2\2\2\22\u00d2\3\2\2\2")
-        buf.write("\24\u00e0\3\2\2\2\26\u00ef\3\2\2\2\30\u00f6\3\2\2\2\32")
-        buf.write("\u00fd\3\2\2\2\34\u00ff\3\2\2\2\36\u0101\3\2\2\2 \u010d")
-        buf.write("\3\2\2\2\"\u0117\3\2\2\2$\u0124\3\2\2\2&\u0129\3\2\2\2")
-        buf.write("(\u012b\3\2\2\2*\u0144\3\2\2\2,\u0148\3\2\2\2.\u0150\3")
-        buf.write("\2\2\2\60\u0152\3\2\2\2\62\u0154\3\2\2\2\64\u0156\3\2")
-        buf.write("\2\2\66\u0158\3\2\2\28\u015a\3\2\2\2:\u015c\3\2\2\2<\u015e")
-        buf.write("\3\2\2\2>?\b\2\1\2?O\5\6\4\2@O\5:\36\2AB\5:\36\2BC\7\3")
-        buf.write("\2\2CE\3\2\2\2DA\3\2\2\2EF\3\2\2\2FD\3\2\2\2FG\3\2\2\2")
-        buf.write("GH\3\2\2\2HI\5<\37\2IO\3\2\2\2JK\7\6\2\2KO\5\2\2\21LM")
-        buf.write("\7\7\2\2MO\5\2\2\20N>\3\2\2\2N@\3\2\2\2ND\3\2\2\2NJ\3")
-        buf.write("\2\2\2NL\3\2\2\2O\u0088\3\2\2\2PQ\f\17\2\2QR\7\b\2\2R")
-        buf.write("\u0087\5\2\2\20ST\f\16\2\2TU\7\t\2\2U\u0087\5\2\2\17V")
-        buf.write("W\f\r\2\2WX\7\n\2\2X\u0087\5\2\2\16YZ\f\f\2\2Z[\7\6\2")
-        buf.write("\2[\u0087\5\2\2\r\\]\f\13\2\2]^\7\13\2\2^\u0087\5\2\2")
-        buf.write("\f_`\f\n\2\2`a\7\f\2\2a\u0087\5\2\2\13bc\f\t\2\2cd\7\r")
-        buf.write("\2\2d\u0087\5\2\2\nef\f\b\2\2fg\7\16\2\2g\u0087\5\2\2")
-        buf.write("\thi\f\7\2\2ij\7\17\2\2j\u0087\5\2\2\bkl\f\6\2\2lm\7\20")
-        buf.write("\2\2m\u0087\5\2\2\7no\f\5\2\2op\7\21\2\2p\u0087\5\2\2")
-        buf.write("\6qr\f\4\2\2rs\7\22\2\2s\u0087\5\2\2\5tu\f\3\2\2uv\7\23")
-        buf.write("\2\2v\u0087\5\2\2\4wx\f\25\2\2x\u0087\5\4\3\2yz\f\24\2")
-        buf.write("\2z{\7\4\2\2{|\5:\36\2|}\5\4\3\2}\u0087\3\2\2\2~\177\f")
-        buf.write("\23\2\2\177\u0080\7\4\2\2\u0080\u0087\5:\36\2\u0081\u0082")
-        buf.write("\f\22\2\2\u0082\u0083\7\5\2\2\u0083\u0084\5:\36\2\u0084")
-        buf.write("\u0085\5\4\3\2\u0085\u0087\3\2\2\2\u0086P\3\2\2\2\u0086")
-        buf.write("S\3\2\2\2\u0086V\3\2\2\2\u0086Y\3\2\2\2\u0086\\\3\2\2")
-        buf.write("\2\u0086_\3\2\2\2\u0086b\3\2\2\2\u0086e\3\2\2\2\u0086")
-        buf.write("h\3\2\2\2\u0086k\3\2\2\2\u0086n\3\2\2\2\u0086q\3\2\2\2")
-        buf.write("\u0086t\3\2\2\2\u0086w\3\2\2\2\u0086y\3\2\2\2\u0086~\3")
-        buf.write("\2\2\2\u0086\u0081\3\2\2\2\u0087\u008a\3\2\2\2\u0088\u0086")
-        buf.write("\3\2\2\2\u0088\u0089\3\2\2\2\u0089\3\3\2\2\2\u008a\u0088")
-        buf.write("\3\2\2\2\u008b\u0094\7\24\2\2\u008c\u0091\5\2\2\2\u008d")
-        buf.write("\u008e\7\25\2\2\u008e\u0090\5\2\2\2\u008f\u008d\3\2\2")
-        buf.write("\2\u0090\u0093\3\2\2\2\u0091\u008f\3\2\2\2\u0091\u0092")
-        buf.write("\3\2\2\2\u0092\u0095\3\2\2\2\u0093\u0091\3\2\2\2\u0094")
-        buf.write("\u008c\3\2\2\2\u0094\u0095\3\2\2\2\u0095\u0096\3\2\2\2")
-        buf.write("\u0096\u00a5\7\26\2\2\u0097\u0098\7\24\2\2\u0098\u009d")
-        buf.write("\5:\36\2\u0099\u009a\7\25\2\2\u009a\u009c\5:\36\2\u009b")
-        buf.write("\u0099\3\2\2\2\u009c\u009f\3\2\2\2\u009d\u009b\3\2\2\2")
-        buf.write("\u009d\u009e\3\2\2\2\u009e\u00a0\3\2\2\2\u009f\u009d\3")
-        buf.write("\2\2\2\u00a0\u00a1\7\27\2\2\u00a1\u00a2\5\2\2\2\u00a2")
-        buf.write("\u00a3\7\26\2\2\u00a3\u00a5\3\2\2\2\u00a4\u008b\3\2\2")
-        buf.write("\2\u00a4\u0097\3\2\2\2\u00a5\5\3\2\2\2\u00a6\u00af\5\b")
-        buf.write("\5\2\u00a7\u00af\5\n\6\2\u00a8\u00af\5\f\7\2\u00a9\u00af")
-        buf.write("\5\16\b\2\u00aa\u00af\5\22\n\2\u00ab\u00af\5\34\17\2\u00ac")
-        buf.write("\u00af\5\36\20\2\u00ad\u00af\5,\27\2\u00ae\u00a6\3\2\2")
-        buf.write("\2\u00ae\u00a7\3\2\2\2\u00ae\u00a8\3\2\2\2\u00ae\u00a9")
-        buf.write("\3\2\2\2\u00ae\u00aa\3\2\2\2\u00ae\u00ab\3\2\2\2\u00ae")
-        buf.write("\u00ac\3\2\2\2\u00ae\u00ad\3\2\2\2\u00af\7\3\2\2\2\u00b0")
-        buf.write("\u00b1\7\30\2\2\u00b1\t\3\2\2\2\u00b2\u00b3\7\24\2\2\u00b3")
-        buf.write("\u00b4\5\2\2\2\u00b4\u00b5\7\26\2\2\u00b5\13\3\2\2\2\u00b6")
-        buf.write("\u00bd\5.\30\2\u00b7\u00bd\5\60\31\2\u00b8\u00bd\5\62")
-        buf.write("\32\2\u00b9\u00bd\5\64\33\2\u00ba\u00bd\5\66\34\2\u00bb")
-        buf.write("\u00bd\58\35\2\u00bc\u00b6\3\2\2\2\u00bc\u00b7\3\2\2\2")
-        buf.write("\u00bc\u00b8\3\2\2\2\u00bc\u00b9\3\2\2\2\u00bc\u00ba\3")
-        buf.write("\2\2\2\u00bc\u00bb\3\2\2\2\u00bd\r\3\2\2\2\u00be\u00bf")
-        buf.write("\7\31\2\2\u00bf\u00c0\7\32\2\2\u00c0\u00c5\5\20\t\2\u00c1")
-        buf.write("\u00c2\7\25\2\2\u00c2\u00c4\5\20\t\2\u00c3\u00c1\3\2\2")
-        buf.write("\2\u00c4\u00c7\3\2\2\2\u00c5\u00c3\3\2\2\2\u00c5\u00c6")
-        buf.write("\3\2\2\2\u00c6\u00c8\3\2\2\2\u00c7\u00c5\3\2\2\2\u00c8")
-        buf.write("\u00c9\7\33\2\2\u00c9\17\3\2\2\2\u00ca\u00cd\5:\36\2\u00cb")
-        buf.write("\u00cc\7\34\2\2\u00cc\u00ce\5\"\22\2\u00cd\u00cb\3\2\2")
-        buf.write("\2\u00cd\u00ce\3\2\2\2\u00ce\u00cf\3\2\2\2\u00cf\u00d0")
-        buf.write("\7\13\2\2\u00d0\u00d1\5\6\4\2\u00d1\21\3\2\2\2\u00d2\u00d3")
-        buf.write("\5\24\13\2\u00d3\u00dc\7\32\2\2\u00d4\u00d9\5\32\16\2")
-        buf.write("\u00d5\u00d6\7\25\2\2\u00d6\u00d8\5\32\16\2\u00d7\u00d5")
-        buf.write("\3\2\2\2\u00d8\u00db\3\2\2\2\u00d9\u00d7\3\2\2\2\u00d9")
-        buf.write("\u00da\3\2\2\2\u00da\u00dd\3\2\2\2\u00db\u00d9\3\2\2\2")
-        buf.write("\u00dc\u00d4\3\2\2\2\u00dc\u00dd\3\2\2\2\u00dd\u00de\3")
-        buf.write("\2\2\2\u00de\u00df\7\33\2\2\u00df\23\3\2\2\2\u00e0\u00e9")
-        buf.write("\5\30\r\2\u00e1\u00e2\7\24\2\2\u00e2\u00e3\5\"\22\2\u00e3")
-        buf.write("\u00e4\7\26\2\2\u00e4\u00ea\3\2\2\2\u00e5\u00e6\7\f\2")
-        buf.write("\2\u00e6\u00e7\5\"\22\2\u00e7\u00e8\7\16\2\2\u00e8\u00ea")
-        buf.write("\3\2\2\2\u00e9\u00e1\3\2\2\2\u00e9\u00e5\3\2\2\2\u00e9")
-        buf.write("\u00ea\3\2\2\2\u00ea\25\3\2\2\2\u00eb\u00f0\7\35\2\2\u00ec")
-        buf.write("\u00f0\7\36\2\2\u00ed\u00f0\7\37\2\2\u00ee\u00f0\7 \2")
-        buf.write("\2\u00ef\u00eb\3\2\2\2\u00ef\u00ec\3\2\2\2\u00ef\u00ed")
-        buf.write("\3\2\2\2\u00ef\u00ee\3\2\2\2\u00f0\27\3\2\2\2\u00f1\u00f7")
-        buf.write("\7!\2\2\u00f2\u00f7\7\"\2\2\u00f3\u00f7\7#\2\2\u00f4\u00f7")
+        buf.write("\n\22\3\23\3\23\3\23\3\23\3\23\3\23\6\23\u0120\n\23\r")
+        buf.write("\23\16\23\u0121\7\23\u0124\n\23\f\23\16\23\u0127\13\23")
+        buf.write("\3\24\3\24\3\24\5\24\u012c\n\24\3\25\3\25\3\25\3\25\3")
+        buf.write("\25\7\25\u0133\n\25\f\25\16\25\u0136\13\25\3\25\3\25\3")
+        buf.write("\25\3\25\3\25\3\25\7\25\u013e\n\25\f\25\16\25\u0141\13")
+        buf.write("\25\3\25\3\25\5\25\u0145\n\25\3\26\3\26\3\26\3\26\3\27")
+        buf.write("\3\27\3\27\3\27\3\27\3\27\3\27\3\27\3\30\3\30\3\31\3\31")
+        buf.write("\3\32\3\32\3\33\3\33\3\34\3\34\3\35\3\35\3\36\3\36\3\37")
+        buf.write("\3\37\3\37\2\4\2$ \2\4\6\b\n\f\16\20\22\24\26\30\32\34")
+        buf.write("\36 \"$&(*,.\60\62\64\668:<\2\6\3\2;<\3\2-.\b\2\7\7\20")
+        buf.write("\24\26\26\30\31\35%\'\67\7\2\7\7\20\24\26\26\30\30\'\60")
+        buf.write("\2\u0183\2N\3\2\2\2\4\u00a4\3\2\2\2\6\u00ae\3\2\2\2\b")
+        buf.write("\u00b0\3\2\2\2\n\u00b2\3\2\2\2\f\u00bc\3\2\2\2\16\u00be")
+        buf.write("\3\2\2\2\20\u00ca\3\2\2\2\22\u00d2\3\2\2\2\24\u00e0\3")
+        buf.write("\2\2\2\26\u00ef\3\2\2\2\30\u00f6\3\2\2\2\32\u00fd\3\2")
+        buf.write("\2\2\34\u00ff\3\2\2\2\36\u0101\3\2\2\2 \u010d\3\2\2\2")
+        buf.write("\"\u0117\3\2\2\2$\u0119\3\2\2\2&\u012b\3\2\2\2(\u012d")
+        buf.write("\3\2\2\2*\u0146\3\2\2\2,\u014a\3\2\2\2.\u0152\3\2\2\2")
+        buf.write("\60\u0154\3\2\2\2\62\u0156\3\2\2\2\64\u0158\3\2\2\2\66")
+        buf.write("\u015a\3\2\2\28\u015c\3\2\2\2:\u015e\3\2\2\2<\u0160\3")
+        buf.write("\2\2\2>?\b\2\1\2?O\5\6\4\2@O\5:\36\2AB\5:\36\2BC\7\3\2")
+        buf.write("\2CE\3\2\2\2DA\3\2\2\2EF\3\2\2\2FD\3\2\2\2FG\3\2\2\2G")
+        buf.write("H\3\2\2\2HI\5<\37\2IO\3\2\2\2JK\7\6\2\2KO\5\2\2\21LM\7")
+        buf.write("\7\2\2MO\5\2\2\20N>\3\2\2\2N@\3\2\2\2ND\3\2\2\2NJ\3\2")
+        buf.write("\2\2NL\3\2\2\2O\u0088\3\2\2\2PQ\f\17\2\2QR\7\b\2\2R\u0087")
+        buf.write("\5\2\2\20ST\f\16\2\2TU\7\t\2\2U\u0087\5\2\2\17VW\f\r\2")
+        buf.write("\2WX\7\n\2\2X\u0087\5\2\2\16YZ\f\f\2\2Z[\7\6\2\2[\u0087")
+        buf.write("\5\2\2\r\\]\f\13\2\2]^\7\13\2\2^\u0087\5\2\2\f_`\f\n\2")
+        buf.write("\2`a\7\f\2\2a\u0087\5\2\2\13bc\f\t\2\2cd\7\r\2\2d\u0087")
+        buf.write("\5\2\2\nef\f\b\2\2fg\7\16\2\2g\u0087\5\2\2\thi\f\7\2\2")
+        buf.write("ij\7\17\2\2j\u0087\5\2\2\bkl\f\6\2\2lm\7\20\2\2m\u0087")
+        buf.write("\5\2\2\7no\f\5\2\2op\7\21\2\2p\u0087\5\2\2\6qr\f\4\2\2")
+        buf.write("rs\7\22\2\2s\u0087\5\2\2\5tu\f\3\2\2uv\7\23\2\2v\u0087")
+        buf.write("\5\2\2\4wx\f\25\2\2x\u0087\5\4\3\2yz\f\24\2\2z{\7\4\2")
+        buf.write("\2{|\5:\36\2|}\5\4\3\2}\u0087\3\2\2\2~\177\f\23\2\2\177")
+        buf.write("\u0080\7\4\2\2\u0080\u0087\5:\36\2\u0081\u0082\f\22\2")
+        buf.write("\2\u0082\u0083\7\5\2\2\u0083\u0084\5:\36\2\u0084\u0085")
+        buf.write("\5\4\3\2\u0085\u0087\3\2\2\2\u0086P\3\2\2\2\u0086S\3\2")
+        buf.write("\2\2\u0086V\3\2\2\2\u0086Y\3\2\2\2\u0086\\\3\2\2\2\u0086")
+        buf.write("_\3\2\2\2\u0086b\3\2\2\2\u0086e\3\2\2\2\u0086h\3\2\2\2")
+        buf.write("\u0086k\3\2\2\2\u0086n\3\2\2\2\u0086q\3\2\2\2\u0086t\3")
+        buf.write("\2\2\2\u0086w\3\2\2\2\u0086y\3\2\2\2\u0086~\3\2\2\2\u0086")
+        buf.write("\u0081\3\2\2\2\u0087\u008a\3\2\2\2\u0088\u0086\3\2\2\2")
+        buf.write("\u0088\u0089\3\2\2\2\u0089\3\3\2\2\2\u008a\u0088\3\2\2")
+        buf.write("\2\u008b\u0094\7\24\2\2\u008c\u0091\5\2\2\2\u008d\u008e")
+        buf.write("\7\25\2\2\u008e\u0090\5\2\2\2\u008f\u008d\3\2\2\2\u0090")
+        buf.write("\u0093\3\2\2\2\u0091\u008f\3\2\2\2\u0091\u0092\3\2\2\2")
+        buf.write("\u0092\u0095\3\2\2\2\u0093\u0091\3\2\2\2\u0094\u008c\3")
+        buf.write("\2\2\2\u0094\u0095\3\2\2\2\u0095\u0096\3\2\2\2\u0096\u00a5")
+        buf.write("\7\26\2\2\u0097\u0098\7\24\2\2\u0098\u009d\5:\36\2\u0099")
+        buf.write("\u009a\7\25\2\2\u009a\u009c\5:\36\2\u009b\u0099\3\2\2")
+        buf.write("\2\u009c\u009f\3\2\2\2\u009d\u009b\3\2\2\2\u009d\u009e")
+        buf.write("\3\2\2\2\u009e\u00a0\3\2\2\2\u009f\u009d\3\2\2\2\u00a0")
+        buf.write("\u00a1\7\27\2\2\u00a1\u00a2\5\2\2\2\u00a2\u00a3\7\26\2")
+        buf.write("\2\u00a3\u00a5\3\2\2\2\u00a4\u008b\3\2\2\2\u00a4\u0097")
+        buf.write("\3\2\2\2\u00a5\5\3\2\2\2\u00a6\u00af\5\b\5\2\u00a7\u00af")
+        buf.write("\5\n\6\2\u00a8\u00af\5\f\7\2\u00a9\u00af\5\16\b\2\u00aa")
+        buf.write("\u00af\5\22\n\2\u00ab\u00af\5\34\17\2\u00ac\u00af\5\36")
+        buf.write("\20\2\u00ad\u00af\5,\27\2\u00ae\u00a6\3\2\2\2\u00ae\u00a7")
+        buf.write("\3\2\2\2\u00ae\u00a8\3\2\2\2\u00ae\u00a9\3\2\2\2\u00ae")
+        buf.write("\u00aa\3\2\2\2\u00ae\u00ab\3\2\2\2\u00ae\u00ac\3\2\2\2")
+        buf.write("\u00ae\u00ad\3\2\2\2\u00af\7\3\2\2\2\u00b0\u00b1\7\30")
+        buf.write("\2\2\u00b1\t\3\2\2\2\u00b2\u00b3\7\24\2\2\u00b3\u00b4")
+        buf.write("\5\2\2\2\u00b4\u00b5\7\26\2\2\u00b5\13\3\2\2\2\u00b6\u00bd")
+        buf.write("\5.\30\2\u00b7\u00bd\5\60\31\2\u00b8\u00bd\5\62\32\2\u00b9")
+        buf.write("\u00bd\5\64\33\2\u00ba\u00bd\5\66\34\2\u00bb\u00bd\58")
+        buf.write("\35\2\u00bc\u00b6\3\2\2\2\u00bc\u00b7\3\2\2\2\u00bc\u00b8")
+        buf.write("\3\2\2\2\u00bc\u00b9\3\2\2\2\u00bc\u00ba\3\2\2\2\u00bc")
+        buf.write("\u00bb\3\2\2\2\u00bd\r\3\2\2\2\u00be\u00bf\7\31\2\2\u00bf")
+        buf.write("\u00c0\7\32\2\2\u00c0\u00c5\5\20\t\2\u00c1\u00c2\7\25")
+        buf.write("\2\2\u00c2\u00c4\5\20\t\2\u00c3\u00c1\3\2\2\2\u00c4\u00c7")
+        buf.write("\3\2\2\2\u00c5\u00c3\3\2\2\2\u00c5\u00c6\3\2\2\2\u00c6")
+        buf.write("\u00c8\3\2\2\2\u00c7\u00c5\3\2\2\2\u00c8\u00c9\7\33\2")
+        buf.write("\2\u00c9\17\3\2\2\2\u00ca\u00cd\5:\36\2\u00cb\u00cc\7")
+        buf.write("\34\2\2\u00cc\u00ce\5\"\22\2\u00cd\u00cb\3\2\2\2\u00cd")
+        buf.write("\u00ce\3\2\2\2\u00ce\u00cf\3\2\2\2\u00cf\u00d0\7\13\2")
+        buf.write("\2\u00d0\u00d1\5\6\4\2\u00d1\21\3\2\2\2\u00d2\u00d3\5")
+        buf.write("\24\13\2\u00d3\u00dc\7\32\2\2\u00d4\u00d9\5\32\16\2\u00d5")
+        buf.write("\u00d6\7\25\2\2\u00d6\u00d8\5\32\16\2\u00d7\u00d5\3\2")
+        buf.write("\2\2\u00d8\u00db\3\2\2\2\u00d9\u00d7\3\2\2\2\u00d9\u00da")
+        buf.write("\3\2\2\2\u00da\u00dd\3\2\2\2\u00db\u00d9\3\2\2\2\u00dc")
+        buf.write("\u00d4\3\2\2\2\u00dc\u00dd\3\2\2\2\u00dd\u00de\3\2\2\2")
+        buf.write("\u00de\u00df\7\33\2\2\u00df\23\3\2\2\2\u00e0\u00e9\5\30")
+        buf.write("\r\2\u00e1\u00e2\7\24\2\2\u00e2\u00e3\5\"\22\2\u00e3\u00e4")
+        buf.write("\7\26\2\2\u00e4\u00ea\3\2\2\2\u00e5\u00e6\7\f\2\2\u00e6")
+        buf.write("\u00e7\5\"\22\2\u00e7\u00e8\7\16\2\2\u00e8\u00ea\3\2\2")
+        buf.write("\2\u00e9\u00e1\3\2\2\2\u00e9\u00e5\3\2\2\2\u00e9\u00ea")
+        buf.write("\3\2\2\2\u00ea\25\3\2\2\2\u00eb\u00f0\7\35\2\2\u00ec\u00f0")
+        buf.write("\7\36\2\2\u00ed\u00f0\7\37\2\2\u00ee\u00f0\7 \2\2\u00ef")
+        buf.write("\u00eb\3\2\2\2\u00ef\u00ec\3\2\2\2\u00ef\u00ed\3\2\2\2")
+        buf.write("\u00ef\u00ee\3\2\2\2\u00f0\27\3\2\2\2\u00f1\u00f7\7!\2")
+        buf.write("\2\u00f2\u00f7\7\"\2\2\u00f3\u00f7\7#\2\2\u00f4\u00f7")
         buf.write("\7$\2\2\u00f5\u00f7\7%\2\2\u00f6\u00f1\3\2\2\2\u00f6\u00f2")
         buf.write("\3\2\2\2\u00f6\u00f3\3\2\2\2\u00f6\u00f4\3\2\2\2\u00f6")
         buf.write("\u00f5\3\2\2\2\u00f7\31\3\2\2\2\u00f8\u00fe\5\2\2\2\u00f9")
@@ -142,39 +143,40 @@ def serializedATN():
         buf.write("\5:\36\2\u010e\u010f\7\34\2\2\u010f\u0111\5\"\22\2\u0110")
         buf.write("\u010e\3\2\2\2\u0110\u0111\3\2\2\2\u0111\u0112\3\2\2\2")
         buf.write("\u0112\u0113\7\13\2\2\u0113\u0114\5\2\2\2\u0114!\3\2\2")
-        buf.write("\2\u0115\u0118\5$\23\2\u0116\u0118\5&\24\2\u0117\u0115")
-        buf.write("\3\2\2\2\u0117\u0116\3\2\2\2\u0118#\3\2\2\2\u0119\u0125")
-        buf.write("\5:\36\2\u011a\u011f\5:\36\2\u011b\u011c\7\3\2\2\u011c")
-        buf.write("\u011e\5<\37\2\u011d\u011b\3\2\2\2\u011e\u0121\3\2\2\2")
-        buf.write("\u011f\u011d\3\2\2\2\u011f\u0120\3\2\2\2\u0120\u0122\3")
-        buf.write("\2\2\2\u0121\u011f\3\2\2\2\u0122\u0123\5<\37\2\u0123\u0125")
-        buf.write("\3\2\2\2\u0124\u0119\3\2\2\2\u0124\u011a\3\2\2\2\u0125")
-        buf.write("%\3\2\2\2\u0126\u012a\5\26\f\2\u0127\u012a\5\24\13\2\u0128")
-        buf.write("\u012a\5(\25\2\u0129\u0126\3\2\2\2\u0129\u0127\3\2\2\2")
-        buf.write("\u0129\u0128\3\2\2\2\u012a\'\3\2\2\2\u012b\u0142\7\31")
-        buf.write("\2\2\u012c\u012d\7\24\2\2\u012d\u0132\5*\26\2\u012e\u012f")
-        buf.write("\7\25\2\2\u012f\u0131\5*\26\2\u0130\u012e\3\2\2\2\u0131")
-        buf.write("\u0134\3\2\2\2\u0132\u0130\3\2\2\2\u0132\u0133\3\2\2\2")
-        buf.write("\u0133\u0135\3\2\2\2\u0134\u0132\3\2\2\2\u0135\u0136\7")
-        buf.write("\26\2\2\u0136\u0143\3\2\2\2\u0137\u0138\7\f\2\2\u0138")
-        buf.write("\u013d\5*\26\2\u0139\u013a\7\25\2\2\u013a\u013c\5*\26")
-        buf.write("\2\u013b\u0139\3\2\2\2\u013c\u013f\3\2\2\2\u013d\u013b")
-        buf.write("\3\2\2\2\u013d\u013e\3\2\2\2\u013e\u0140\3\2\2\2\u013f")
-        buf.write("\u013d\3\2\2\2\u0140\u0141\7\16\2\2\u0141\u0143\3\2\2")
-        buf.write("\2\u0142\u012c\3\2\2\2\u0142\u0137\3\2\2\2\u0142\u0143")
-        buf.write("\3\2\2\2\u0143)\3\2\2\2\u0144\u0145\5:\36\2\u0145\u0146")
-        buf.write("\7\34\2\2\u0146\u0147\5\"\22\2\u0147+\3\2\2\2\u0148\u0149")
-        buf.write("\7)\2\2\u0149\u014a\5\2\2\2\u014a\u014b\7*\2\2\u014b\u014c")
-        buf.write("\5\2\2\2\u014c\u014d\7+\2\2\u014d\u014e\5\2\2\2\u014e")
-        buf.write("\u014f\7,\2\2\u014f-\3\2\2\2\u0150\u0151\t\2\2\2\u0151")
-        buf.write("/\3\2\2\2\u0152\u0153\79\2\2\u0153\61\3\2\2\2\u0154\u0155")
-        buf.write("\t\3\2\2\u0155\63\3\2\2\2\u0156\u0157\7\b\2\2\u0157\65")
-        buf.write("\3\2\2\2\u0158\u0159\7/\2\2\u0159\67\3\2\2\2\u015a\u015b")
-        buf.write("\7\60\2\2\u015b9\3\2\2\2\u015c\u015d\n\4\2\2\u015d;\3")
-        buf.write("\2\2\2\u015e\u015f\n\5\2\2\u015f=\3\2\2\2\35FN\u0086\u0088")
+        buf.write("\2\u0115\u0118\5&\24\2\u0116\u0118\5$\23\2\u0117\u0115")
+        buf.write("\3\2\2\2\u0117\u0116\3\2\2\2\u0118#\3\2\2\2\u0119\u011a")
+        buf.write("\b\23\1\2\u011a\u011b\5:\36\2\u011b\u0125\3\2\2\2\u011c")
+        buf.write("\u011f\f\3\2\2\u011d\u011e\7\3\2\2\u011e\u0120\5<\37\2")
+        buf.write("\u011f\u011d\3\2\2\2\u0120\u0121\3\2\2\2\u0121\u011f\3")
+        buf.write("\2\2\2\u0121\u0122\3\2\2\2\u0122\u0124\3\2\2\2\u0123\u011c")
+        buf.write("\3\2\2\2\u0124\u0127\3\2\2\2\u0125\u0123\3\2\2\2\u0125")
+        buf.write("\u0126\3\2\2\2\u0126%\3\2\2\2\u0127\u0125\3\2\2\2\u0128")
+        buf.write("\u012c\5\24\13\2\u0129\u012c\5\26\f\2\u012a\u012c\5(\25")
+        buf.write("\2\u012b\u0128\3\2\2\2\u012b\u0129\3\2\2\2\u012b\u012a")
+        buf.write("\3\2\2\2\u012c\'\3\2\2\2\u012d\u0144\7\31\2\2\u012e\u012f")
+        buf.write("\7\24\2\2\u012f\u0134\5*\26\2\u0130\u0131\7\25\2\2\u0131")
+        buf.write("\u0133\5*\26\2\u0132\u0130\3\2\2\2\u0133\u0136\3\2\2\2")
+        buf.write("\u0134\u0132\3\2\2\2\u0134\u0135\3\2\2\2\u0135\u0137\3")
+        buf.write("\2\2\2\u0136\u0134\3\2\2\2\u0137\u0138\7\26\2\2\u0138")
+        buf.write("\u0145\3\2\2\2\u0139\u013a\7\f\2\2\u013a\u013f\5*\26\2")
+        buf.write("\u013b\u013c\7\25\2\2\u013c\u013e\5*\26\2\u013d\u013b")
+        buf.write("\3\2\2\2\u013e\u0141\3\2\2\2\u013f\u013d\3\2\2\2\u013f")
+        buf.write("\u0140\3\2\2\2\u0140\u0142\3\2\2\2\u0141\u013f\3\2\2\2")
+        buf.write("\u0142\u0143\7\16\2\2\u0143\u0145\3\2\2\2\u0144\u012e")
+        buf.write("\3\2\2\2\u0144\u0139\3\2\2\2\u0144\u0145\3\2\2\2\u0145")
+        buf.write(")\3\2\2\2\u0146\u0147\5:\36\2\u0147\u0148\7\34\2\2\u0148")
+        buf.write("\u0149\5\"\22\2\u0149+\3\2\2\2\u014a\u014b\7)\2\2\u014b")
+        buf.write("\u014c\5\2\2\2\u014c\u014d\7*\2\2\u014d\u014e\5\2\2\2")
+        buf.write("\u014e\u014f\7+\2\2\u014f\u0150\5\2\2\2\u0150\u0151\7")
+        buf.write(",\2\2\u0151-\3\2\2\2\u0152\u0153\t\2\2\2\u0153/\3\2\2")
+        buf.write("\2\u0154\u0155\78\2\2\u0155\61\3\2\2\2\u0156\u0157\t\3")
+        buf.write("\2\2\u0157\63\3\2\2\2\u0158\u0159\7\b\2\2\u0159\65\3\2")
+        buf.write("\2\2\u015a\u015b\7/\2\2\u015b\67\3\2\2\2\u015c\u015d\7")
+        buf.write("\60\2\2\u015d9\3\2\2\2\u015e\u015f\n\4\2\2\u015f;\3\2")
+        buf.write("\2\2\u0160\u0161\n\5\2\2\u0161=\3\2\2\2\35FN\u0086\u0088")
         buf.write("\u0091\u0094\u009d\u00a4\u00ae\u00bc\u00c5\u00cd\u00d9")
-        buf.write("\u00dc\u00e9\u00ef\u00f6\u00fd\u0107\u0110\u0117\u011f")
-        buf.write("\u0124\u0129\u0132\u013d\u0142")
+        buf.write("\u00dc\u00e9\u00ef\u00f6\u00fd\u0107\u0110\u0117\u0121")
+        buf.write("\u0125\u012b\u0134\u013f\u0144")
         return buf.getvalue()
 
 
@@ -197,7 +199,7 @@ class OclExpressionParser ( Parser ):
                      "'Set'", "'..'", "'let'", "'in'", "'if'", "'then'", 
                      "'else'", "'endif'", "'true'", "'false'", "'invalid'", 
                      "'null'", "'Lambda'", "'OclAny'", "'OclInvalid'", "'OclMessage'", 
-                     "'OclSelf'", "'OclVoid'", "'Real'", "' Sequence'" ]
+                     "'OclSelf'", "'OclVoid'", "'Real'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
@@ -212,7 +214,7 @@ class OclExpressionParser ( Parser ):
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "STRING", "SPECIAL_VARNAME", 
+                      "<INVALID>", "<INVALID>", "STRING", "SPECIAL_VARNAME", 
                       "VARNAME", "INT", "FLOAT", "WS" ]
 
     RULE_oclExp = 0
@@ -310,13 +312,12 @@ class OclExpressionParser ( Parser ):
     T__50=51
     T__51=52
     T__52=53
-    T__53=54
-    STRING=55
-    SPECIAL_VARNAME=56
-    VARNAME=57
-    INT=58
-    FLOAT=59
-    WS=60
+    STRING=54
+    SPECIAL_VARNAME=55
+    VARNAME=56
+    INT=57
+    FLOAT=58
+    WS=59
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -1105,8 +1106,8 @@ class OclExpressionParser ( Parser ):
                 self.match(OclExpressionParser.T__17)
                 self.state = 146
                 self._errHandler.sync(self)
-                la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
-                if la_ == 1:
+                _la = self._input.LA(1)
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << OclExpressionParser.T__0) | (1 << OclExpressionParser.T__1) | (1 << OclExpressionParser.T__2) | (1 << OclExpressionParser.T__3) | (1 << OclExpressionParser.T__4) | (1 << OclExpressionParser.T__5) | (1 << OclExpressionParser.T__6) | (1 << OclExpressionParser.T__7) | (1 << OclExpressionParser.T__8) | (1 << OclExpressionParser.T__9) | (1 << OclExpressionParser.T__10) | (1 << OclExpressionParser.T__11) | (1 << OclExpressionParser.T__12) | (1 << OclExpressionParser.T__17) | (1 << OclExpressionParser.T__18) | (1 << OclExpressionParser.T__20) | (1 << OclExpressionParser.T__21) | (1 << OclExpressionParser.T__22) | (1 << OclExpressionParser.T__23) | (1 << OclExpressionParser.T__24) | (1 << OclExpressionParser.T__25) | (1 << OclExpressionParser.T__26) | (1 << OclExpressionParser.T__27) | (1 << OclExpressionParser.T__28) | (1 << OclExpressionParser.T__29) | (1 << OclExpressionParser.T__30) | (1 << OclExpressionParser.T__31) | (1 << OclExpressionParser.T__32) | (1 << OclExpressionParser.T__33) | (1 << OclExpressionParser.T__34) | (1 << OclExpressionParser.T__35) | (1 << OclExpressionParser.T__36) | (1 << OclExpressionParser.T__38) | (1 << OclExpressionParser.T__42) | (1 << OclExpressionParser.T__43) | (1 << OclExpressionParser.T__44) | (1 << OclExpressionParser.T__45) | (1 << OclExpressionParser.STRING) | (1 << OclExpressionParser.SPECIAL_VARNAME) | (1 << OclExpressionParser.VARNAME) | (1 << OclExpressionParser.INT) | (1 << OclExpressionParser.FLOAT) | (1 << OclExpressionParser.WS))) != 0):
                     self.state = 138
                     self.oclExp(0)
                     self.state = 143
@@ -2513,12 +2514,12 @@ class OclExpressionParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def typeNameExpCS(self):
-            return self.getTypedRuleContext(OclExpressionParser.TypeNameExpCSContext,0)
-
-
         def typeLiteralCS(self):
             return self.getTypedRuleContext(OclExpressionParser.TypeLiteralCSContext,0)
+
+
+        def typeNameExpCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.TypeNameExpCSContext,0)
 
 
         def getRuleIndex(self):
@@ -2548,19 +2549,19 @@ class OclExpressionParser ( Parser ):
         try:
             self.state = 277
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,20,self._ctx)
-            if la_ == 1:
+            token = self._input.LA(1)
+            if token in [OclExpressionParser.T__22, OclExpressionParser.T__26, OclExpressionParser.T__27, OclExpressionParser.T__28, OclExpressionParser.T__29, OclExpressionParser.T__30, OclExpressionParser.T__31, OclExpressionParser.T__32, OclExpressionParser.T__33, OclExpressionParser.T__34]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 275
-                self.typeNameExpCS()
-                pass
-
-            elif la_ == 2:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 276
                 self.typeLiteralCS()
                 pass
-
+            elif token in [OclExpressionParser.T__0, OclExpressionParser.T__1, OclExpressionParser.T__2, OclExpressionParser.T__3, OclExpressionParser.T__5, OclExpressionParser.T__6, OclExpressionParser.T__7, OclExpressionParser.T__8, OclExpressionParser.T__9, OclExpressionParser.T__10, OclExpressionParser.T__11, OclExpressionParser.T__12, OclExpressionParser.T__18, OclExpressionParser.T__20, OclExpressionParser.T__23, OclExpressionParser.T__24, OclExpressionParser.T__25, OclExpressionParser.T__35, OclExpressionParser.STRING, OclExpressionParser.SPECIAL_VARNAME, OclExpressionParser.VARNAME, OclExpressionParser.INT, OclExpressionParser.FLOAT, OclExpressionParser.WS]:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 276
+                self.typeNameExpCS(0)
+                pass
+            else:
+                raise NoViableAltException(self)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -2580,6 +2581,10 @@ class OclExpressionParser ( Parser ):
 
         def unrestrictedName(self):
             return self.getTypedRuleContext(OclExpressionParser.UnrestrictedNameContext,0)
+
+
+        def typeNameExpCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.TypeNameExpCSContext,0)
 
 
         def unreservedName(self, i:int=None):
@@ -2608,49 +2613,58 @@ class OclExpressionParser ( Parser ):
 
 
 
-
-    def typeNameExpCS(self):
-
-        localctx = OclExpressionParser.TypeNameExpCSContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 34, self.RULE_typeNameExpCS)
+    def typeNameExpCS(self, _p:int=0):
+        _parentctx = self._ctx
+        _parentState = self.state
+        localctx = OclExpressionParser.TypeNameExpCSContext(self, self._ctx, _parentState)
+        _prevctx = localctx
+        _startState = 34
+        self.enterRecursionRule(localctx, 34, self.RULE_typeNameExpCS, _p)
         try:
-            self.state = 290
+            self.enterOuterAlt(localctx, 1)
+            self.state = 280
+            self.unrestrictedName()
+            self._ctx.stop = self._input.LT(-1)
+            self.state = 291
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,22,self._ctx)
-            if la_ == 1:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 279
-                self.unrestrictedName()
-                pass
-
-            elif la_ == 2:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 280
-                self.unrestrictedName()
-                self.state = 285
-                self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,21,self._ctx)
-                while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
-                    if _alt==1:
-                        self.state = 281
-                        self.match(OclExpressionParser.T__0)
-                        self.state = 282
-                        self.unreservedName() 
-                    self.state = 287
+            _alt = self._interp.adaptivePredict(self._input,22,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
+                    if self._parseListeners is not None:
+                        self.triggerExitRuleEvent()
+                    _prevctx = localctx
+                    localctx = OclExpressionParser.TypeNameExpCSContext(self, _parentctx, _parentState)
+                    self.pushNewRecursionContext(localctx, _startState, self.RULE_typeNameExpCS)
+                    self.state = 282
+                    if not self.precpred(self._ctx, 1):
+                        from antlr4.error.Errors import FailedPredicateException
+                        raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
+                    self.state = 285 
                     self._errHandler.sync(self)
-                    _alt = self._interp.adaptivePredict(self._input,21,self._ctx)
+                    _alt = 1
+                    while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                        if _alt == 1:
+                            self.state = 283
+                            self.match(OclExpressionParser.T__0)
+                            self.state = 284
+                            self.unreservedName()
 
-                self.state = 288
-                self.unreservedName()
-                pass
-
+                        else:
+                            raise NoViableAltException(self)
+                        self.state = 287 
+                        self._errHandler.sync(self)
+                        _alt = self._interp.adaptivePredict(self._input,21,self._ctx)
+             
+                self.state = 293
+                self._errHandler.sync(self)
+                _alt = self._interp.adaptivePredict(self._input,22,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
             self._errHandler.recover(self, re)
         finally:
-            self.exitRule()
+            self.unrollRecursionContexts(_parentctx)
         return localctx
 
 
@@ -2661,12 +2675,12 @@ class OclExpressionParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def primitiveTypeCS(self):
-            return self.getTypedRuleContext(OclExpressionParser.PrimitiveTypeCSContext,0)
-
-
         def collectionTypeCS(self):
             return self.getTypedRuleContext(OclExpressionParser.CollectionTypeCSContext,0)
+
+
+        def primitiveTypeCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.PrimitiveTypeCSContext,0)
 
 
         def tupleTypeCS(self):
@@ -2698,22 +2712,22 @@ class OclExpressionParser ( Parser ):
         localctx = OclExpressionParser.TypeLiteralCSContext(self, self._ctx, self.state)
         self.enterRule(localctx, 36, self.RULE_typeLiteralCS)
         try:
-            self.state = 295
+            self.state = 297
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [OclExpressionParser.T__26, OclExpressionParser.T__27, OclExpressionParser.T__28, OclExpressionParser.T__29]:
+            if token in [OclExpressionParser.T__30, OclExpressionParser.T__31, OclExpressionParser.T__32, OclExpressionParser.T__33, OclExpressionParser.T__34]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 292
-                self.primitiveTypeCS()
-                pass
-            elif token in [OclExpressionParser.T__30, OclExpressionParser.T__31, OclExpressionParser.T__32, OclExpressionParser.T__33, OclExpressionParser.T__34]:
-                self.enterOuterAlt(localctx, 2)
-                self.state = 293
+                self.state = 294
                 self.collectionTypeCS()
+                pass
+            elif token in [OclExpressionParser.T__26, OclExpressionParser.T__27, OclExpressionParser.T__28, OclExpressionParser.T__29]:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 295
+                self.primitiveTypeCS()
                 pass
             elif token in [OclExpressionParser.T__22]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 294
+                self.state = 296
                 self.tupleTypeCS()
                 pass
             else:
@@ -2769,49 +2783,49 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 297
+            self.state = 299
             self.match(OclExpressionParser.T__22)
-            self.state = 320
+            self.state = 322
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,26,self._ctx)
             if la_ == 1:
-                self.state = 298
+                self.state = 300
                 self.match(OclExpressionParser.T__17)
-                self.state = 299
+                self.state = 301
                 self.tuplePartCS()
-                self.state = 304
+                self.state = 306
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==OclExpressionParser.T__18:
-                    self.state = 300
+                    self.state = 302
                     self.match(OclExpressionParser.T__18)
-                    self.state = 301
+                    self.state = 303
                     self.tuplePartCS()
-                    self.state = 306
+                    self.state = 308
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 307
+                self.state = 309
                 self.match(OclExpressionParser.T__19)
 
             elif la_ == 2:
-                self.state = 309
+                self.state = 311
                 self.match(OclExpressionParser.T__9)
-                self.state = 310
+                self.state = 312
                 self.tuplePartCS()
-                self.state = 315
+                self.state = 317
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==OclExpressionParser.T__18:
-                    self.state = 311
+                    self.state = 313
                     self.match(OclExpressionParser.T__18)
-                    self.state = 312
+                    self.state = 314
                     self.tuplePartCS()
-                    self.state = 317
+                    self.state = 319
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 318
+                self.state = 320
                 self.match(OclExpressionParser.T__11)
 
 
@@ -2865,11 +2879,11 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 40, self.RULE_tuplePartCS)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 322
-            self.unrestrictedName()
-            self.state = 323
-            self.match(OclExpressionParser.T__25)
             self.state = 324
+            self.unrestrictedName()
+            self.state = 325
+            self.match(OclExpressionParser.T__25)
+            self.state = 326
             self.typeExpCS()
         except RecognitionException as re:
             localctx.exception = re
@@ -2923,19 +2937,19 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 42, self.RULE_ifExp)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 326
-            self.match(OclExpressionParser.T__38)
-            self.state = 327
-            localctx.condition = self.oclExp(0)
             self.state = 328
-            self.match(OclExpressionParser.T__39)
+            self.match(OclExpressionParser.T__38)
             self.state = 329
-            localctx.body = self.oclExp(0)
+            localctx.condition = self.oclExp(0)
             self.state = 330
-            self.match(OclExpressionParser.T__40)
+            self.match(OclExpressionParser.T__39)
             self.state = 331
-            localctx.else_ = self.oclExp(0)
+            localctx.body = self.oclExp(0)
             self.state = 332
+            self.match(OclExpressionParser.T__40)
+            self.state = 333
+            localctx.else_ = self.oclExp(0)
+            self.state = 334
             self.match(OclExpressionParser.T__41)
         except RecognitionException as re:
             localctx.exception = re
@@ -2986,7 +3000,7 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 334
+            self.state = 336
             _la = self._input.LA(1)
             if not(_la==OclExpressionParser.INT or _la==OclExpressionParser.FLOAT):
                 self._errHandler.recoverInline(self)
@@ -3038,7 +3052,7 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 46, self.RULE_stringLiteralExpCS)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 336
+            self.state = 338
             self.match(OclExpressionParser.STRING)
         except RecognitionException as re:
             localctx.exception = re
@@ -3084,7 +3098,7 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 338
+            self.state = 340
             _la = self._input.LA(1)
             if not(_la==OclExpressionParser.T__42 or _la==OclExpressionParser.T__43):
                 self._errHandler.recoverInline(self)
@@ -3134,7 +3148,7 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 50, self.RULE_unlimitedNaturalLiteralCS)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 340
+            self.state = 342
             self.match(OclExpressionParser.T__5)
         except RecognitionException as re:
             localctx.exception = re
@@ -3179,7 +3193,7 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 52, self.RULE_invalidLiteralExpCS)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 342
+            self.state = 344
             self.match(OclExpressionParser.T__44)
         except RecognitionException as re:
             localctx.exception = re
@@ -3224,7 +3238,7 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 54, self.RULE_nullLiteralExpCS)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 344
+            self.state = 346
             self.match(OclExpressionParser.T__45)
         except RecognitionException as re:
             localctx.exception = re
@@ -3270,9 +3284,9 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 346
+            self.state = 348
             _la = self._input.LA(1)
-            if _la <= 0 or (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << OclExpressionParser.T__4) | (1 << OclExpressionParser.T__13) | (1 << OclExpressionParser.T__14) | (1 << OclExpressionParser.T__15) | (1 << OclExpressionParser.T__16) | (1 << OclExpressionParser.T__21) | (1 << OclExpressionParser.T__22) | (1 << OclExpressionParser.T__26) | (1 << OclExpressionParser.T__27) | (1 << OclExpressionParser.T__28) | (1 << OclExpressionParser.T__29) | (1 << OclExpressionParser.T__30) | (1 << OclExpressionParser.T__31) | (1 << OclExpressionParser.T__32) | (1 << OclExpressionParser.T__34) | (1 << OclExpressionParser.T__36) | (1 << OclExpressionParser.T__37) | (1 << OclExpressionParser.T__38) | (1 << OclExpressionParser.T__39) | (1 << OclExpressionParser.T__40) | (1 << OclExpressionParser.T__41) | (1 << OclExpressionParser.T__42) | (1 << OclExpressionParser.T__43) | (1 << OclExpressionParser.T__44) | (1 << OclExpressionParser.T__45) | (1 << OclExpressionParser.T__46) | (1 << OclExpressionParser.T__47) | (1 << OclExpressionParser.T__48) | (1 << OclExpressionParser.T__49) | (1 << OclExpressionParser.T__50) | (1 << OclExpressionParser.T__51) | (1 << OclExpressionParser.T__52) | (1 << OclExpressionParser.T__53))) != 0):
+            if _la <= 0 or (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << OclExpressionParser.T__4) | (1 << OclExpressionParser.T__13) | (1 << OclExpressionParser.T__14) | (1 << OclExpressionParser.T__15) | (1 << OclExpressionParser.T__16) | (1 << OclExpressionParser.T__17) | (1 << OclExpressionParser.T__19) | (1 << OclExpressionParser.T__21) | (1 << OclExpressionParser.T__22) | (1 << OclExpressionParser.T__26) | (1 << OclExpressionParser.T__27) | (1 << OclExpressionParser.T__28) | (1 << OclExpressionParser.T__29) | (1 << OclExpressionParser.T__30) | (1 << OclExpressionParser.T__31) | (1 << OclExpressionParser.T__32) | (1 << OclExpressionParser.T__33) | (1 << OclExpressionParser.T__34) | (1 << OclExpressionParser.T__36) | (1 << OclExpressionParser.T__37) | (1 << OclExpressionParser.T__38) | (1 << OclExpressionParser.T__39) | (1 << OclExpressionParser.T__40) | (1 << OclExpressionParser.T__41) | (1 << OclExpressionParser.T__42) | (1 << OclExpressionParser.T__43) | (1 << OclExpressionParser.T__44) | (1 << OclExpressionParser.T__45) | (1 << OclExpressionParser.T__46) | (1 << OclExpressionParser.T__47) | (1 << OclExpressionParser.T__48) | (1 << OclExpressionParser.T__49) | (1 << OclExpressionParser.T__50) | (1 << OclExpressionParser.T__51) | (1 << OclExpressionParser.T__52))) != 0):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3321,9 +3335,9 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 348
+            self.state = 350
             _la = self._input.LA(1)
-            if _la <= 0 or (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << OclExpressionParser.T__4) | (1 << OclExpressionParser.T__13) | (1 << OclExpressionParser.T__14) | (1 << OclExpressionParser.T__15) | (1 << OclExpressionParser.T__16) | (1 << OclExpressionParser.T__21) | (1 << OclExpressionParser.T__36) | (1 << OclExpressionParser.T__37) | (1 << OclExpressionParser.T__38) | (1 << OclExpressionParser.T__39) | (1 << OclExpressionParser.T__40) | (1 << OclExpressionParser.T__41) | (1 << OclExpressionParser.T__42) | (1 << OclExpressionParser.T__43) | (1 << OclExpressionParser.T__44) | (1 << OclExpressionParser.T__45))) != 0):
+            if _la <= 0 or (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << OclExpressionParser.T__4) | (1 << OclExpressionParser.T__13) | (1 << OclExpressionParser.T__14) | (1 << OclExpressionParser.T__15) | (1 << OclExpressionParser.T__16) | (1 << OclExpressionParser.T__17) | (1 << OclExpressionParser.T__19) | (1 << OclExpressionParser.T__21) | (1 << OclExpressionParser.T__36) | (1 << OclExpressionParser.T__37) | (1 << OclExpressionParser.T__38) | (1 << OclExpressionParser.T__39) | (1 << OclExpressionParser.T__40) | (1 << OclExpressionParser.T__41) | (1 << OclExpressionParser.T__42) | (1 << OclExpressionParser.T__43) | (1 << OclExpressionParser.T__44) | (1 << OclExpressionParser.T__45))) != 0):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3342,6 +3356,7 @@ class OclExpressionParser ( Parser ):
         if self._predicates == None:
             self._predicates = dict()
         self._predicates[0] = self.oclExp_sempred
+        self._predicates[17] = self.typeNameExpCS_sempred
         pred = self._predicates.get(ruleIndex, None)
         if pred is None:
             raise Exception("No predicate with index:" + str(ruleIndex))
@@ -3415,6 +3430,11 @@ class OclExpressionParser ( Parser ):
 
             if predIndex == 16:
                 return self.precpred(self._ctx, 16)
+         
+
+    def typeNameExpCS_sempred(self, localctx:TypeNameExpCSContext, predIndex:int):
+            if predIndex == 17:
+                return self.precpred(self._ctx, 1)
          
 
 

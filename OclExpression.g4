@@ -107,18 +107,18 @@ letVariableCS:
 ;
 
 typeExpCS:
-    typeNameExpCS
-|   typeLiteralCS
+    typeLiteralCS
+|   typeNameExpCS
 ;
 
 typeNameExpCS:
     unrestrictedName
-|   unrestrictedName ('::' unreservedName)* unreservedName
+|   typeNameExpCS ('::' unreservedName)+
 ;
 
 typeLiteralCS:
-    primitiveTypeCS
-|   collectionTypeCS
+    collectionTypeCS
+|   primitiveTypeCS
 |   tupleTypeCS
 ;
 
@@ -160,8 +160,8 @@ nullLiteralExpCS:
     'null'
 ;
 
-unrestrictedName: ~('true'|'false'|'and'|'else'|'endif'|'false'|'if'|'implies'|'in'|'invalid'|'let'|'not'|'null'|'or'|'self'|'then'|'true'|'xor'|'Bag'|'Boolean'|'Collection'|'Integer'|'Lambda'|'OclAny'|'OclInvalid'|'OclMessage'|'OclSelf'|'OclVoid'|'OrderedSet'|'Real'|' Sequence'|'Set'|'String'|'Tuple'|'UnlimitedNatural');
-unreservedName: ~('and'|'else'|'endif'|'false'|'if'|'implies'|'in'|'invalid'|'let'|'not'|'null'|'or'|'self'|'then'|'true'|'xor');
+unrestrictedName: ~('('|')'|'true'|'false'|'and'|'else'|'endif'|'false'|'if'|'implies'|'in'|'invalid'|'let'|'not'|'null'|'or'|'self'|'then'|'true'|'xor'|'Bag'|'Boolean'|'Collection'|'Integer'|'Lambda'|'OclAny'|'OclInvalid'|'OclMessage'|'OclSelf'|'OclVoid'|'OrderedSet'|'Real'|'Sequence'|'Set'|'String'|'Tuple'|'UnlimitedNatural');
+unreservedName: ~('('|')'|'and'|'else'|'endif'|'false'|'if'|'implies'|'in'|'invalid'|'let'|'not'|'null'|'or'|'self'|'then'|'true'|'xor');
 
 STRING: '\'' ~[']* '\'';
 SPECIAL_VARNAME: '_' STRING;
