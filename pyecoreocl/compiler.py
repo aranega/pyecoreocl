@@ -45,7 +45,7 @@ class DummyVisitor(OclExpressionVisitor):
         self.inline(ctx.text)
 
     def visitFullQualifiedName(self, ctx):
-        return self.visitChildren(ctx)
+        self.inline(ctx.text.replace('::', '.'))
 
     def visitComparisonBinaryOperation(self, ctx):
         self.visit(ctx.left)

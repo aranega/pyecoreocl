@@ -11,7 +11,7 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3=")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3>")
         buf.write("\u015a\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
@@ -45,7 +45,7 @@ def serializedATN():
         buf.write("\3\25\3\25\3\25\3\25\3\25\3\25\3\25\3\26\3\26\3\27\3\27")
         buf.write("\3\30\3\30\3\31\3\31\3\32\3\32\3\33\3\33\3\34\3\34\3\35")
         buf.write("\3\35\3\35\2\3\2\36\2\4\6\b\n\f\16\20\22\24\26\30\32\34")
-        buf.write("\36 \"$&(*,.\60\62\64\668\2\6\3\2;<\3\2-.\b\2\7\7\20\23")
+        buf.write("\36 \"$&(*,.\60\62\64\668\2\6\3\2<=\3\2-.\b\2\7\7\20\23")
         buf.write("\30\31\35#%%\'8\6\2\7\7\20\23\30\30\'\60\2\u017c\2J\3")
         buf.write("\2\2\2\4\u00a0\3\2\2\2\6\u00ad\3\2\2\2\b\u00b5\3\2\2\2")
         buf.write("\n\u00b7\3\2\2\2\f\u00c3\3\2\2\2\16\u00cb\3\2\2\2\20\u00d9")
@@ -210,8 +210,8 @@ class OclExpressionParser ( Parser ):
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "STRING", "VARNAME", 
-                      "INT", "FLOAT", "WS" ]
+                      "<INVALID>", "<INVALID>", "<INVALID>", "STRING", "SPECIAL_VARNAME", 
+                      "VARNAME", "INT", "FLOAT", "WS" ]
 
     RULE_oclExp = 0
     RULE_argExp = 1
@@ -308,10 +308,11 @@ class OclExpressionParser ( Parser ):
     T__52=53
     T__53=54
     STRING=55
-    VARNAME=56
-    INT=57
-    FLOAT=58
-    WS=59
+    SPECIAL_VARNAME=56
+    VARNAME=57
+    INT=58
+    FLOAT=59
+    WS=60
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)

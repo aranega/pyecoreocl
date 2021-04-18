@@ -156,6 +156,7 @@ unrestrictedName: ~('true'|'false'|'and'|'else'|'endif'|'false'|'if'|'implies'|'
 unreservedName: ~('and'|'else'|'endif'|'false'|'if'|'implies'|'in'|'invalid'|'let'|'not'|'null'|'or'|'self'|'then'|'true'|'xor');
 
 STRING: '\'' ~[']* '\'';
+SPECIAL_VARNAME: '_' STRING;
 VARNAME: [a-zA-Z_][a-zA-Z_0-9]*;
 INT: [0-9]+;
 FLOAT:  INT ('.' INT)? (('e'|'E') ('+'|'-')? INT)?;
