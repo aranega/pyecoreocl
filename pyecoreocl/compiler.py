@@ -1,0 +1,241 @@
+from io import StringIO
+from antlr4 import CommonTokenStream, InputStream
+from .parser import OclExpressionVisitor, OclExpressionParser, OclExpressionLexer
+
+
+class DummyVisitor(OclExpressionVisitor):
+    def __init__(self):
+        self.ind = ""
+        self.result = ""
+
+    def line(self, s):
+        self.result += self.ind + s + "\n"
+
+    def inline(self, s):
+        self.result += s
+
+    def indent(self):
+        self.ind += "  "
+
+    def unindent(self):
+        self.ind = self.ind[2:]
+
+    def visitUnaryOperation(self, ctx):
+        self.inline(ctx.text)
+
+    def visitAttributeNavigation(self, ctx):
+        self.visit(ctx.expression)
+        self.inline(f".{ctx.attname.text}")
+
+    def visitPrimaryExpression(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitArithmeticBinaryOperation(self, ctx):
+        self.visit(ctx.left)
+        self.inline(f" {ctx.operator.text} ")
+        self.visit(ctx.right)
+
+    def visitSimpleName(self, ctx):
+        self.inline(ctx.text)
+
+    def visitFullQualifiedName(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitComparisonBinaryOperation(self, ctx):
+        self.visit(ctx.left)
+        operator = ctx.operator.text
+        self.inline(f" {operator if operator != '=' else '=='} ")
+        self.visit(ctx.right)
+
+    def visitCollectionCall(self, ctx):
+        operation = ctx.attname.text
+        if operation == 'collect':
+            self.visitCollect(ctx)
+        if operation == 'select':
+            self.visitSelect(ctx)
+
+    def visitCollect(self, ctx):
+        self.inline("[")
+        self.visit(ctx.argExp().oclExp())
+        self.inline(f" for {ctx.argExp().varnames[0].text} in ")
+        self.visit(ctx.expression)
+        self.inline("]")
+
+    def visitSelect(self, ctx):
+        self.inline(f"[{ctx.argExp().varnames[0].text}")
+        self.inline(f" for {ctx.argExp().varnames[0].text} in ")
+        self.visit(ctx.expression)
+        self.inline(f" if ")
+        self.visit(ctx.argExp().oclExp())
+        self.inline("]")
+
+    def visitBooleanBinaryOperation(self, ctx):
+        self.visit(ctx.left)
+        self.inline(f" {ctx.operator.text} ")
+        self.visit(ctx.right)
+
+    def visitCallExpression(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitArgumentsExp(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitLambdaExp(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitPrimaryExp(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitNumberLiteral(self, ctx):
+        self.inline(ctx.text)
+
+    def visitStringLiteral(self, ctx):
+        self.inline(ctx.text)
+
+    def visitBooleanLiteral(self, ctx):
+        self.inline(ctx.text.capitalize())
+
+    def visitUnlimitedNaturalLiteral(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitInvalidLiteral(self, ctx):
+        self.inline("None")
+
+    def visitNullLiteral(self, ctx):
+        self.inline("None")
+
+    def visitTupleLiteralExp(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitTupleLiteralPartCS(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitCollectionLiteralExp(self, ctx):
+        ctype = ctx.collectionTypeCS().text
+        if ctype == 'Sequence' or ctype == 'Bag':
+            opening = '['
+            ending = ']'
+        elif ctype == 'Set':
+            opening = '{'
+            ending = '}'
+        self.inline(opening)
+        for exp in ctx.expressions:
+            self.visit(exp)
+            self.inline(', ')
+        self.inline(ending)
+
+    def visitCollectionTypeCS(self, ctx):
+        self.visitChildren(ctx)
+
+    def visitStringType(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitIntegerType(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitUnlimitedNaturalType(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitBooleanType(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitCollectionType(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitBagType(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitOrderedSetType(self, ctx):
+        self.inline(ctx.text)
+
+    def visitSequenceType(self, ctx):
+        self.inline("list")
+
+    def visitSetType(self, ctx):
+        self.inline("set")
+
+    def visitCollectionLiteralPartCS(self, ctx):
+        if ctx.isInterval:
+            self.inline("*range(")
+            self.visit(ctx.inf)
+            self.inline(", ")
+            self.visit(ctx.sup)
+            self.inline(")")
+        else:
+            self.visitChildren(ctx)
+
+    def visitTypeLiteralExp(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitLetExp(self, ctx):
+        args = ', '.join(x.unrestrictedName().text for x in ctx.variables)
+        call_params = ', '.join(x.unrestrictedName().text for x in ctx.variables)
+        self.inline(f"(lambda {args}: ")
+        self.visit(ctx.oclExp())
+        self.inline(")(")
+        for param in ctx.variables:
+            self.visit(param.oclExp())
+            self.inline(", ")
+        self.inline(")")
+
+    def visitLetVariableCS(self, ctx):
+        self.inline(f"{ctx.unrestrictedName().text} = ")
+        self.visit(ctx.oclExp())
+        self.line("")
+
+    def visitTypeExpCS(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitTypeNameExpCS(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitTypeLiteralCS(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitTupleTypeCS(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitTuplePartCS(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitIfExp(self, ctx):
+        self.visit(ctx.body)
+        self.inline(" if ")
+        self.visit(ctx.condition)
+        self.inline(" else ")
+        self.visit(ctx.else_)
+
+    def visitNumberLiteralExpCS(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitStringLiteralExpCS(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitBooleanLiteralExpCS(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitUnlimitedNaturalLiteralCS(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitInvalidLiteralExpCS(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitNullLiteralExpCS(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitUnrestrictedName(self, ctx):
+        return self.visitChildren(ctx)
+
+    def visitUnreservedName(self, ctx):
+        return self.visitChildren(ctx)
+
+
+def dummy_compiler(s):
+    input_stream = InputStream(s)
+    lexer = OclExpressionLexer(input_stream)
+    stream = CommonTokenStream(lexer)
+    parser = OclExpressionParser(stream)
+    tree = parser.oclExp()
+    visitor = DummyVisitor()
+    tree.accept(visitor)
+    return visitor.result
