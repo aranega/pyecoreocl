@@ -22,6 +22,6 @@ print(dummy_compiler(expression))
 [e + 4 for e in [e for e in [0, *range(1, 15), ] if e > 0]]
 ```
 
-## Dependencies
+## Dependencies
 
 * antlr4
