@@ -38,7 +38,7 @@ primaryExp:
 |		typeLiteralExp
 |		letExp
 |		ifExp
-|		'(' oclExp ')'
+|		'(' nested=oclExp ')'
 ;
 
 primitiveLiteralExp:

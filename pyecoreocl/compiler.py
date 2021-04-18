@@ -3,6 +3,12 @@ from antlr4 import CommonTokenStream, InputStream
 from .parser import OclExpressionVisitor, OclExpressionParser, OclExpressionLexer
 
 
+class OCLTuple(object):
+    def __init__(self, **kwargs):
+        for k, v in kwargs.items():
+            setattr(self, k, v)
+
+
 class DummyVisitor(OclExpressionVisitor):
     def __init__(self):
         self.ind = ""
@@ -116,6 +122,11 @@ class DummyVisitor(OclExpressionVisitor):
         return self.visitChildren(ctx)
 
     def visitPrimaryExp(self, ctx):
+        if ctx.nested:
+            self.inline('(')
+            self.visit(ctx.nested)
+            self.inline(')')
+            return
         return self.visitChildren(ctx)
 
     def visitNumberLiteral(self, ctx):
@@ -137,10 +148,15 @@ class DummyVisitor(OclExpressionVisitor):
         self.inline("None")
 
     def visitTupleLiteralExp(self, ctx):
-        return self.visitChildren(ctx)
+        self.inline('OCLTuple(')
+        for part in ctx.tupleLiteralPartCS():
+            self.visit(part)
+            self.inline(", ")
+        self.inline(')')
 
     def visitTupleLiteralPartCS(self, ctx):
-        return self.visitChildren(ctx)
+        self.inline(f"{ctx.unrestrictedName().text}=")
+        self.visit(ctx.primaryExp())
 
     def visitCollectionLiteralExp(self, ctx):
         ctype = ctx.collectionTypeCS().text

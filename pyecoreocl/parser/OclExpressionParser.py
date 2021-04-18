@@ -1167,6 +1167,7 @@ class OclExpressionParser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
+            self.nested = None # OclExpContext
 
         def primitiveLiteralExp(self):
             return self.getTypedRuleContext(OclExpressionParser.PrimitiveLiteralExpContext,0)
@@ -1271,7 +1272,7 @@ class OclExpressionParser ( Parser ):
                 self.state = 167
                 self.match(OclExpressionParser.T__17)
                 self.state = 168
-                self.oclExp(0)
+                localctx.nested = self.oclExp(0)
                 self.state = 169
                 self.match(OclExpressionParser.T__19)
                 pass

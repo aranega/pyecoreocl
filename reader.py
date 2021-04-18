@@ -10,8 +10,12 @@ expression = "Set{}->isEmpty(4)"
 print(dummy_compiler(expression))
 
 
-expression = "len(x, y+4)"
+expression = "len(x, (y+4) * 3)"
 print(dummy_compiler(expression))
 
 expression = "a.b.c.d(45)"
+print(dummy_compiler(expression))
+
+
+expression = "let x = Tuple{foo='abc'} in x.foo"
 print(dummy_compiler(expression))
