@@ -28,3 +28,7 @@ let b:BehavioredClassifier = self.behavioredClassifier(self.owner) in
             b.oclAsType(Behavior).context
                 else b endif endif)"""
 print(dummy_compiler(expression))
+
+expression = """Extension.allInstances()->select(ext |  let endTypes = ext.memberEnd->collect(e | type.oclAsType(Classifier)) in
+        endTypes->includes(self) or endTypes.allParents()->includes(self))"""
+print(dummy_compiler(expression))

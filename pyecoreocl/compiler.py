@@ -62,6 +62,11 @@ class DummyVisitor(OclExpressionVisitor):
         if operation == 'select':
             self.visitSelect(ctx)
             return
+        if operation == 'includes':
+            self.visit(ctx.argExp().oclExp()[0])
+            self.inline(' in ')
+            self.visit(ctx.expression)
+            return
         if operation == 'isNotEmpty':
             self.inline('len(')
             self.visit(ctx.expression)

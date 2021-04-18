@@ -59,6 +59,12 @@ print(dummy_compiler(expression))
 # result
 (None if nestingClass > None else (lambda b: b.context if isinstance(b, Behavior) and b.context > None else b)(self.behavioredClassifier(self.owner)))
 
+
+expression = """Extension.allInstances()->select(ext |  let endTypes = ext.memberEnd->collect(e | type.oclAsType(Classifier)) in
+        endTypes->includes(self) or endTypes.allParents()->includes(self))"""
+print(dummy_compiler(expression))
+# result
+[ext for ext in Extension.allInstances() if (lambda endTypes: self in endTypes or self in endTypes.allParents())([type for e in ext.memberEnd])]
 ```
 
 ## Dependencies
