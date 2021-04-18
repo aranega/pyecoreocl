@@ -20,3 +20,14 @@ print(dummy_compiler(expression))
 
 expression = "ParameterDirectionKind::inout"
 print(dummy_compiler(expression))
+
+expression = """(if nestingClass > null then null
+else
+let b:BehavioredClassifier = self.behavioredClassifier(self.owner) in
+    if b.oclIsKindOf(Behavior) and b.oclAsType(Behavior).context > null then
+            b.oclAsType(Behavior)._'context'
+                else
+                        b
+                            endif
+                            endif)"""
+print(dummy_compiler(expression))

@@ -134,6 +134,24 @@ class OclExpressionListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by OclExpressionParser#selfExp.
+    def enterSelfExp(self, ctx:OclExpressionParser.SelfExpContext):
+        pass
+
+    # Exit a parse tree produced by OclExpressionParser#selfExp.
+    def exitSelfExp(self, ctx:OclExpressionParser.SelfExpContext):
+        pass
+
+
+    # Enter a parse tree produced by OclExpressionParser#nestedExp.
+    def enterNestedExp(self, ctx:OclExpressionParser.NestedExpContext):
+        pass
+
+    # Exit a parse tree produced by OclExpressionParser#nestedExp.
+    def exitNestedExp(self, ctx:OclExpressionParser.NestedExpContext):
+        pass
+
+
     # Enter a parse tree produced by OclExpressionParser#NumberLiteral.
     def enterNumberLiteral(self, ctx:OclExpressionParser.NumberLiteralContext):
         pass

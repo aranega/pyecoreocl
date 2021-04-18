@@ -31,14 +31,22 @@ argExp:
 ;
 
 primaryExp:
-		'self'
+		selfExp
+|		nestedExp
 |		primitiveLiteralExp
 |		tupleLiteralExp
 |		collectionLiteralExp
 |		typeLiteralExp
 |		letExp
 |		ifExp
-|		'(' nested=oclExp ')'
+;
+
+selfExp:
+    'self'
+;
+
+nestedExp:
+    '(' nested=oclExp ')'
 ;
 
 primitiveLiteralExp:

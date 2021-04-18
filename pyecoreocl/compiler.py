@@ -108,6 +108,13 @@ class DummyVisitor(OclExpressionVisitor):
         if ctx.attname.text == 'oclAsType':
             self.visit(ctx.expression)
             return
+        if ctx.attname.text == 'oclIsKindOf':
+            self.inline('isinstance(')
+            self.visit(ctx.expression)
+            self.inline(', ')
+            self.visit(ctx.argExp())
+            self.inline(')')
+            return
         self.visit(ctx.expression)
         self.inline(f".{ctx.attname.text}(")
         self.visit(ctx.argExp())
@@ -116,18 +123,19 @@ class DummyVisitor(OclExpressionVisitor):
     def visitArgumentsExp(self, ctx):
         for exp in ctx.oclExp():
             self.visit(exp)
-            self.inline(', ')
+            if exp is not ctx.oclExp()[-1]:
+                self.inline(', ')
 
     def visitLambdaExp(self, ctx):
         return self.visitChildren(ctx)
 
-    def visitPrimaryExp(self, ctx):
-        if ctx.nested:
-            self.inline('(')
-            self.visit(ctx.nested)
-            self.inline(')')
-            return
-        return self.visitChildren(ctx)
+    def visitNestedExp(self, ctx):
+        self.inline('(')
+        self.visit(ctx.nested)
+        self.inline(')')
+
+    def visitSelfExp(self, ctx):
+        self.inline('self')
 
     def visitNumberLiteral(self, ctx):
         self.inline(ctx.text)
@@ -151,7 +159,8 @@ class DummyVisitor(OclExpressionVisitor):
         self.inline('OCLTuple(')
         for part in ctx.tupleLiteralPartCS():
             self.visit(part)
-            self.inline(", ")
+            if part is not ctx.tupleLiteralPartCS()[-1]:
+                self.inline(", ")
         self.inline(')')
 
     def visitTupleLiteralPartCS(self, ctx):
@@ -172,7 +181,8 @@ class DummyVisitor(OclExpressionVisitor):
         self.inline(opening)
         for exp in ctx.expressions:
             self.visit(exp)
-            self.inline(', ')
+            if exp is not ctx.expressions[-1]:
+                self.inline(', ')
         self.inline(ending)
 
     def visitCollectionTypeCS(self, ctx):
@@ -226,7 +236,8 @@ class DummyVisitor(OclExpressionVisitor):
         self.inline(")(")
         for param in ctx.variables:
             self.visit(param.oclExp())
-            self.inline(", ")
+            if param is not ctx.variables[-1]:
+                self.inline(", ")
         self.inline(")")
 
     def visitLetVariableCS(self, ctx):

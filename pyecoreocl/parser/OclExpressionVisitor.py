@@ -79,6 +79,16 @@ class OclExpressionVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by OclExpressionParser#selfExp.
+    def visitSelfExp(self, ctx:OclExpressionParser.SelfExpContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by OclExpressionParser#nestedExp.
+    def visitNestedExp(self, ctx:OclExpressionParser.NestedExpContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by OclExpressionParser#NumberLiteral.
     def visitNumberLiteral(self, ctx:OclExpressionParser.NumberLiteralContext):
         return self.visitChildren(ctx)
