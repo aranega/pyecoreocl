@@ -29,6 +29,6 @@ let b:BehavioredClassifier = self.behavioredClassifier(self.owner) in
                 else b endif endif)"""
 print(dummy_compiler(expression))
 
-expression = """Extension.allInstances()->select(ext |  let endTypes : Sequence(Classifier) = ext.memberEnd->collect(e | type.oclAsType(Classifier)) in
+expression = """Extension.allInstances()->select(ext |  let endTypes : Sequence(Classifier) = ext.memberEnd->collect(e | e.type.oclAsType(Classifier)) in
         endTypes->includes(self) or endTypes.allParents()->includes(self))"""
 print(dummy_compiler(expression))

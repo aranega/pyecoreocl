@@ -84,19 +84,19 @@ class DummyVisitor(OclExpressionVisitor):
         self.inline(")")
 
     def visitCollect(self, ctx):
-        self.inline("[")
+        self.inline("(")
         self.visit(ctx.argExp().oclExp())
         self.inline(f" for {ctx.argExp().varnames[0].text} in ")
         self.visit(ctx.expression)
-        self.inline("]")
+        self.inline(")")
 
     def visitSelect(self, ctx):
-        self.inline(f"[{ctx.argExp().varnames[0].text}")
+        self.inline(f"({ctx.argExp().varnames[0].text}")
         self.inline(f" for {ctx.argExp().varnames[0].text} in ")
         self.visit(ctx.expression)
         self.inline(f" if ")
         self.visit(ctx.argExp().oclExp())
-        self.inline("]")
+        self.inline(")")
 
     def visitBooleanBinaryOperation(self, ctx):
         self.visit(ctx.left)
