@@ -23,6 +23,42 @@ expression = "Sequence{0, 1..15}->select(e | e > 0)->collect(e | e + 4)"
 print(dummy_compiler(expression))
 # result
 [e + 4 for e in [e for e in [0, *range(1, 15), ] if e > 0]]
+
+expression = "Set{}->isEmpty(4)"
+print(dummy_compiler(expression))
+# result
+len(set()) == 0
+
+expression = "len(x, (y+4) * 3)"
+print(dummy_compiler(expression))
+# result
+len(x, (y + 4) * 3)
+
+expression = "a.b.c.d(45)"
+print(dummy_compiler(expression))
+# result
+a.b.c.d(45)
+
+expression = "let x = Tuple{foo='abc'} in x.foo"
+print(dummy_compiler(expression))
+# result
+(lambda x: x.foo)(OCLTuple(foo='abc'))
+
+expression = "ParameterDirectionKind::inout"
+print(dummy_compiler(expression))
+# result
+ParameterDirectionKind.inout
+
+expression = """(if nestingClass > null then null
+else
+let b:BehavioredClassifier = self.behavioredClassifier(self.owner) in
+    if b.oclIsKindOf(Behavior) and b.oclAsType(Behavior).context > null then
+            b.oclAsType(Behavior).context
+                else b endif endif)"""
+print(dummy_compiler(expression))
+# result
+(None if nestingClass > None else (lambda b: b.context if isinstance(b, Behavior) and b.context > None else b)(self.behavioredClassifier(self.owner)))
+
 ```
 
 ## Dependencies
