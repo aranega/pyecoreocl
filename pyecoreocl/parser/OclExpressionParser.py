@@ -1,0 +1,3216 @@
+# Generated from OclExpression.g4 by ANTLR 4.9.2
+# encoding: utf-8
+from antlr4 import *
+from io import StringIO
+import sys
+if sys.version_info[1] > 5:
+	from typing import TextIO
+else:
+	from typing.io import TextIO
+
+
+def serializedATN():
+    with StringIO() as buf:
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3=")
+        buf.write("\u014b\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
+        buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
+        buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31")
+        buf.write("\t\31\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\3\2\3\2")
+        buf.write("\3\2\3\2\3\2\3\2\6\2A\n\2\r\2\16\2B\3\2\3\2\3\2\3\2\3")
+        buf.write("\2\3\2\5\2K\n\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3")
+        buf.write("\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2")
+        buf.write("\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3")
+        buf.write("\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\7\2")
+        buf.write("~\n\2\f\2\16\2\u0081\13\2\3\3\3\3\3\3\3\3\7\3\u0087\n")
+        buf.write("\3\f\3\16\3\u008a\13\3\5\3\u008c\n\3\3\3\3\3\3\3\3\3\3")
+        buf.write("\3\3\3\3\3\5\3\u0095\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3")
+        buf.write("\4\3\4\3\4\3\4\5\4\u00a2\n\4\3\5\3\5\3\5\3\5\3\5\3\5\5")
+        buf.write("\5\u00aa\n\5\3\6\3\6\3\6\3\6\3\6\7\6\u00b1\n\6\f\6\16")
+        buf.write("\6\u00b4\13\6\3\6\3\6\3\7\3\7\3\7\5\7\u00bb\n\7\3\7\3")
+        buf.write("\7\3\7\3\b\3\b\3\b\3\b\3\b\7\b\u00c5\n\b\f\b\16\b\u00c8")
+        buf.write("\13\b\5\b\u00ca\n\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\3\t\3")
+        buf.write("\t\3\t\3\t\5\t\u00d7\n\t\3\n\3\n\3\n\3\n\5\n\u00dd\n\n")
+        buf.write("\3\13\3\13\3\13\3\13\3\13\5\13\u00e4\n\13\3\f\3\f\3\f")
+        buf.write("\3\f\3\r\3\r\3\16\3\16\3\16\3\16\7\16\u00f0\n\16\f\16")
+        buf.write("\16\16\u00f3\13\16\3\16\3\16\3\16\3\17\3\17\3\17\5\17")
+        buf.write("\u00fb\n\17\3\17\3\17\3\17\3\20\3\20\5\20\u0102\n\20\3")
+        buf.write("\21\3\21\3\21\3\21\7\21\u0108\n\21\f\21\16\21\u010b\13")
+        buf.write("\21\3\21\3\21\5\21\u010f\n\21\3\22\3\22\3\22\5\22\u0114")
+        buf.write("\n\22\3\23\3\23\3\23\3\23\3\23\7\23\u011b\n\23\f\23\16")
+        buf.write("\23\u011e\13\23\3\23\3\23\3\23\3\23\3\23\3\23\7\23\u0126")
+        buf.write("\n\23\f\23\16\23\u0129\13\23\3\23\3\23\5\23\u012d\n\23")
+        buf.write("\3\24\3\24\3\24\3\24\3\25\3\25\3\25\3\25\3\25\3\25\3\25")
+        buf.write("\3\25\3\26\3\26\3\27\3\27\3\30\3\30\3\31\3\31\3\32\3\32")
+        buf.write("\3\33\3\33\3\34\3\34\3\35\3\35\3\35\2\3\2\36\2\4\6\b\n")
+        buf.write("\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\668\2")
+        buf.write("\6\3\2;<\3\2-.\b\2\7\7\20\23\30\31\35#%%\'8\6\2\7\7\20")
+        buf.write("\23\30\30\'\60\2\u016a\2J\3\2\2\2\4\u0094\3\2\2\2\6\u00a1")
+        buf.write("\3\2\2\2\b\u00a9\3\2\2\2\n\u00ab\3\2\2\2\f\u00b7\3\2\2")
+        buf.write("\2\16\u00bf\3\2\2\2\20\u00cd\3\2\2\2\22\u00dc\3\2\2\2")
+        buf.write("\24\u00e3\3\2\2\2\26\u00e5\3\2\2\2\30\u00e9\3\2\2\2\32")
+        buf.write("\u00eb\3\2\2\2\34\u00f7\3\2\2\2\36\u0101\3\2\2\2 \u010e")
+        buf.write("\3\2\2\2\"\u0113\3\2\2\2$\u0115\3\2\2\2&\u012e\3\2\2\2")
+        buf.write("(\u0132\3\2\2\2*\u013a\3\2\2\2,\u013c\3\2\2\2.\u013e\3")
+        buf.write("\2\2\2\60\u0140\3\2\2\2\62\u0142\3\2\2\2\64\u0144\3\2")
+        buf.write("\2\2\66\u0146\3\2\2\28\u0148\3\2\2\2:;\b\2\1\2;K\5\6\4")
+        buf.write("\2<K\5\66\34\2=>\5\66\34\2>?\7\3\2\2?A\3\2\2\2@=\3\2\2")
+        buf.write("\2AB\3\2\2\2B@\3\2\2\2BC\3\2\2\2CD\3\2\2\2DE\58\35\2E")
+        buf.write("K\3\2\2\2FG\7\6\2\2GK\5\2\2\21HI\7\7\2\2IK\5\2\2\20J:")
+        buf.write("\3\2\2\2J<\3\2\2\2J@\3\2\2\2JF\3\2\2\2JH\3\2\2\2K\177")
+        buf.write("\3\2\2\2LM\f\17\2\2MN\7\b\2\2N~\5\2\2\20OP\f\16\2\2PQ")
+        buf.write("\7\t\2\2Q~\5\2\2\17RS\f\r\2\2ST\7\n\2\2T~\5\2\2\16UV\f")
+        buf.write("\f\2\2VW\7\6\2\2W~\5\2\2\rXY\f\13\2\2YZ\7\13\2\2Z~\5\2")
+        buf.write("\2\f[\\\f\n\2\2\\]\7\f\2\2]~\5\2\2\13^_\f\t\2\2_`\7\r")
+        buf.write("\2\2`~\5\2\2\nab\f\b\2\2bc\7\16\2\2c~\5\2\2\tde\f\7\2")
+        buf.write("\2ef\7\17\2\2f~\5\2\2\bgh\f\6\2\2hi\7\20\2\2i~\5\2\2\7")
+        buf.write("jk\f\5\2\2kl\7\21\2\2l~\5\2\2\6mn\f\4\2\2no\7\22\2\2o")
+        buf.write("~\5\2\2\5pq\f\3\2\2qr\7\23\2\2r~\5\2\2\4st\f\24\2\2t~")
+        buf.write("\5\4\3\2uv\f\23\2\2vw\7\4\2\2w~\5\66\34\2xy\f\22\2\2y")
+        buf.write("z\7\5\2\2z{\5\66\34\2{|\5\4\3\2|~\3\2\2\2}L\3\2\2\2}O")
+        buf.write("\3\2\2\2}R\3\2\2\2}U\3\2\2\2}X\3\2\2\2}[\3\2\2\2}^\3\2")
+        buf.write("\2\2}a\3\2\2\2}d\3\2\2\2}g\3\2\2\2}j\3\2\2\2}m\3\2\2\2")
+        buf.write("}p\3\2\2\2}s\3\2\2\2}u\3\2\2\2}x\3\2\2\2~\u0081\3\2\2")
+        buf.write("\2\177}\3\2\2\2\177\u0080\3\2\2\2\u0080\3\3\2\2\2\u0081")
+        buf.write("\177\3\2\2\2\u0082\u008b\7\24\2\2\u0083\u0088\5\2\2\2")
+        buf.write("\u0084\u0085\7\25\2\2\u0085\u0087\5\2\2\2\u0086\u0084")
+        buf.write("\3\2\2\2\u0087\u008a\3\2\2\2\u0088\u0086\3\2\2\2\u0088")
+        buf.write("\u0089\3\2\2\2\u0089\u008c\3\2\2\2\u008a\u0088\3\2\2\2")
+        buf.write("\u008b\u0083\3\2\2\2\u008b\u008c\3\2\2\2\u008c\u008d\3")
+        buf.write("\2\2\2\u008d\u0095\7\26\2\2\u008e\u008f\7\24\2\2\u008f")
+        buf.write("\u0090\5\66\34\2\u0090\u0091\7\27\2\2\u0091\u0092\5\2")
+        buf.write("\2\2\u0092\u0093\7\26\2\2\u0093\u0095\3\2\2\2\u0094\u0082")
+        buf.write("\3\2\2\2\u0094\u008e\3\2\2\2\u0095\5\3\2\2\2\u0096\u00a2")
+        buf.write("\7\30\2\2\u0097\u00a2\5\b\5\2\u0098\u00a2\5\n\6\2\u0099")
+        buf.write("\u00a2\5\16\b\2\u009a\u00a2\5\30\r\2\u009b\u00a2\5\32")
+        buf.write("\16\2\u009c\u00a2\5(\25\2\u009d\u009e\7\24\2\2\u009e\u009f")
+        buf.write("\5\2\2\2\u009f\u00a0\7\26\2\2\u00a0\u00a2\3\2\2\2\u00a1")
+        buf.write("\u0096\3\2\2\2\u00a1\u0097\3\2\2\2\u00a1\u0098\3\2\2\2")
+        buf.write("\u00a1\u0099\3\2\2\2\u00a1\u009a\3\2\2\2\u00a1\u009b\3")
+        buf.write("\2\2\2\u00a1\u009c\3\2\2\2\u00a1\u009d\3\2\2\2\u00a2\7")
+        buf.write("\3\2\2\2\u00a3\u00aa\5*\26\2\u00a4\u00aa\5,\27\2\u00a5")
+        buf.write("\u00aa\5.\30\2\u00a6\u00aa\5\60\31\2\u00a7\u00aa\5\62")
+        buf.write("\32\2\u00a8\u00aa\5\64\33\2\u00a9\u00a3\3\2\2\2\u00a9")
+        buf.write("\u00a4\3\2\2\2\u00a9\u00a5\3\2\2\2\u00a9\u00a6\3\2\2\2")
+        buf.write("\u00a9\u00a7\3\2\2\2\u00a9\u00a8\3\2\2\2\u00aa\t\3\2\2")
+        buf.write("\2\u00ab\u00ac\7\31\2\2\u00ac\u00ad\7\32\2\2\u00ad\u00b2")
+        buf.write("\5\f\7\2\u00ae\u00af\7\25\2\2\u00af\u00b1\5\f\7\2\u00b0")
+        buf.write("\u00ae\3\2\2\2\u00b1\u00b4\3\2\2\2\u00b2\u00b0\3\2\2\2")
+        buf.write("\u00b2\u00b3\3\2\2\2\u00b3\u00b5\3\2\2\2\u00b4\u00b2\3")
+        buf.write("\2\2\2\u00b5\u00b6\7\33\2\2\u00b6\13\3\2\2\2\u00b7\u00ba")
+        buf.write("\5\66\34\2\u00b8\u00b9\7\34\2\2\u00b9\u00bb\5\36\20\2")
+        buf.write("\u00ba\u00b8\3\2\2\2\u00ba\u00bb\3\2\2\2\u00bb\u00bc\3")
+        buf.write("\2\2\2\u00bc\u00bd\7\13\2\2\u00bd\u00be\5\6\4\2\u00be")
+        buf.write("\r\3\2\2\2\u00bf\u00c0\5\20\t\2\u00c0\u00c9\7\32\2\2\u00c1")
+        buf.write("\u00c6\5\26\f\2\u00c2\u00c3\7\25\2\2\u00c3\u00c5\5\26")
+        buf.write("\f\2\u00c4\u00c2\3\2\2\2\u00c5\u00c8\3\2\2\2\u00c6\u00c4")
+        buf.write("\3\2\2\2\u00c6\u00c7\3\2\2\2\u00c7\u00ca\3\2\2\2\u00c8")
+        buf.write("\u00c6\3\2\2\2\u00c9\u00c1\3\2\2\2\u00c9\u00ca\3\2\2\2")
+        buf.write("\u00ca\u00cb\3\2\2\2\u00cb\u00cc\7\33\2\2\u00cc\17\3\2")
+        buf.write("\2\2\u00cd\u00d6\5\24\13\2\u00ce\u00cf\7\24\2\2\u00cf")
+        buf.write("\u00d0\5\36\20\2\u00d0\u00d1\7\26\2\2\u00d1\u00d7\3\2")
+        buf.write("\2\2\u00d2\u00d3\7\f\2\2\u00d3\u00d4\5\36\20\2\u00d4\u00d5")
+        buf.write("\7\16\2\2\u00d5\u00d7\3\2\2\2\u00d6\u00ce\3\2\2\2\u00d6")
+        buf.write("\u00d2\3\2\2\2\u00d6\u00d7\3\2\2\2\u00d7\21\3\2\2\2\u00d8")
+        buf.write("\u00dd\7\35\2\2\u00d9\u00dd\7\36\2\2\u00da\u00dd\7\37")
+        buf.write("\2\2\u00db\u00dd\7 \2\2\u00dc\u00d8\3\2\2\2\u00dc\u00d9")
+        buf.write("\3\2\2\2\u00dc\u00da\3\2\2\2\u00dc\u00db\3\2\2\2\u00dd")
+        buf.write("\23\3\2\2\2\u00de\u00e4\7!\2\2\u00df\u00e4\7\"\2\2\u00e0")
+        buf.write("\u00e4\7#\2\2\u00e1\u00e4\7$\2\2\u00e2\u00e4\7%\2\2\u00e3")
+        buf.write("\u00de\3\2\2\2\u00e3\u00df\3\2\2\2\u00e3\u00e0\3\2\2\2")
+        buf.write("\u00e3\u00e1\3\2\2\2\u00e3\u00e2\3\2\2\2\u00e4\25\3\2")
+        buf.write("\2\2\u00e5\u00e6\5\2\2\2\u00e6\u00e7\7&\2\2\u00e7\u00e8")
+        buf.write("\5\2\2\2\u00e8\27\3\2\2\2\u00e9\u00ea\5\"\22\2\u00ea\31")
+        buf.write("\3\2\2\2\u00eb\u00ec\7\'\2\2\u00ec\u00f1\5\34\17\2\u00ed")
+        buf.write("\u00ee\7\25\2\2\u00ee\u00f0\5\34\17\2\u00ef\u00ed\3\2")
+        buf.write("\2\2\u00f0\u00f3\3\2\2\2\u00f1\u00ef\3\2\2\2\u00f1\u00f2")
+        buf.write("\3\2\2\2\u00f2\u00f4\3\2\2\2\u00f3\u00f1\3\2\2\2\u00f4")
+        buf.write("\u00f5\7(\2\2\u00f5\u00f6\5\2\2\2\u00f6\33\3\2\2\2\u00f7")
+        buf.write("\u00fa\5\66\34\2\u00f8\u00f9\7\34\2\2\u00f9\u00fb\5\36")
+        buf.write("\20\2\u00fa\u00f8\3\2\2\2\u00fa\u00fb\3\2\2\2\u00fb\u00fc")
+        buf.write("\3\2\2\2\u00fc\u00fd\7\13\2\2\u00fd\u00fe\5\2\2\2\u00fe")
+        buf.write("\35\3\2\2\2\u00ff\u0102\5 \21\2\u0100\u0102\5\"\22\2\u0101")
+        buf.write("\u00ff\3\2\2\2\u0101\u0100\3\2\2\2\u0102\37\3\2\2\2\u0103")
+        buf.write("\u010f\5\66\34\2\u0104\u0109\5\66\34\2\u0105\u0106\7\3")
+        buf.write("\2\2\u0106\u0108\58\35\2\u0107\u0105\3\2\2\2\u0108\u010b")
+        buf.write("\3\2\2\2\u0109\u0107\3\2\2\2\u0109\u010a\3\2\2\2\u010a")
+        buf.write("\u010c\3\2\2\2\u010b\u0109\3\2\2\2\u010c\u010d\58\35\2")
+        buf.write("\u010d\u010f\3\2\2\2\u010e\u0103\3\2\2\2\u010e\u0104\3")
+        buf.write("\2\2\2\u010f!\3\2\2\2\u0110\u0114\5\22\n\2\u0111\u0114")
+        buf.write("\5\20\t\2\u0112\u0114\5$\23\2\u0113\u0110\3\2\2\2\u0113")
+        buf.write("\u0111\3\2\2\2\u0113\u0112\3\2\2\2\u0114#\3\2\2\2\u0115")
+        buf.write("\u012c\7\31\2\2\u0116\u0117\7\24\2\2\u0117\u011c\5&\24")
+        buf.write("\2\u0118\u0119\7\25\2\2\u0119\u011b\5&\24\2\u011a\u0118")
+        buf.write("\3\2\2\2\u011b\u011e\3\2\2\2\u011c\u011a\3\2\2\2\u011c")
+        buf.write("\u011d\3\2\2\2\u011d\u011f\3\2\2\2\u011e\u011c\3\2\2\2")
+        buf.write("\u011f\u0120\7\26\2\2\u0120\u012d\3\2\2\2\u0121\u0122")
+        buf.write("\7\f\2\2\u0122\u0127\5&\24\2\u0123\u0124\7\25\2\2\u0124")
+        buf.write("\u0126\5&\24\2\u0125\u0123\3\2\2\2\u0126\u0129\3\2\2\2")
+        buf.write("\u0127\u0125\3\2\2\2\u0127\u0128\3\2\2\2\u0128\u012a\3")
+        buf.write("\2\2\2\u0129\u0127\3\2\2\2\u012a\u012b\7\16\2\2\u012b")
+        buf.write("\u012d\3\2\2\2\u012c\u0116\3\2\2\2\u012c\u0121\3\2\2\2")
+        buf.write("\u012c\u012d\3\2\2\2\u012d%\3\2\2\2\u012e\u012f\5\66\34")
+        buf.write("\2\u012f\u0130\7\34\2\2\u0130\u0131\5\36\20\2\u0131\'")
+        buf.write("\3\2\2\2\u0132\u0133\7)\2\2\u0133\u0134\5\2\2\2\u0134")
+        buf.write("\u0135\7*\2\2\u0135\u0136\5\2\2\2\u0136\u0137\7+\2\2\u0137")
+        buf.write("\u0138\5\2\2\2\u0138\u0139\7,\2\2\u0139)\3\2\2\2\u013a")
+        buf.write("\u013b\t\2\2\2\u013b+\3\2\2\2\u013c\u013d\79\2\2\u013d")
+        buf.write("-\3\2\2\2\u013e\u013f\t\3\2\2\u013f/\3\2\2\2\u0140\u0141")
+        buf.write("\7\b\2\2\u0141\61\3\2\2\2\u0142\u0143\7/\2\2\u0143\63")
+        buf.write("\3\2\2\2\u0144\u0145\7\60\2\2\u0145\65\3\2\2\2\u0146\u0147")
+        buf.write("\n\4\2\2\u0147\67\3\2\2\2\u0148\u0149\n\5\2\2\u01499\3")
+        buf.write("\2\2\2\33BJ}\177\u0088\u008b\u0094\u00a1\u00a9\u00b2\u00ba")
+        buf.write("\u00c6\u00c9\u00d6\u00dc\u00e3\u00f1\u00fa\u0101\u0109")
+        buf.write("\u010e\u0113\u011c\u0127\u012c")
+        return buf.getvalue()
+
+
+class OclExpressionParser ( Parser ):
+
+    grammarFileName = "OclExpression.g4"
+
+    atn = ATNDeserializer().deserialize(serializedATN())
+
+    decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
+
+    sharedContextCache = PredictionContextCache()
+
+    literalNames = [ "<INVALID>", "'::'", "'.'", "'->'", "'-'", "'not'", 
+                     "'*'", "'/'", "'+'", "'='", "'<'", "'<='", "'>'", "'>='", 
+                     "'and'", "'or'", "'xor'", "'implies'", "'('", "','", 
+                     "')'", "'|'", "'self'", "'Tuple'", "'{'", "'}'", "':'", 
+                     "'String'", "'Integer'", "'UnlimitedNatural'", "'Boolean'", 
+                     "'Collection'", "'Bag'", "'OrderedSet'", "'Sequence'", 
+                     "'Set'", "'..'", "'let'", "'in'", "'if'", "'then'", 
+                     "'else'", "'endif'", "'true'", "'false'", "'invalid'", 
+                     "'null'", "'Lambda'", "'OclAny'", "'OclInvalid'", "'OclMessage'", 
+                     "'OclSelf'", "'OclVoid'", "'Real'", "' Sequence'" ]
+
+    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "STRING", "VARNAME", 
+                      "INT", "FLOAT", "WS" ]
+
+    RULE_oclExp = 0
+    RULE_argExp = 1
+    RULE_primaryExp = 2
+    RULE_primitiveLiteralExp = 3
+    RULE_tupleLiteralExp = 4
+    RULE_tupleLiteralPartCS = 5
+    RULE_collectionLiteralExp = 6
+    RULE_collectionTypeCS = 7
+    RULE_primitiveTypeCS = 8
+    RULE_collectionTypeIdentifier = 9
+    RULE_collectionLiteralPartCS = 10
+    RULE_typeLiteralExp = 11
+    RULE_letExp = 12
+    RULE_letVariableCS = 13
+    RULE_typeExpCS = 14
+    RULE_typeNameExpCS = 15
+    RULE_typeLiteralCS = 16
+    RULE_tupleTypeCS = 17
+    RULE_tuplePartCS = 18
+    RULE_ifExp = 19
+    RULE_numberLiteralExpCS = 20
+    RULE_stringLiteralExpCS = 21
+    RULE_booleanLiteralExpCS = 22
+    RULE_unlimitedNaturalLiteralCS = 23
+    RULE_invalidLiteralExpCS = 24
+    RULE_nullLiteralExpCS = 25
+    RULE_unrestrictedName = 26
+    RULE_unreservedName = 27
+
+    ruleNames =  [ "oclExp", "argExp", "primaryExp", "primitiveLiteralExp", 
+                   "tupleLiteralExp", "tupleLiteralPartCS", "collectionLiteralExp", 
+                   "collectionTypeCS", "primitiveTypeCS", "collectionTypeIdentifier", 
+                   "collectionLiteralPartCS", "typeLiteralExp", "letExp", 
+                   "letVariableCS", "typeExpCS", "typeNameExpCS", "typeLiteralCS", 
+                   "tupleTypeCS", "tuplePartCS", "ifExp", "numberLiteralExpCS", 
+                   "stringLiteralExpCS", "booleanLiteralExpCS", "unlimitedNaturalLiteralCS", 
+                   "invalidLiteralExpCS", "nullLiteralExpCS", "unrestrictedName", 
+                   "unreservedName" ]
+
+    EOF = Token.EOF
+    T__0=1
+    T__1=2
+    T__2=3
+    T__3=4
+    T__4=5
+    T__5=6
+    T__6=7
+    T__7=8
+    T__8=9
+    T__9=10
+    T__10=11
+    T__11=12
+    T__12=13
+    T__13=14
+    T__14=15
+    T__15=16
+    T__16=17
+    T__17=18
+    T__18=19
+    T__19=20
+    T__20=21
+    T__21=22
+    T__22=23
+    T__23=24
+    T__24=25
+    T__25=26
+    T__26=27
+    T__27=28
+    T__28=29
+    T__29=30
+    T__30=31
+    T__31=32
+    T__32=33
+    T__33=34
+    T__34=35
+    T__35=36
+    T__36=37
+    T__37=38
+    T__38=39
+    T__39=40
+    T__40=41
+    T__41=42
+    T__42=43
+    T__43=44
+    T__44=45
+    T__45=46
+    T__46=47
+    T__47=48
+    T__48=49
+    T__49=50
+    T__50=51
+    T__51=52
+    T__52=53
+    T__53=54
+    STRING=55
+    VARNAME=56
+    INT=57
+    FLOAT=58
+    WS=59
+
+    def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
+        super().__init__(input, output)
+        self.checkVersion("4.9.2")
+        self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
+        self._predicates = None
+
+
+
+
+    class OclExpContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_oclExp
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+    class UnaryOperationContext(OclExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.OclExpContext
+            super().__init__(parser)
+            self.operator = None # Token
+            self.expression = None # OclExpContext
+            self.copyFrom(ctx)
+
+        def oclExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.OclExpContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnaryOperation" ):
+                listener.enterUnaryOperation(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnaryOperation" ):
+                listener.exitUnaryOperation(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnaryOperation" ):
+                return visitor.visitUnaryOperation(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class AttributeNavigationContext(OclExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.OclExpContext
+            super().__init__(parser)
+            self.expression = None # OclExpContext
+            self.attname = None # UnrestrictedNameContext
+            self.copyFrom(ctx)
+
+        def oclExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.OclExpContext,0)
+
+        def unrestrictedName(self):
+            return self.getTypedRuleContext(OclExpressionParser.UnrestrictedNameContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAttributeNavigation" ):
+                listener.enterAttributeNavigation(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAttributeNavigation" ):
+                listener.exitAttributeNavigation(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAttributeNavigation" ):
+                return visitor.visitAttributeNavigation(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class PrimaryExpressionContext(OclExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.OclExpContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def primaryExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.PrimaryExpContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPrimaryExpression" ):
+                listener.enterPrimaryExpression(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPrimaryExpression" ):
+                listener.exitPrimaryExpression(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPrimaryExpression" ):
+                return visitor.visitPrimaryExpression(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class ArithmeticBinaryOperationContext(OclExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.OclExpContext
+            super().__init__(parser)
+            self.left = None # OclExpContext
+            self.operator = None # Token
+            self.right = None # OclExpContext
+            self.copyFrom(ctx)
+
+        def oclExp(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(OclExpressionParser.OclExpContext)
+            else:
+                return self.getTypedRuleContext(OclExpressionParser.OclExpContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterArithmeticBinaryOperation" ):
+                listener.enterArithmeticBinaryOperation(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitArithmeticBinaryOperation" ):
+                listener.exitArithmeticBinaryOperation(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArithmeticBinaryOperation" ):
+                return visitor.visitArithmeticBinaryOperation(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class SimpleNameContext(OclExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.OclExpContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def unrestrictedName(self):
+            return self.getTypedRuleContext(OclExpressionParser.UnrestrictedNameContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterSimpleName" ):
+                listener.enterSimpleName(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitSimpleName" ):
+                listener.exitSimpleName(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSimpleName" ):
+                return visitor.visitSimpleName(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class FullQualifiedNameContext(OclExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.OclExpContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def unreservedName(self):
+            return self.getTypedRuleContext(OclExpressionParser.UnreservedNameContext,0)
+
+        def unrestrictedName(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(OclExpressionParser.UnrestrictedNameContext)
+            else:
+                return self.getTypedRuleContext(OclExpressionParser.UnrestrictedNameContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFullQualifiedName" ):
+                listener.enterFullQualifiedName(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFullQualifiedName" ):
+                listener.exitFullQualifiedName(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFullQualifiedName" ):
+                return visitor.visitFullQualifiedName(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class ComparisonBinaryOperationContext(OclExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.OclExpContext
+            super().__init__(parser)
+            self.left = None # OclExpContext
+            self.operator = None # Token
+            self.right = None # OclExpContext
+            self.copyFrom(ctx)
+
+        def oclExp(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(OclExpressionParser.OclExpContext)
+            else:
+                return self.getTypedRuleContext(OclExpressionParser.OclExpContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterComparisonBinaryOperation" ):
+                listener.enterComparisonBinaryOperation(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitComparisonBinaryOperation" ):
+                listener.exitComparisonBinaryOperation(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitComparisonBinaryOperation" ):
+                return visitor.visitComparisonBinaryOperation(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class CollectionCallContext(OclExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.OclExpContext
+            super().__init__(parser)
+            self.expression = None # OclExpContext
+            self.attname = None # UnrestrictedNameContext
+            self.copyFrom(ctx)
+
+        def argExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.ArgExpContext,0)
+
+        def oclExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.OclExpContext,0)
+
+        def unrestrictedName(self):
+            return self.getTypedRuleContext(OclExpressionParser.UnrestrictedNameContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCollectionCall" ):
+                listener.enterCollectionCall(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCollectionCall" ):
+                listener.exitCollectionCall(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCollectionCall" ):
+                return visitor.visitCollectionCall(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class BooleanBinaryOperationContext(OclExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.OclExpContext
+            super().__init__(parser)
+            self.left = None # OclExpContext
+            self.operator = None # Token
+            self.right = None # OclExpContext
+            self.copyFrom(ctx)
+
+        def oclExp(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(OclExpressionParser.OclExpContext)
+            else:
+                return self.getTypedRuleContext(OclExpressionParser.OclExpContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBooleanBinaryOperation" ):
+                listener.enterBooleanBinaryOperation(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBooleanBinaryOperation" ):
+                listener.exitBooleanBinaryOperation(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBooleanBinaryOperation" ):
+                return visitor.visitBooleanBinaryOperation(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class CallExpressionContext(OclExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.OclExpContext
+            super().__init__(parser)
+            self.expression = None # OclExpContext
+            self.copyFrom(ctx)
+
+        def argExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.ArgExpContext,0)
+
+        def oclExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.OclExpContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCallExpression" ):
+                listener.enterCallExpression(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCallExpression" ):
+                listener.exitCallExpression(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCallExpression" ):
+                return visitor.visitCallExpression(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+    def oclExp(self, _p:int=0):
+        _parentctx = self._ctx
+        _parentState = self.state
+        localctx = OclExpressionParser.OclExpContext(self, self._ctx, _parentState)
+        _prevctx = localctx
+        _startState = 0
+        self.enterRecursionRule(localctx, 0, self.RULE_oclExp, _p)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 72
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,1,self._ctx)
+            if la_ == 1:
+                localctx = OclExpressionParser.PrimaryExpressionContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+
+                self.state = 57
+                self.primaryExp()
+                pass
+
+            elif la_ == 2:
+                localctx = OclExpressionParser.SimpleNameContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 58
+                self.unrestrictedName()
+                pass
+
+            elif la_ == 3:
+                localctx = OclExpressionParser.FullQualifiedNameContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 62 
+                self._errHandler.sync(self)
+                _alt = 1
+                while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                    if _alt == 1:
+                        self.state = 59
+                        self.unrestrictedName()
+                        self.state = 60
+                        self.match(OclExpressionParser.T__0)
+
+                    else:
+                        raise NoViableAltException(self)
+                    self.state = 64 
+                    self._errHandler.sync(self)
+                    _alt = self._interp.adaptivePredict(self._input,0,self._ctx)
+
+                self.state = 66
+                self.unreservedName()
+                pass
+
+            elif la_ == 4:
+                localctx = OclExpressionParser.UnaryOperationContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 68
+                localctx.operator = self.match(OclExpressionParser.T__3)
+                self.state = 69
+                localctx.expression = self.oclExp(15)
+                pass
+
+            elif la_ == 5:
+                localctx = OclExpressionParser.UnaryOperationContext(self, localctx)
+                self._ctx = localctx
+                _prevctx = localctx
+                self.state = 70
+                localctx.operator = self.match(OclExpressionParser.T__4)
+                self.state = 71
+                localctx.expression = self.oclExp(14)
+                pass
+
+
+            self._ctx.stop = self._input.LT(-1)
+            self.state = 125
+            self._errHandler.sync(self)
+            _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
+                    if self._parseListeners is not None:
+                        self.triggerExitRuleEvent()
+                    _prevctx = localctx
+                    self.state = 123
+                    self._errHandler.sync(self)
+                    la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
+                    if la_ == 1:
+                        localctx = OclExpressionParser.ArithmeticBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 74
+                        if not self.precpred(self._ctx, 13):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 13)")
+                        self.state = 75
+                        localctx.operator = self.match(OclExpressionParser.T__5)
+                        self.state = 76
+                        localctx.right = self.oclExp(14)
+                        pass
+
+                    elif la_ == 2:
+                        localctx = OclExpressionParser.ArithmeticBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 77
+                        if not self.precpred(self._ctx, 12):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 12)")
+                        self.state = 78
+                        localctx.operator = self.match(OclExpressionParser.T__6)
+                        self.state = 79
+                        localctx.right = self.oclExp(13)
+                        pass
+
+                    elif la_ == 3:
+                        localctx = OclExpressionParser.ArithmeticBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 80
+                        if not self.precpred(self._ctx, 11):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 11)")
+                        self.state = 81
+                        localctx.operator = self.match(OclExpressionParser.T__7)
+                        self.state = 82
+                        localctx.right = self.oclExp(12)
+                        pass
+
+                    elif la_ == 4:
+                        localctx = OclExpressionParser.ArithmeticBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 83
+                        if not self.precpred(self._ctx, 10):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 10)")
+                        self.state = 84
+                        localctx.operator = self.match(OclExpressionParser.T__3)
+                        self.state = 85
+                        localctx.right = self.oclExp(11)
+                        pass
+
+                    elif la_ == 5:
+                        localctx = OclExpressionParser.ComparisonBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 86
+                        if not self.precpred(self._ctx, 9):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 9)")
+                        self.state = 87
+                        localctx.operator = self.match(OclExpressionParser.T__8)
+                        self.state = 88
+                        localctx.right = self.oclExp(10)
+                        pass
+
+                    elif la_ == 6:
+                        localctx = OclExpressionParser.ComparisonBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 89
+                        if not self.precpred(self._ctx, 8):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 8)")
+                        self.state = 90
+                        localctx.operator = self.match(OclExpressionParser.T__9)
+                        self.state = 91
+                        localctx.right = self.oclExp(9)
+                        pass
+
+                    elif la_ == 7:
+                        localctx = OclExpressionParser.ComparisonBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 92
+                        if not self.precpred(self._ctx, 7):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 7)")
+                        self.state = 93
+                        localctx.operator = self.match(OclExpressionParser.T__10)
+                        self.state = 94
+                        localctx.right = self.oclExp(8)
+                        pass
+
+                    elif la_ == 8:
+                        localctx = OclExpressionParser.ComparisonBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 95
+                        if not self.precpred(self._ctx, 6):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 6)")
+                        self.state = 96
+                        localctx.operator = self.match(OclExpressionParser.T__11)
+                        self.state = 97
+                        localctx.right = self.oclExp(7)
+                        pass
+
+                    elif la_ == 9:
+                        localctx = OclExpressionParser.ComparisonBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 98
+                        if not self.precpred(self._ctx, 5):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
+                        self.state = 99
+                        localctx.operator = self.match(OclExpressionParser.T__12)
+                        self.state = 100
+                        localctx.right = self.oclExp(6)
+                        pass
+
+                    elif la_ == 10:
+                        localctx = OclExpressionParser.BooleanBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 101
+                        if not self.precpred(self._ctx, 4):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
+                        self.state = 102
+                        localctx.operator = self.match(OclExpressionParser.T__13)
+                        self.state = 103
+                        localctx.right = self.oclExp(5)
+                        pass
+
+                    elif la_ == 11:
+                        localctx = OclExpressionParser.BooleanBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 104
+                        if not self.precpred(self._ctx, 3):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
+                        self.state = 105
+                        localctx.operator = self.match(OclExpressionParser.T__14)
+                        self.state = 106
+                        localctx.right = self.oclExp(4)
+                        pass
+
+                    elif la_ == 12:
+                        localctx = OclExpressionParser.BooleanBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 107
+                        if not self.precpred(self._ctx, 2):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
+                        self.state = 108
+                        localctx.operator = self.match(OclExpressionParser.T__15)
+                        self.state = 109
+                        localctx.right = self.oclExp(3)
+                        pass
+
+                    elif la_ == 13:
+                        localctx = OclExpressionParser.BooleanBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 110
+                        if not self.precpred(self._ctx, 1):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
+                        self.state = 111
+                        localctx.operator = self.match(OclExpressionParser.T__16)
+                        self.state = 112
+                        localctx.right = self.oclExp(2)
+                        pass
+
+                    elif la_ == 14:
+                        localctx = OclExpressionParser.CallExpressionContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.expression = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 113
+                        if not self.precpred(self._ctx, 18):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 18)")
+                        self.state = 114
+                        self.argExp()
+                        pass
+
+                    elif la_ == 15:
+                        localctx = OclExpressionParser.AttributeNavigationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.expression = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 115
+                        if not self.precpred(self._ctx, 17):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 17)")
+                        self.state = 116
+                        self.match(OclExpressionParser.T__1)
+                        self.state = 117
+                        localctx.attname = self.unrestrictedName()
+                        pass
+
+                    elif la_ == 16:
+                        localctx = OclExpressionParser.CollectionCallContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.expression = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
+                        self.state = 118
+                        if not self.precpred(self._ctx, 16):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 16)")
+                        self.state = 119
+                        self.match(OclExpressionParser.T__2)
+                        self.state = 120
+                        localctx.attname = self.unrestrictedName()
+                        self.state = 121
+                        self.argExp()
+                        pass
+
+             
+                self.state = 127
+                self._errHandler.sync(self)
+                _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.unrollRecursionContexts(_parentctx)
+        return localctx
+
+
+    class ArgExpContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_argExp
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+
+    class LambdaExpContext(ArgExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.ArgExpContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def unrestrictedName(self):
+            return self.getTypedRuleContext(OclExpressionParser.UnrestrictedNameContext,0)
+
+        def oclExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.OclExpContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLambdaExp" ):
+                listener.enterLambdaExp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLambdaExp" ):
+                listener.exitLambdaExp(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLambdaExp" ):
+                return visitor.visitLambdaExp(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class ArgumentsExpContext(ArgExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.ArgExpContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def oclExp(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(OclExpressionParser.OclExpContext)
+            else:
+                return self.getTypedRuleContext(OclExpressionParser.OclExpContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterArgumentsExp" ):
+                listener.enterArgumentsExp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitArgumentsExp" ):
+                listener.exitArgumentsExp(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArgumentsExp" ):
+                return visitor.visitArgumentsExp(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+    def argExp(self):
+
+        localctx = OclExpressionParser.ArgExpContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 2, self.RULE_argExp)
+        self._la = 0 # Token type
+        try:
+            self.state = 146
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
+            if la_ == 1:
+                localctx = OclExpressionParser.ArgumentsExpContext(self, localctx)
+                self.enterOuterAlt(localctx, 1)
+                self.state = 128
+                self.match(OclExpressionParser.T__17)
+                self.state = 137
+                self._errHandler.sync(self)
+                la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
+                if la_ == 1:
+                    self.state = 129
+                    self.oclExp(0)
+                    self.state = 134
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    while _la==OclExpressionParser.T__18:
+                        self.state = 130
+                        self.match(OclExpressionParser.T__18)
+                        self.state = 131
+                        self.oclExp(0)
+                        self.state = 136
+                        self._errHandler.sync(self)
+                        _la = self._input.LA(1)
+
+
+
+                self.state = 139
+                self.match(OclExpressionParser.T__19)
+                pass
+
+            elif la_ == 2:
+                localctx = OclExpressionParser.LambdaExpContext(self, localctx)
+                self.enterOuterAlt(localctx, 2)
+                self.state = 140
+                self.match(OclExpressionParser.T__17)
+                self.state = 141
+                self.unrestrictedName()
+                self.state = 142
+                self.match(OclExpressionParser.T__20)
+                self.state = 143
+                self.oclExp(0)
+                self.state = 144
+                self.match(OclExpressionParser.T__19)
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class PrimaryExpContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def primitiveLiteralExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.PrimitiveLiteralExpContext,0)
+
+
+        def tupleLiteralExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.TupleLiteralExpContext,0)
+
+
+        def collectionLiteralExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.CollectionLiteralExpContext,0)
+
+
+        def typeLiteralExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.TypeLiteralExpContext,0)
+
+
+        def letExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.LetExpContext,0)
+
+
+        def ifExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.IfExpContext,0)
+
+
+        def oclExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.OclExpContext,0)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_primaryExp
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPrimaryExp" ):
+                listener.enterPrimaryExp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPrimaryExp" ):
+                listener.exitPrimaryExp(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPrimaryExp" ):
+                return visitor.visitPrimaryExp(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def primaryExp(self):
+
+        localctx = OclExpressionParser.PrimaryExpContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 4, self.RULE_primaryExp)
+        try:
+            self.state = 159
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,7,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 148
+                self.match(OclExpressionParser.T__21)
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 149
+                self.primitiveLiteralExp()
+                pass
+
+            elif la_ == 3:
+                self.enterOuterAlt(localctx, 3)
+                self.state = 150
+                self.tupleLiteralExp()
+                pass
+
+            elif la_ == 4:
+                self.enterOuterAlt(localctx, 4)
+                self.state = 151
+                self.collectionLiteralExp()
+                pass
+
+            elif la_ == 5:
+                self.enterOuterAlt(localctx, 5)
+                self.state = 152
+                self.typeLiteralExp()
+                pass
+
+            elif la_ == 6:
+                self.enterOuterAlt(localctx, 6)
+                self.state = 153
+                self.letExp()
+                pass
+
+            elif la_ == 7:
+                self.enterOuterAlt(localctx, 7)
+                self.state = 154
+                self.ifExp()
+                pass
+
+            elif la_ == 8:
+                self.enterOuterAlt(localctx, 8)
+                self.state = 155
+                self.match(OclExpressionParser.T__17)
+                self.state = 156
+                self.oclExp(0)
+                self.state = 157
+                self.match(OclExpressionParser.T__19)
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class PrimitiveLiteralExpContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_primitiveLiteralExp
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+
+    class StringLiteralContext(PrimitiveLiteralExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.PrimitiveLiteralExpContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def stringLiteralExpCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.StringLiteralExpCSContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterStringLiteral" ):
+                listener.enterStringLiteral(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitStringLiteral" ):
+                listener.exitStringLiteral(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStringLiteral" ):
+                return visitor.visitStringLiteral(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class BooleanLiteralContext(PrimitiveLiteralExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.PrimitiveLiteralExpContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def booleanLiteralExpCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.BooleanLiteralExpCSContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBooleanLiteral" ):
+                listener.enterBooleanLiteral(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBooleanLiteral" ):
+                listener.exitBooleanLiteral(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBooleanLiteral" ):
+                return visitor.visitBooleanLiteral(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class InvalidLiteralContext(PrimitiveLiteralExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.PrimitiveLiteralExpContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def invalidLiteralExpCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.InvalidLiteralExpCSContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterInvalidLiteral" ):
+                listener.enterInvalidLiteral(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitInvalidLiteral" ):
+                listener.exitInvalidLiteral(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInvalidLiteral" ):
+                return visitor.visitInvalidLiteral(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class UnlimitedNaturalLiteralContext(PrimitiveLiteralExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.PrimitiveLiteralExpContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def unlimitedNaturalLiteralCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.UnlimitedNaturalLiteralCSContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnlimitedNaturalLiteral" ):
+                listener.enterUnlimitedNaturalLiteral(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnlimitedNaturalLiteral" ):
+                listener.exitUnlimitedNaturalLiteral(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnlimitedNaturalLiteral" ):
+                return visitor.visitUnlimitedNaturalLiteral(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class NullLiteralContext(PrimitiveLiteralExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.PrimitiveLiteralExpContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def nullLiteralExpCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.NullLiteralExpCSContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNullLiteral" ):
+                listener.enterNullLiteral(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNullLiteral" ):
+                listener.exitNullLiteral(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNullLiteral" ):
+                return visitor.visitNullLiteral(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class NumberLiteralContext(PrimitiveLiteralExpContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.PrimitiveLiteralExpContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def numberLiteralExpCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.NumberLiteralExpCSContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNumberLiteral" ):
+                listener.enterNumberLiteral(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNumberLiteral" ):
+                listener.exitNumberLiteral(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNumberLiteral" ):
+                return visitor.visitNumberLiteral(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+    def primitiveLiteralExp(self):
+
+        localctx = OclExpressionParser.PrimitiveLiteralExpContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 6, self.RULE_primitiveLiteralExp)
+        try:
+            self.state = 167
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [OclExpressionParser.INT, OclExpressionParser.FLOAT]:
+                localctx = OclExpressionParser.NumberLiteralContext(self, localctx)
+                self.enterOuterAlt(localctx, 1)
+                self.state = 161
+                self.numberLiteralExpCS()
+                pass
+            elif token in [OclExpressionParser.STRING]:
+                localctx = OclExpressionParser.StringLiteralContext(self, localctx)
+                self.enterOuterAlt(localctx, 2)
+                self.state = 162
+                self.stringLiteralExpCS()
+                pass
+            elif token in [OclExpressionParser.T__42, OclExpressionParser.T__43]:
+                localctx = OclExpressionParser.BooleanLiteralContext(self, localctx)
+                self.enterOuterAlt(localctx, 3)
+                self.state = 163
+                self.booleanLiteralExpCS()
+                pass
+            elif token in [OclExpressionParser.T__5]:
+                localctx = OclExpressionParser.UnlimitedNaturalLiteralContext(self, localctx)
+                self.enterOuterAlt(localctx, 4)
+                self.state = 164
+                self.unlimitedNaturalLiteralCS()
+                pass
+            elif token in [OclExpressionParser.T__44]:
+                localctx = OclExpressionParser.InvalidLiteralContext(self, localctx)
+                self.enterOuterAlt(localctx, 5)
+                self.state = 165
+                self.invalidLiteralExpCS()
+                pass
+            elif token in [OclExpressionParser.T__45]:
+                localctx = OclExpressionParser.NullLiteralContext(self, localctx)
+                self.enterOuterAlt(localctx, 6)
+                self.state = 166
+                self.nullLiteralExpCS()
+                pass
+            else:
+                raise NoViableAltException(self)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class TupleLiteralExpContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def tupleLiteralPartCS(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(OclExpressionParser.TupleLiteralPartCSContext)
+            else:
+                return self.getTypedRuleContext(OclExpressionParser.TupleLiteralPartCSContext,i)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_tupleLiteralExp
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTupleLiteralExp" ):
+                listener.enterTupleLiteralExp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTupleLiteralExp" ):
+                listener.exitTupleLiteralExp(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTupleLiteralExp" ):
+                return visitor.visitTupleLiteralExp(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def tupleLiteralExp(self):
+
+        localctx = OclExpressionParser.TupleLiteralExpContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 8, self.RULE_tupleLiteralExp)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 169
+            self.match(OclExpressionParser.T__22)
+            self.state = 170
+            self.match(OclExpressionParser.T__23)
+            self.state = 171
+            self.tupleLiteralPartCS()
+            self.state = 176
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            while _la==OclExpressionParser.T__18:
+                self.state = 172
+                self.match(OclExpressionParser.T__18)
+                self.state = 173
+                self.tupleLiteralPartCS()
+                self.state = 178
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+
+            self.state = 179
+            self.match(OclExpressionParser.T__24)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class TupleLiteralPartCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def unrestrictedName(self):
+            return self.getTypedRuleContext(OclExpressionParser.UnrestrictedNameContext,0)
+
+
+        def primaryExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.PrimaryExpContext,0)
+
+
+        def typeExpCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.TypeExpCSContext,0)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_tupleLiteralPartCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTupleLiteralPartCS" ):
+                listener.enterTupleLiteralPartCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTupleLiteralPartCS" ):
+                listener.exitTupleLiteralPartCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTupleLiteralPartCS" ):
+                return visitor.visitTupleLiteralPartCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def tupleLiteralPartCS(self):
+
+        localctx = OclExpressionParser.TupleLiteralPartCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 10, self.RULE_tupleLiteralPartCS)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 181
+            self.unrestrictedName()
+            self.state = 184
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==OclExpressionParser.T__25:
+                self.state = 182
+                self.match(OclExpressionParser.T__25)
+                self.state = 183
+                self.typeExpCS()
+
+
+            self.state = 186
+            self.match(OclExpressionParser.T__8)
+            self.state = 187
+            self.primaryExp()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class CollectionLiteralExpContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def collectionTypeCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.CollectionTypeCSContext,0)
+
+
+        def collectionLiteralPartCS(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(OclExpressionParser.CollectionLiteralPartCSContext)
+            else:
+                return self.getTypedRuleContext(OclExpressionParser.CollectionLiteralPartCSContext,i)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_collectionLiteralExp
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCollectionLiteralExp" ):
+                listener.enterCollectionLiteralExp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCollectionLiteralExp" ):
+                listener.exitCollectionLiteralExp(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCollectionLiteralExp" ):
+                return visitor.visitCollectionLiteralExp(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def collectionLiteralExp(self):
+
+        localctx = OclExpressionParser.CollectionLiteralExpContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 12, self.RULE_collectionLiteralExp)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 189
+            self.collectionTypeCS()
+            self.state = 190
+            self.match(OclExpressionParser.T__23)
+            self.state = 199
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,12,self._ctx)
+            if la_ == 1:
+                self.state = 191
+                self.collectionLiteralPartCS()
+                self.state = 196
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                while _la==OclExpressionParser.T__18:
+                    self.state = 192
+                    self.match(OclExpressionParser.T__18)
+                    self.state = 193
+                    self.collectionLiteralPartCS()
+                    self.state = 198
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+
+
+
+            self.state = 201
+            self.match(OclExpressionParser.T__24)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class CollectionTypeCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def collectionTypeIdentifier(self):
+            return self.getTypedRuleContext(OclExpressionParser.CollectionTypeIdentifierContext,0)
+
+
+        def typeExpCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.TypeExpCSContext,0)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_collectionTypeCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCollectionTypeCS" ):
+                listener.enterCollectionTypeCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCollectionTypeCS" ):
+                listener.exitCollectionTypeCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCollectionTypeCS" ):
+                return visitor.visitCollectionTypeCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def collectionTypeCS(self):
+
+        localctx = OclExpressionParser.CollectionTypeCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 14, self.RULE_collectionTypeCS)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 203
+            self.collectionTypeIdentifier()
+            self.state = 212
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
+            if la_ == 1:
+                self.state = 204
+                self.match(OclExpressionParser.T__17)
+                self.state = 205
+                self.typeExpCS()
+                self.state = 206
+                self.match(OclExpressionParser.T__19)
+
+            elif la_ == 2:
+                self.state = 208
+                self.match(OclExpressionParser.T__9)
+                self.state = 209
+                self.typeExpCS()
+                self.state = 210
+                self.match(OclExpressionParser.T__11)
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class PrimitiveTypeCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_primitiveTypeCS
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+
+    class IntegerTypeContext(PrimitiveTypeCSContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.PrimitiveTypeCSContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterIntegerType" ):
+                listener.enterIntegerType(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitIntegerType" ):
+                listener.exitIntegerType(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIntegerType" ):
+                return visitor.visitIntegerType(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class StringTypeContext(PrimitiveTypeCSContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.PrimitiveTypeCSContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterStringType" ):
+                listener.enterStringType(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitStringType" ):
+                listener.exitStringType(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStringType" ):
+                return visitor.visitStringType(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class BooleanTypeContext(PrimitiveTypeCSContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.PrimitiveTypeCSContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBooleanType" ):
+                listener.enterBooleanType(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBooleanType" ):
+                listener.exitBooleanType(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBooleanType" ):
+                return visitor.visitBooleanType(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class UnlimitedNaturalTypeContext(PrimitiveTypeCSContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.PrimitiveTypeCSContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnlimitedNaturalType" ):
+                listener.enterUnlimitedNaturalType(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnlimitedNaturalType" ):
+                listener.exitUnlimitedNaturalType(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnlimitedNaturalType" ):
+                return visitor.visitUnlimitedNaturalType(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+    def primitiveTypeCS(self):
+
+        localctx = OclExpressionParser.PrimitiveTypeCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 16, self.RULE_primitiveTypeCS)
+        try:
+            self.state = 218
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [OclExpressionParser.T__26]:
+                localctx = OclExpressionParser.StringTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 1)
+                self.state = 214
+                self.match(OclExpressionParser.T__26)
+                pass
+            elif token in [OclExpressionParser.T__27]:
+                localctx = OclExpressionParser.IntegerTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 2)
+                self.state = 215
+                self.match(OclExpressionParser.T__27)
+                pass
+            elif token in [OclExpressionParser.T__28]:
+                localctx = OclExpressionParser.UnlimitedNaturalTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 3)
+                self.state = 216
+                self.match(OclExpressionParser.T__28)
+                pass
+            elif token in [OclExpressionParser.T__29]:
+                localctx = OclExpressionParser.BooleanTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 4)
+                self.state = 217
+                self.match(OclExpressionParser.T__29)
+                pass
+            else:
+                raise NoViableAltException(self)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class CollectionTypeIdentifierContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_collectionTypeIdentifier
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+
+    class OrderedSetTypeContext(CollectionTypeIdentifierContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.CollectionTypeIdentifierContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterOrderedSetType" ):
+                listener.enterOrderedSetType(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitOrderedSetType" ):
+                listener.exitOrderedSetType(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOrderedSetType" ):
+                return visitor.visitOrderedSetType(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class SetTypeContext(CollectionTypeIdentifierContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.CollectionTypeIdentifierContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterSetType" ):
+                listener.enterSetType(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitSetType" ):
+                listener.exitSetType(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSetType" ):
+                return visitor.visitSetType(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class BagTypeContext(CollectionTypeIdentifierContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.CollectionTypeIdentifierContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBagType" ):
+                listener.enterBagType(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBagType" ):
+                listener.exitBagType(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBagType" ):
+                return visitor.visitBagType(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class CollectionTypeContext(CollectionTypeIdentifierContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.CollectionTypeIdentifierContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCollectionType" ):
+                listener.enterCollectionType(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCollectionType" ):
+                listener.exitCollectionType(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCollectionType" ):
+                return visitor.visitCollectionType(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class SequenceTypeContext(CollectionTypeIdentifierContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.CollectionTypeIdentifierContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterSequenceType" ):
+                listener.enterSequenceType(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitSequenceType" ):
+                listener.exitSequenceType(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSequenceType" ):
+                return visitor.visitSequenceType(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+    def collectionTypeIdentifier(self):
+
+        localctx = OclExpressionParser.CollectionTypeIdentifierContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 18, self.RULE_collectionTypeIdentifier)
+        try:
+            self.state = 225
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [OclExpressionParser.T__30]:
+                localctx = OclExpressionParser.CollectionTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 1)
+                self.state = 220
+                self.match(OclExpressionParser.T__30)
+                pass
+            elif token in [OclExpressionParser.T__31]:
+                localctx = OclExpressionParser.BagTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 2)
+                self.state = 221
+                self.match(OclExpressionParser.T__31)
+                pass
+            elif token in [OclExpressionParser.T__32]:
+                localctx = OclExpressionParser.OrderedSetTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 3)
+                self.state = 222
+                self.match(OclExpressionParser.T__32)
+                pass
+            elif token in [OclExpressionParser.T__33]:
+                localctx = OclExpressionParser.SequenceTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 4)
+                self.state = 223
+                self.match(OclExpressionParser.T__33)
+                pass
+            elif token in [OclExpressionParser.T__34]:
+                localctx = OclExpressionParser.SetTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 5)
+                self.state = 224
+                self.match(OclExpressionParser.T__34)
+                pass
+            else:
+                raise NoViableAltException(self)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class CollectionLiteralPartCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def oclExp(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(OclExpressionParser.OclExpContext)
+            else:
+                return self.getTypedRuleContext(OclExpressionParser.OclExpContext,i)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_collectionLiteralPartCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCollectionLiteralPartCS" ):
+                listener.enterCollectionLiteralPartCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCollectionLiteralPartCS" ):
+                listener.exitCollectionLiteralPartCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCollectionLiteralPartCS" ):
+                return visitor.visitCollectionLiteralPartCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def collectionLiteralPartCS(self):
+
+        localctx = OclExpressionParser.CollectionLiteralPartCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 20, self.RULE_collectionLiteralPartCS)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 227
+            self.oclExp(0)
+            self.state = 228
+            self.match(OclExpressionParser.T__35)
+            self.state = 229
+            self.oclExp(0)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class TypeLiteralExpContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def typeLiteralCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.TypeLiteralCSContext,0)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_typeLiteralExp
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTypeLiteralExp" ):
+                listener.enterTypeLiteralExp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTypeLiteralExp" ):
+                listener.exitTypeLiteralExp(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTypeLiteralExp" ):
+                return visitor.visitTypeLiteralExp(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def typeLiteralExp(self):
+
+        localctx = OclExpressionParser.TypeLiteralExpContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 22, self.RULE_typeLiteralExp)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 231
+            self.typeLiteralCS()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class LetExpContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+            self._letVariableCS = None # LetVariableCSContext
+            self.variables = list() # of LetVariableCSContexts
+
+        def oclExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.OclExpContext,0)
+
+
+        def letVariableCS(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(OclExpressionParser.LetVariableCSContext)
+            else:
+                return self.getTypedRuleContext(OclExpressionParser.LetVariableCSContext,i)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_letExp
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLetExp" ):
+                listener.enterLetExp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLetExp" ):
+                listener.exitLetExp(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLetExp" ):
+                return visitor.visitLetExp(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def letExp(self):
+
+        localctx = OclExpressionParser.LetExpContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 24, self.RULE_letExp)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 233
+            self.match(OclExpressionParser.T__36)
+            self.state = 234
+            localctx._letVariableCS = self.letVariableCS()
+            localctx.variables.append(localctx._letVariableCS)
+            self.state = 239
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            while _la==OclExpressionParser.T__18:
+                self.state = 235
+                self.match(OclExpressionParser.T__18)
+                self.state = 236
+                localctx._letVariableCS = self.letVariableCS()
+                localctx.variables.append(localctx._letVariableCS)
+                self.state = 241
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+
+            self.state = 242
+            self.match(OclExpressionParser.T__37)
+            self.state = 243
+            self.oclExp(0)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class LetVariableCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def unrestrictedName(self):
+            return self.getTypedRuleContext(OclExpressionParser.UnrestrictedNameContext,0)
+
+
+        def oclExp(self):
+            return self.getTypedRuleContext(OclExpressionParser.OclExpContext,0)
+
+
+        def typeExpCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.TypeExpCSContext,0)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_letVariableCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLetVariableCS" ):
+                listener.enterLetVariableCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLetVariableCS" ):
+                listener.exitLetVariableCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLetVariableCS" ):
+                return visitor.visitLetVariableCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def letVariableCS(self):
+
+        localctx = OclExpressionParser.LetVariableCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 26, self.RULE_letVariableCS)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 245
+            self.unrestrictedName()
+            self.state = 248
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==OclExpressionParser.T__25:
+                self.state = 246
+                self.match(OclExpressionParser.T__25)
+                self.state = 247
+                self.typeExpCS()
+
+
+            self.state = 250
+            self.match(OclExpressionParser.T__8)
+            self.state = 251
+            self.oclExp(0)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class TypeExpCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def typeNameExpCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.TypeNameExpCSContext,0)
+
+
+        def typeLiteralCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.TypeLiteralCSContext,0)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_typeExpCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTypeExpCS" ):
+                listener.enterTypeExpCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTypeExpCS" ):
+                listener.exitTypeExpCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTypeExpCS" ):
+                return visitor.visitTypeExpCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def typeExpCS(self):
+
+        localctx = OclExpressionParser.TypeExpCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 28, self.RULE_typeExpCS)
+        try:
+            self.state = 255
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,18,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 253
+                self.typeNameExpCS()
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 254
+                self.typeLiteralCS()
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class TypeNameExpCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def unrestrictedName(self):
+            return self.getTypedRuleContext(OclExpressionParser.UnrestrictedNameContext,0)
+
+
+        def unreservedName(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(OclExpressionParser.UnreservedNameContext)
+            else:
+                return self.getTypedRuleContext(OclExpressionParser.UnreservedNameContext,i)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_typeNameExpCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTypeNameExpCS" ):
+                listener.enterTypeNameExpCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTypeNameExpCS" ):
+                listener.exitTypeNameExpCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTypeNameExpCS" ):
+                return visitor.visitTypeNameExpCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def typeNameExpCS(self):
+
+        localctx = OclExpressionParser.TypeNameExpCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 30, self.RULE_typeNameExpCS)
+        try:
+            self.state = 268
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,20,self._ctx)
+            if la_ == 1:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 257
+                self.unrestrictedName()
+                pass
+
+            elif la_ == 2:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 258
+                self.unrestrictedName()
+                self.state = 263
+                self._errHandler.sync(self)
+                _alt = self._interp.adaptivePredict(self._input,19,self._ctx)
+                while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                    if _alt==1:
+                        self.state = 259
+                        self.match(OclExpressionParser.T__0)
+                        self.state = 260
+                        self.unreservedName() 
+                    self.state = 265
+                    self._errHandler.sync(self)
+                    _alt = self._interp.adaptivePredict(self._input,19,self._ctx)
+
+                self.state = 266
+                self.unreservedName()
+                pass
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class TypeLiteralCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def primitiveTypeCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.PrimitiveTypeCSContext,0)
+
+
+        def collectionTypeCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.CollectionTypeCSContext,0)
+
+
+        def tupleTypeCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.TupleTypeCSContext,0)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_typeLiteralCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTypeLiteralCS" ):
+                listener.enterTypeLiteralCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTypeLiteralCS" ):
+                listener.exitTypeLiteralCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTypeLiteralCS" ):
+                return visitor.visitTypeLiteralCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def typeLiteralCS(self):
+
+        localctx = OclExpressionParser.TypeLiteralCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 32, self.RULE_typeLiteralCS)
+        try:
+            self.state = 273
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [OclExpressionParser.T__26, OclExpressionParser.T__27, OclExpressionParser.T__28, OclExpressionParser.T__29]:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 270
+                self.primitiveTypeCS()
+                pass
+            elif token in [OclExpressionParser.T__30, OclExpressionParser.T__31, OclExpressionParser.T__32, OclExpressionParser.T__33, OclExpressionParser.T__34]:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 271
+                self.collectionTypeCS()
+                pass
+            elif token in [OclExpressionParser.T__22]:
+                self.enterOuterAlt(localctx, 3)
+                self.state = 272
+                self.tupleTypeCS()
+                pass
+            else:
+                raise NoViableAltException(self)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class TupleTypeCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def tuplePartCS(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(OclExpressionParser.TuplePartCSContext)
+            else:
+                return self.getTypedRuleContext(OclExpressionParser.TuplePartCSContext,i)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_tupleTypeCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTupleTypeCS" ):
+                listener.enterTupleTypeCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTupleTypeCS" ):
+                listener.exitTupleTypeCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTupleTypeCS" ):
+                return visitor.visitTupleTypeCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def tupleTypeCS(self):
+
+        localctx = OclExpressionParser.TupleTypeCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 34, self.RULE_tupleTypeCS)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 275
+            self.match(OclExpressionParser.T__22)
+            self.state = 298
+            self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,24,self._ctx)
+            if la_ == 1:
+                self.state = 276
+                self.match(OclExpressionParser.T__17)
+                self.state = 277
+                self.tuplePartCS()
+                self.state = 282
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                while _la==OclExpressionParser.T__18:
+                    self.state = 278
+                    self.match(OclExpressionParser.T__18)
+                    self.state = 279
+                    self.tuplePartCS()
+                    self.state = 284
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+
+                self.state = 285
+                self.match(OclExpressionParser.T__19)
+
+            elif la_ == 2:
+                self.state = 287
+                self.match(OclExpressionParser.T__9)
+                self.state = 288
+                self.tuplePartCS()
+                self.state = 293
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                while _la==OclExpressionParser.T__18:
+                    self.state = 289
+                    self.match(OclExpressionParser.T__18)
+                    self.state = 290
+                    self.tuplePartCS()
+                    self.state = 295
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+
+                self.state = 296
+                self.match(OclExpressionParser.T__11)
+
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class TuplePartCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def unrestrictedName(self):
+            return self.getTypedRuleContext(OclExpressionParser.UnrestrictedNameContext,0)
+
+
+        def typeExpCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.TypeExpCSContext,0)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_tuplePartCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTuplePartCS" ):
+                listener.enterTuplePartCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTuplePartCS" ):
+                listener.exitTuplePartCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTuplePartCS" ):
+                return visitor.visitTuplePartCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def tuplePartCS(self):
+
+        localctx = OclExpressionParser.TuplePartCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 36, self.RULE_tuplePartCS)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 300
+            self.unrestrictedName()
+            self.state = 301
+            self.match(OclExpressionParser.T__25)
+            self.state = 302
+            self.typeExpCS()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class IfExpContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+            self.condition = None # OclExpContext
+            self.body = None # OclExpContext
+            self.else_ = None # OclExpContext
+
+        def oclExp(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(OclExpressionParser.OclExpContext)
+            else:
+                return self.getTypedRuleContext(OclExpressionParser.OclExpContext,i)
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_ifExp
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterIfExp" ):
+                listener.enterIfExp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitIfExp" ):
+                listener.exitIfExp(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIfExp" ):
+                return visitor.visitIfExp(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def ifExp(self):
+
+        localctx = OclExpressionParser.IfExpContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 38, self.RULE_ifExp)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 304
+            self.match(OclExpressionParser.T__38)
+            self.state = 305
+            localctx.condition = self.oclExp(0)
+            self.state = 306
+            self.match(OclExpressionParser.T__39)
+            self.state = 307
+            localctx.body = self.oclExp(0)
+            self.state = 308
+            self.match(OclExpressionParser.T__40)
+            self.state = 309
+            localctx.else_ = self.oclExp(0)
+            self.state = 310
+            self.match(OclExpressionParser.T__41)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class NumberLiteralExpCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def INT(self):
+            return self.getToken(OclExpressionParser.INT, 0)
+
+        def FLOAT(self):
+            return self.getToken(OclExpressionParser.FLOAT, 0)
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_numberLiteralExpCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNumberLiteralExpCS" ):
+                listener.enterNumberLiteralExpCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNumberLiteralExpCS" ):
+                listener.exitNumberLiteralExpCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNumberLiteralExpCS" ):
+                return visitor.visitNumberLiteralExpCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def numberLiteralExpCS(self):
+
+        localctx = OclExpressionParser.NumberLiteralExpCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 40, self.RULE_numberLiteralExpCS)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 312
+            _la = self._input.LA(1)
+            if not(_la==OclExpressionParser.INT or _la==OclExpressionParser.FLOAT):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class StringLiteralExpCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def STRING(self):
+            return self.getToken(OclExpressionParser.STRING, 0)
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_stringLiteralExpCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterStringLiteralExpCS" ):
+                listener.enterStringLiteralExpCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitStringLiteralExpCS" ):
+                listener.exitStringLiteralExpCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStringLiteralExpCS" ):
+                return visitor.visitStringLiteralExpCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def stringLiteralExpCS(self):
+
+        localctx = OclExpressionParser.StringLiteralExpCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 42, self.RULE_stringLiteralExpCS)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 314
+            self.match(OclExpressionParser.STRING)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class BooleanLiteralExpCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_booleanLiteralExpCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBooleanLiteralExpCS" ):
+                listener.enterBooleanLiteralExpCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBooleanLiteralExpCS" ):
+                listener.exitBooleanLiteralExpCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBooleanLiteralExpCS" ):
+                return visitor.visitBooleanLiteralExpCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def booleanLiteralExpCS(self):
+
+        localctx = OclExpressionParser.BooleanLiteralExpCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 44, self.RULE_booleanLiteralExpCS)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 316
+            _la = self._input.LA(1)
+            if not(_la==OclExpressionParser.T__42 or _la==OclExpressionParser.T__43):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class UnlimitedNaturalLiteralCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_unlimitedNaturalLiteralCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnlimitedNaturalLiteralCS" ):
+                listener.enterUnlimitedNaturalLiteralCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnlimitedNaturalLiteralCS" ):
+                listener.exitUnlimitedNaturalLiteralCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnlimitedNaturalLiteralCS" ):
+                return visitor.visitUnlimitedNaturalLiteralCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def unlimitedNaturalLiteralCS(self):
+
+        localctx = OclExpressionParser.UnlimitedNaturalLiteralCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 46, self.RULE_unlimitedNaturalLiteralCS)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 318
+            self.match(OclExpressionParser.T__5)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class InvalidLiteralExpCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_invalidLiteralExpCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterInvalidLiteralExpCS" ):
+                listener.enterInvalidLiteralExpCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitInvalidLiteralExpCS" ):
+                listener.exitInvalidLiteralExpCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInvalidLiteralExpCS" ):
+                return visitor.visitInvalidLiteralExpCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def invalidLiteralExpCS(self):
+
+        localctx = OclExpressionParser.InvalidLiteralExpCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 48, self.RULE_invalidLiteralExpCS)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 320
+            self.match(OclExpressionParser.T__44)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class NullLiteralExpCSContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_nullLiteralExpCS
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNullLiteralExpCS" ):
+                listener.enterNullLiteralExpCS(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNullLiteralExpCS" ):
+                listener.exitNullLiteralExpCS(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNullLiteralExpCS" ):
+                return visitor.visitNullLiteralExpCS(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def nullLiteralExpCS(self):
+
+        localctx = OclExpressionParser.NullLiteralExpCSContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 50, self.RULE_nullLiteralExpCS)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 322
+            self.match(OclExpressionParser.T__45)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class UnrestrictedNameContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_unrestrictedName
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnrestrictedName" ):
+                listener.enterUnrestrictedName(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnrestrictedName" ):
+                listener.exitUnrestrictedName(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnrestrictedName" ):
+                return visitor.visitUnrestrictedName(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def unrestrictedName(self):
+
+        localctx = OclExpressionParser.UnrestrictedNameContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 52, self.RULE_unrestrictedName)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 324
+            _la = self._input.LA(1)
+            if _la <= 0 or (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << OclExpressionParser.T__4) | (1 << OclExpressionParser.T__13) | (1 << OclExpressionParser.T__14) | (1 << OclExpressionParser.T__15) | (1 << OclExpressionParser.T__16) | (1 << OclExpressionParser.T__21) | (1 << OclExpressionParser.T__22) | (1 << OclExpressionParser.T__26) | (1 << OclExpressionParser.T__27) | (1 << OclExpressionParser.T__28) | (1 << OclExpressionParser.T__29) | (1 << OclExpressionParser.T__30) | (1 << OclExpressionParser.T__31) | (1 << OclExpressionParser.T__32) | (1 << OclExpressionParser.T__34) | (1 << OclExpressionParser.T__36) | (1 << OclExpressionParser.T__37) | (1 << OclExpressionParser.T__38) | (1 << OclExpressionParser.T__39) | (1 << OclExpressionParser.T__40) | (1 << OclExpressionParser.T__41) | (1 << OclExpressionParser.T__42) | (1 << OclExpressionParser.T__43) | (1 << OclExpressionParser.T__44) | (1 << OclExpressionParser.T__45) | (1 << OclExpressionParser.T__46) | (1 << OclExpressionParser.T__47) | (1 << OclExpressionParser.T__48) | (1 << OclExpressionParser.T__49) | (1 << OclExpressionParser.T__50) | (1 << OclExpressionParser.T__51) | (1 << OclExpressionParser.T__52) | (1 << OclExpressionParser.T__53))) != 0):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class UnreservedNameContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return OclExpressionParser.RULE_unreservedName
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUnreservedName" ):
+                listener.enterUnreservedName(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUnreservedName" ):
+                listener.exitUnreservedName(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnreservedName" ):
+                return visitor.visitUnreservedName(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def unreservedName(self):
+
+        localctx = OclExpressionParser.UnreservedNameContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 54, self.RULE_unreservedName)
+        self._la = 0 # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 326
+            _la = self._input.LA(1)
+            if _la <= 0 or (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << OclExpressionParser.T__4) | (1 << OclExpressionParser.T__13) | (1 << OclExpressionParser.T__14) | (1 << OclExpressionParser.T__15) | (1 << OclExpressionParser.T__16) | (1 << OclExpressionParser.T__21) | (1 << OclExpressionParser.T__36) | (1 << OclExpressionParser.T__37) | (1 << OclExpressionParser.T__38) | (1 << OclExpressionParser.T__39) | (1 << OclExpressionParser.T__40) | (1 << OclExpressionParser.T__41) | (1 << OclExpressionParser.T__42) | (1 << OclExpressionParser.T__43) | (1 << OclExpressionParser.T__44) | (1 << OclExpressionParser.T__45))) != 0):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+
+    def sempred(self, localctx:RuleContext, ruleIndex:int, predIndex:int):
+        if self._predicates == None:
+            self._predicates = dict()
+        self._predicates[0] = self.oclExp_sempred
+        pred = self._predicates.get(ruleIndex, None)
+        if pred is None:
+            raise Exception("No predicate with index:" + str(ruleIndex))
+        else:
+            return pred(localctx, predIndex)
+
+    def oclExp_sempred(self, localctx:OclExpContext, predIndex:int):
+            if predIndex == 0:
+                return self.precpred(self._ctx, 13)
+         
+
+            if predIndex == 1:
+                return self.precpred(self._ctx, 12)
+         
+
+            if predIndex == 2:
+                return self.precpred(self._ctx, 11)
+         
+
+            if predIndex == 3:
+                return self.precpred(self._ctx, 10)
+         
+
+            if predIndex == 4:
+                return self.precpred(self._ctx, 9)
+         
+
+            if predIndex == 5:
+                return self.precpred(self._ctx, 8)
+         
+
+            if predIndex == 6:
+                return self.precpred(self._ctx, 7)
+         
+
+            if predIndex == 7:
+                return self.precpred(self._ctx, 6)
+         
+
+            if predIndex == 8:
+                return self.precpred(self._ctx, 5)
+         
+
+            if predIndex == 9:
+                return self.precpred(self._ctx, 4)
+         
+
+            if predIndex == 10:
+                return self.precpred(self._ctx, 3)
+         
+
+            if predIndex == 11:
+                return self.precpred(self._ctx, 2)
+         
+
+            if predIndex == 12:
+                return self.precpred(self._ctx, 1)
+         
+
+            if predIndex == 13:
+                return self.precpred(self._ctx, 18)
+         
+
+            if predIndex == 14:
+                return self.precpred(self._ctx, 17)
+         
+
+            if predIndex == 15:
+                return self.precpred(self._ctx, 16)
+         
+
+
+
+
