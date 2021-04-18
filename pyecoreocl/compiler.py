@@ -56,7 +56,7 @@ class DummyVisitor(OclExpressionVisitor):
         if operation == 'select':
             self.visitSelect(ctx)
             return
-        if operation == 'isEmpty':
+        if operation == 'isNotEmpty':
             self.inline('len(')
             self.visit(ctx.expression)
             self.inline(') > 0')
