@@ -98,6 +98,15 @@ class OclExpressionListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by OclExpressionParser#MethodCall.
+    def enterMethodCall(self, ctx:OclExpressionParser.MethodCallContext):
+        pass
+
+    # Exit a parse tree produced by OclExpressionParser#MethodCall.
+    def exitMethodCall(self, ctx:OclExpressionParser.MethodCallContext):
+        pass
+
+
     # Enter a parse tree produced by OclExpressionParser#ArgumentsExp.
     def enterArgumentsExp(self, ctx:OclExpressionParser.ArgumentsExpContext):
         pass

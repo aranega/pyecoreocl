@@ -5,6 +5,7 @@ oclExp:
 |   unrestrictedName                                      # SimpleName
 |   (unrestrictedName '::')+ unreservedName               # FullQualifiedName
 |   expression=oclExp argExp                               # CallExpression
+|   expression=oclExp '.' attname=unrestrictedName  argExp        # MethodCall
 |   expression=oclExp '.' attname=unrestrictedName             # AttributeNavigation
 |   expression=oclExp '->' attname=unrestrictedName argExp     # CollectionCall
 |   operator='-' expression=oclExp                    # UnaryOperation

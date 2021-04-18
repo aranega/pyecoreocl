@@ -59,6 +59,11 @@ class OclExpressionVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by OclExpressionParser#MethodCall.
+    def visitMethodCall(self, ctx:OclExpressionParser.MethodCallContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by OclExpressionParser#ArgumentsExp.
     def visitArgumentsExp(self, ctx:OclExpressionParser.ArgumentsExpContext):
         return self.visitChildren(ctx)

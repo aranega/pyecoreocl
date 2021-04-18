@@ -44,15 +44,33 @@ class DummyVisitor(OclExpressionVisitor):
     def visitComparisonBinaryOperation(self, ctx):
         self.visit(ctx.left)
         operator = ctx.operator.text
-        self.inline(f" {operator if operator != '=' else '=='} ")
+        operator = operator if operator != '=' else '=='
+        self.inline(f" {operator} ")
         self.visit(ctx.right)
 
     def visitCollectionCall(self, ctx):
         operation = ctx.attname.text
         if operation == 'collect':
             self.visitCollect(ctx)
+            return
         if operation == 'select':
             self.visitSelect(ctx)
+            return
+        if operation == 'isEmpty':
+            self.inline('len(')
+            self.visit(ctx.expression)
+            self.inline(') > 0')
+            return
+        if operation == 'isEmpty':
+            self.inline('len(')
+            self.visit(ctx.expression)
+            self.inline(') == 0')
+            return
+
+        self.visit(ctx.expression)
+        self.inline(f".{operation}(")
+        self.visit(ctx.argExp())
+        self.inline(")")
 
     def visitCollect(self, ctx):
         self.inline("[")
@@ -75,10 +93,24 @@ class DummyVisitor(OclExpressionVisitor):
         self.visit(ctx.right)
 
     def visitCallExpression(self, ctx):
-        return self.visitChildren(ctx)
+        self.visit(ctx.expression)
+        self.inline("(")
+        self.visit(ctx.argExp())
+        self.inline(")")
+
+    def visitMethodCall(self, ctx):
+        if ctx.attname.text == 'oclAsType':
+            self.visit(ctx.expression)
+            return
+        self.visit(ctx.expression)
+        self.inline(f".{ctx.attname.text}(")
+        self.visit(ctx.argExp())
+        self.inline(")")
 
     def visitArgumentsExp(self, ctx):
-        return self.visitChildren(ctx)
+        for exp in ctx.oclExp():
+            self.visit(exp)
+            self.inline(', ')
 
     def visitLambdaExp(self, ctx):
         return self.visitChildren(ctx)
@@ -115,9 +147,12 @@ class DummyVisitor(OclExpressionVisitor):
         if ctype == 'Sequence' or ctype == 'Bag':
             opening = '['
             ending = ']'
-        elif ctype == 'Set':
+        elif ctype == 'Set' and len(ctx.expressions) > 0:
             opening = '{'
             ending = '}'
+        elif ctype == 'Set':
+            opening = 'set('
+            ending = ')'
         self.inline(opening)
         for exp in ctx.expressions:
             self.visit(exp)
