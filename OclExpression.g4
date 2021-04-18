@@ -26,7 +26,7 @@ oclExp:
 
 argExp:
     '(' (oclExp (',' oclExp)*)? ')'           # ArgumentsExp
-|   '(' unrestrictedName '|' oclExp ')'      # LambdaExp
+|   '(' varnames+=unrestrictedName (',' varnames+=unrestrictedName)* '|' oclExp ')'      # LambdaExp
 ;
 
 primaryExp:
@@ -58,7 +58,7 @@ tupleLiteralPartCS:
 ;
 
 collectionLiteralExp:
-    collectionTypeCS '{' (collectionLiteralPartCS (',' collectionLiteralPartCS)*)? '}'
+    collectionTypeCS '{' (expressions+=collectionLiteralPartCS (',' expressions+=collectionLiteralPartCS)*)? '}'
 ;
 
 collectionTypeCS:
@@ -81,7 +81,8 @@ collectionTypeIdentifier:
 ;
 
 collectionLiteralPartCS:
-    oclExp '..' oclExp
+    oclExp
+|   inf=oclExp isInterval='..' sup=oclExp
 ;
 
 typeLiteralExp:
