@@ -67,6 +67,21 @@ print(dummy_compiler(expression))
 [ext for ext in Extension.allInstances() if (lambda endTypes: self in endTypes or self in endTypes.allParents())([type for e in ext.memberEnd])]
 ```
 
+
+## Example Use
+
+This repository proposes a very simple repl for OCL expressions.
+Launch it using `python oclrepl.py`.
+You'll get a repl interface running.
+You can either type an ocl expression directly, or load a metamodel/model and register metamodels.
+
+Syntax to load a model/metamodel is: `load <model_metamodel_path>`.
+Syntax to register a metamodel is: `register <model_metamodel_path>`.
+
+Here is a demo on how to use it.
+![](repl_demo.svg)
+
 ## Dependencies
 
-* antlr4
+* `antlr4-python3-runtime`
+* for the repl: `pyecore`

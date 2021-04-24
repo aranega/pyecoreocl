@@ -77,6 +77,17 @@ class DummyVisitor(OclExpressionVisitor):
             self.visit(ctx.expression)
             self.inline(') == 0')
             return
+        if operation == 'at':
+            self.visit(ctx.expression)
+            self.inline('[')
+            self.visit(ctx.argExp().oclExp()[0])
+            self.inline(']')
+            return
+        if operation == 'size':
+            self.inline('len(')
+            self.visit(ctx.expression)
+            self.inline(')')
+            return
 
         self.visit(ctx.expression)
         self.inline(f".{operation}(")
