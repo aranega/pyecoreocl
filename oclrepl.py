@@ -37,14 +37,6 @@ class OCLShell(cmd.Cmd):
         except Exception as e:
             print(e)
 
-    def do_assign(self, arg):
-        try:
-            var, expression = arg.split()
-            res = self.compile_execute(expression)
-            self.vars[var.strip()] = res
-        except Exception as e:
-            print(e)
-
     def default(self, line):
         if ':=' in line:
             self.assign(line)
