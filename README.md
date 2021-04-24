@@ -79,6 +79,7 @@ Syntax to load a model/metamodel is: `load <model_metamodel_path>`.
 Syntax to register a metamodel is: `register <model_metamodel_path>`.
 
 Here is a demo on how to use it.
+
 ![](repl_demo.svg)
 
 ## Dependencies
