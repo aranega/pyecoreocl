@@ -1,4 +1,4 @@
-from pyecoreocl.compiler import dummy_compiler
+from pyecoreocl.compiler import dummy_compiler, OCLTuple
 from pyecore.resources import ResourceSet
 import pyecore
 import cmd
@@ -11,10 +11,14 @@ class OCLShell(cmd.Cmd):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.rset = ResourceSet()
-        self.vars = {}
+        self.vars = {
+            'rset': self.rset,
+            'ecore': pyecore.ecore
+        }
+        self.gvars = {
+            'OCLTuple': OCLTuple
+        }
         self.vars['metavars'] = self.vars
-        self.vars['rset'] = self.rset
-        self.vars['ecore'] = pyecore.ecore
 
     def do_load(self, arg):
         try:
@@ -62,7 +66,7 @@ class OCLShell(cmd.Cmd):
         cmd = dummy_compiler(line)
         print(f"!! expr: {cmd}")
         code = compile(f"{cmd}", '<ocl_expr>', 'eval')
-        return eval(code, {}, self.vars)
+        return eval(code, self.gvars, self.vars)
 
     def do_quit(self, arg):
         print("\n!! Exiting")
