@@ -14,11 +14,12 @@ oclExp:
 |   left=oclExp operator='/' right=oclExp         # ArithmeticBinaryOperation
 |   left=oclExp operator='+' right=oclExp         # ArithmeticBinaryOperation
 |   left=oclExp operator='-' right=oclExp         # ArithmeticBinaryOperation
-|   left=oclExp operator='=' right=oclExp         # ComparisonBinaryOperation
 |   left=oclExp operator='<' right=oclExp         # ComparisonBinaryOperation
-|   left=oclExp operator='<=' right=oclExp        # ComparisonBinaryOperation
 |   left=oclExp operator='>' right=oclExp         # ComparisonBinaryOperation
+|   left=oclExp operator='<=' right=oclExp        # ComparisonBinaryOperation
 |   left=oclExp operator='>=' right=oclExp        # ComparisonBinaryOperation
+|   left=oclExp operator='=' right=oclExp         # ComparisonBinaryOperation
+|   left=oclExp operator='<>' right=oclExp         # ComparisonBinaryOperation
 |   left=oclExp operator='and' right=oclExp       # BooleanBinaryOperation
 |   left=oclExp operator='or' right=oclExp        # BooleanBinaryOperation
 |   left=oclExp operator='xor' right=oclExp       # BooleanBinaryOperation
@@ -27,7 +28,7 @@ oclExp:
 
 argExp:
     '(' (oclExp (',' oclExp)*)? ')'           # ArgumentsExp
-|   '(' varnames+=unrestrictedName (',' varnames+=unrestrictedName)* '|' oclExp ')'      # LambdaExp
+|   '(' varnames+=unreservedName (',' varnames+=unreservedName )* (':' typeExpCS)? '|' oclExp ')'      # LambdaExp
 ;
 
 primaryExp:

@@ -1,4 +1,4 @@
-# Generated from OclExpression.g4 by ANTLR 4.9.2
+# Generated from OclExpression.g4 by ANTLR 4.13.2
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -8,177 +8,139 @@ if sys.version_info[1] > 5:
 else:
 	from typing.io import TextIO
 
-
 def serializedATN():
-    with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3=")
-        buf.write("\u0163\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
-        buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
-        buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
-        buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31")
-        buf.write("\t\31\4\32\t\32\4\33\t\33\4\34\t\34\4\35\t\35\4\36\t\36")
-        buf.write("\4\37\t\37\3\2\3\2\3\2\3\2\3\2\3\2\6\2E\n\2\r\2\16\2F")
-        buf.write("\3\2\3\2\3\2\3\2\3\2\3\2\5\2O\n\2\3\2\3\2\3\2\3\2\3\2")
-        buf.write("\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3")
-        buf.write("\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2")
-        buf.write("\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3")
-        buf.write("\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\7\2\u0087\n\2\f\2\16")
-        buf.write("\2\u008a\13\2\3\3\3\3\3\3\3\3\7\3\u0090\n\3\f\3\16\3\u0093")
-        buf.write("\13\3\5\3\u0095\n\3\3\3\3\3\3\3\3\3\3\3\7\3\u009c\n\3")
-        buf.write("\f\3\16\3\u009f\13\3\3\3\3\3\3\3\3\3\5\3\u00a5\n\3\3\4")
-        buf.write("\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4\u00af\n\4\3\5\3\5\3\6")
-        buf.write("\3\6\3\6\3\6\3\7\3\7\3\7\3\7\3\7\3\7\5\7\u00bd\n\7\3\b")
-        buf.write("\3\b\3\b\3\b\3\b\7\b\u00c4\n\b\f\b\16\b\u00c7\13\b\3\b")
-        buf.write("\3\b\3\t\3\t\3\t\5\t\u00ce\n\t\3\t\3\t\3\t\3\n\3\n\3\n")
-        buf.write("\3\n\3\n\7\n\u00d8\n\n\f\n\16\n\u00db\13\n\5\n\u00dd\n")
-        buf.write("\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13")
-        buf.write("\5\13\u00ea\n\13\3\f\3\f\3\f\3\f\5\f\u00f0\n\f\3\r\3\r")
-        buf.write("\3\r\3\r\3\r\5\r\u00f7\n\r\3\16\3\16\3\16\3\16\3\16\5")
-        buf.write("\16\u00fe\n\16\3\17\3\17\3\20\3\20\3\20\3\20\7\20\u0106")
-        buf.write("\n\20\f\20\16\20\u0109\13\20\3\20\3\20\3\20\3\21\3\21")
-        buf.write("\3\21\5\21\u0111\n\21\3\21\3\21\3\21\3\22\3\22\5\22\u0118")
-        buf.write("\n\22\3\23\3\23\3\23\3\23\3\23\3\23\6\23\u0120\n\23\r")
-        buf.write("\23\16\23\u0121\7\23\u0124\n\23\f\23\16\23\u0127\13\23")
-        buf.write("\3\24\3\24\3\24\5\24\u012c\n\24\3\25\3\25\3\25\3\25\3")
-        buf.write("\25\7\25\u0133\n\25\f\25\16\25\u0136\13\25\3\25\3\25\3")
-        buf.write("\25\3\25\3\25\3\25\7\25\u013e\n\25\f\25\16\25\u0141\13")
-        buf.write("\25\3\25\3\25\5\25\u0145\n\25\3\26\3\26\3\26\3\26\3\27")
-        buf.write("\3\27\3\27\3\27\3\27\3\27\3\27\3\27\3\30\3\30\3\31\3\31")
-        buf.write("\3\32\3\32\3\33\3\33\3\34\3\34\3\35\3\35\3\36\3\36\3\37")
-        buf.write("\3\37\3\37\2\4\2$ \2\4\6\b\n\f\16\20\22\24\26\30\32\34")
-        buf.write("\36 \"$&(*,.\60\62\64\668:<\2\6\3\2;<\3\2-.\b\2\7\7\20")
-        buf.write("\24\26\26\30\31\35%\'\67\7\2\7\7\20\24\26\26\30\30\'\60")
-        buf.write("\2\u0183\2N\3\2\2\2\4\u00a4\3\2\2\2\6\u00ae\3\2\2\2\b")
-        buf.write("\u00b0\3\2\2\2\n\u00b2\3\2\2\2\f\u00bc\3\2\2\2\16\u00be")
-        buf.write("\3\2\2\2\20\u00ca\3\2\2\2\22\u00d2\3\2\2\2\24\u00e0\3")
-        buf.write("\2\2\2\26\u00ef\3\2\2\2\30\u00f6\3\2\2\2\32\u00fd\3\2")
-        buf.write("\2\2\34\u00ff\3\2\2\2\36\u0101\3\2\2\2 \u010d\3\2\2\2")
-        buf.write("\"\u0117\3\2\2\2$\u0119\3\2\2\2&\u012b\3\2\2\2(\u012d")
-        buf.write("\3\2\2\2*\u0146\3\2\2\2,\u014a\3\2\2\2.\u0152\3\2\2\2")
-        buf.write("\60\u0154\3\2\2\2\62\u0156\3\2\2\2\64\u0158\3\2\2\2\66")
-        buf.write("\u015a\3\2\2\28\u015c\3\2\2\2:\u015e\3\2\2\2<\u0160\3")
-        buf.write("\2\2\2>?\b\2\1\2?O\5\6\4\2@O\5:\36\2AB\5:\36\2BC\7\3\2")
-        buf.write("\2CE\3\2\2\2DA\3\2\2\2EF\3\2\2\2FD\3\2\2\2FG\3\2\2\2G")
-        buf.write("H\3\2\2\2HI\5<\37\2IO\3\2\2\2JK\7\6\2\2KO\5\2\2\21LM\7")
-        buf.write("\7\2\2MO\5\2\2\20N>\3\2\2\2N@\3\2\2\2ND\3\2\2\2NJ\3\2")
-        buf.write("\2\2NL\3\2\2\2O\u0088\3\2\2\2PQ\f\17\2\2QR\7\b\2\2R\u0087")
-        buf.write("\5\2\2\20ST\f\16\2\2TU\7\t\2\2U\u0087\5\2\2\17VW\f\r\2")
-        buf.write("\2WX\7\n\2\2X\u0087\5\2\2\16YZ\f\f\2\2Z[\7\6\2\2[\u0087")
-        buf.write("\5\2\2\r\\]\f\13\2\2]^\7\13\2\2^\u0087\5\2\2\f_`\f\n\2")
-        buf.write("\2`a\7\f\2\2a\u0087\5\2\2\13bc\f\t\2\2cd\7\r\2\2d\u0087")
-        buf.write("\5\2\2\nef\f\b\2\2fg\7\16\2\2g\u0087\5\2\2\thi\f\7\2\2")
-        buf.write("ij\7\17\2\2j\u0087\5\2\2\bkl\f\6\2\2lm\7\20\2\2m\u0087")
-        buf.write("\5\2\2\7no\f\5\2\2op\7\21\2\2p\u0087\5\2\2\6qr\f\4\2\2")
-        buf.write("rs\7\22\2\2s\u0087\5\2\2\5tu\f\3\2\2uv\7\23\2\2v\u0087")
-        buf.write("\5\2\2\4wx\f\25\2\2x\u0087\5\4\3\2yz\f\24\2\2z{\7\4\2")
-        buf.write("\2{|\5:\36\2|}\5\4\3\2}\u0087\3\2\2\2~\177\f\23\2\2\177")
-        buf.write("\u0080\7\4\2\2\u0080\u0087\5:\36\2\u0081\u0082\f\22\2")
-        buf.write("\2\u0082\u0083\7\5\2\2\u0083\u0084\5:\36\2\u0084\u0085")
-        buf.write("\5\4\3\2\u0085\u0087\3\2\2\2\u0086P\3\2\2\2\u0086S\3\2")
-        buf.write("\2\2\u0086V\3\2\2\2\u0086Y\3\2\2\2\u0086\\\3\2\2\2\u0086")
-        buf.write("_\3\2\2\2\u0086b\3\2\2\2\u0086e\3\2\2\2\u0086h\3\2\2\2")
-        buf.write("\u0086k\3\2\2\2\u0086n\3\2\2\2\u0086q\3\2\2\2\u0086t\3")
-        buf.write("\2\2\2\u0086w\3\2\2\2\u0086y\3\2\2\2\u0086~\3\2\2\2\u0086")
-        buf.write("\u0081\3\2\2\2\u0087\u008a\3\2\2\2\u0088\u0086\3\2\2\2")
-        buf.write("\u0088\u0089\3\2\2\2\u0089\3\3\2\2\2\u008a\u0088\3\2\2")
-        buf.write("\2\u008b\u0094\7\24\2\2\u008c\u0091\5\2\2\2\u008d\u008e")
-        buf.write("\7\25\2\2\u008e\u0090\5\2\2\2\u008f\u008d\3\2\2\2\u0090")
-        buf.write("\u0093\3\2\2\2\u0091\u008f\3\2\2\2\u0091\u0092\3\2\2\2")
-        buf.write("\u0092\u0095\3\2\2\2\u0093\u0091\3\2\2\2\u0094\u008c\3")
-        buf.write("\2\2\2\u0094\u0095\3\2\2\2\u0095\u0096\3\2\2\2\u0096\u00a5")
-        buf.write("\7\26\2\2\u0097\u0098\7\24\2\2\u0098\u009d\5:\36\2\u0099")
-        buf.write("\u009a\7\25\2\2\u009a\u009c\5:\36\2\u009b\u0099\3\2\2")
-        buf.write("\2\u009c\u009f\3\2\2\2\u009d\u009b\3\2\2\2\u009d\u009e")
-        buf.write("\3\2\2\2\u009e\u00a0\3\2\2\2\u009f\u009d\3\2\2\2\u00a0")
-        buf.write("\u00a1\7\27\2\2\u00a1\u00a2\5\2\2\2\u00a2\u00a3\7\26\2")
-        buf.write("\2\u00a3\u00a5\3\2\2\2\u00a4\u008b\3\2\2\2\u00a4\u0097")
-        buf.write("\3\2\2\2\u00a5\5\3\2\2\2\u00a6\u00af\5\b\5\2\u00a7\u00af")
-        buf.write("\5\n\6\2\u00a8\u00af\5\f\7\2\u00a9\u00af\5\16\b\2\u00aa")
-        buf.write("\u00af\5\22\n\2\u00ab\u00af\5\34\17\2\u00ac\u00af\5\36")
-        buf.write("\20\2\u00ad\u00af\5,\27\2\u00ae\u00a6\3\2\2\2\u00ae\u00a7")
-        buf.write("\3\2\2\2\u00ae\u00a8\3\2\2\2\u00ae\u00a9\3\2\2\2\u00ae")
-        buf.write("\u00aa\3\2\2\2\u00ae\u00ab\3\2\2\2\u00ae\u00ac\3\2\2\2")
-        buf.write("\u00ae\u00ad\3\2\2\2\u00af\7\3\2\2\2\u00b0\u00b1\7\30")
-        buf.write("\2\2\u00b1\t\3\2\2\2\u00b2\u00b3\7\24\2\2\u00b3\u00b4")
-        buf.write("\5\2\2\2\u00b4\u00b5\7\26\2\2\u00b5\13\3\2\2\2\u00b6\u00bd")
-        buf.write("\5.\30\2\u00b7\u00bd\5\60\31\2\u00b8\u00bd\5\62\32\2\u00b9")
-        buf.write("\u00bd\5\64\33\2\u00ba\u00bd\5\66\34\2\u00bb\u00bd\58")
-        buf.write("\35\2\u00bc\u00b6\3\2\2\2\u00bc\u00b7\3\2\2\2\u00bc\u00b8")
-        buf.write("\3\2\2\2\u00bc\u00b9\3\2\2\2\u00bc\u00ba\3\2\2\2\u00bc")
-        buf.write("\u00bb\3\2\2\2\u00bd\r\3\2\2\2\u00be\u00bf\7\31\2\2\u00bf")
-        buf.write("\u00c0\7\32\2\2\u00c0\u00c5\5\20\t\2\u00c1\u00c2\7\25")
-        buf.write("\2\2\u00c2\u00c4\5\20\t\2\u00c3\u00c1\3\2\2\2\u00c4\u00c7")
-        buf.write("\3\2\2\2\u00c5\u00c3\3\2\2\2\u00c5\u00c6\3\2\2\2\u00c6")
-        buf.write("\u00c8\3\2\2\2\u00c7\u00c5\3\2\2\2\u00c8\u00c9\7\33\2")
-        buf.write("\2\u00c9\17\3\2\2\2\u00ca\u00cd\5:\36\2\u00cb\u00cc\7")
-        buf.write("\34\2\2\u00cc\u00ce\5\"\22\2\u00cd\u00cb\3\2\2\2\u00cd")
-        buf.write("\u00ce\3\2\2\2\u00ce\u00cf\3\2\2\2\u00cf\u00d0\7\13\2")
-        buf.write("\2\u00d0\u00d1\5\6\4\2\u00d1\21\3\2\2\2\u00d2\u00d3\5")
-        buf.write("\24\13\2\u00d3\u00dc\7\32\2\2\u00d4\u00d9\5\32\16\2\u00d5")
-        buf.write("\u00d6\7\25\2\2\u00d6\u00d8\5\32\16\2\u00d7\u00d5\3\2")
-        buf.write("\2\2\u00d8\u00db\3\2\2\2\u00d9\u00d7\3\2\2\2\u00d9\u00da")
-        buf.write("\3\2\2\2\u00da\u00dd\3\2\2\2\u00db\u00d9\3\2\2\2\u00dc")
-        buf.write("\u00d4\3\2\2\2\u00dc\u00dd\3\2\2\2\u00dd\u00de\3\2\2\2")
-        buf.write("\u00de\u00df\7\33\2\2\u00df\23\3\2\2\2\u00e0\u00e9\5\30")
-        buf.write("\r\2\u00e1\u00e2\7\24\2\2\u00e2\u00e3\5\"\22\2\u00e3\u00e4")
-        buf.write("\7\26\2\2\u00e4\u00ea\3\2\2\2\u00e5\u00e6\7\f\2\2\u00e6")
-        buf.write("\u00e7\5\"\22\2\u00e7\u00e8\7\16\2\2\u00e8\u00ea\3\2\2")
-        buf.write("\2\u00e9\u00e1\3\2\2\2\u00e9\u00e5\3\2\2\2\u00e9\u00ea")
-        buf.write("\3\2\2\2\u00ea\25\3\2\2\2\u00eb\u00f0\7\35\2\2\u00ec\u00f0")
-        buf.write("\7\36\2\2\u00ed\u00f0\7\37\2\2\u00ee\u00f0\7 \2\2\u00ef")
-        buf.write("\u00eb\3\2\2\2\u00ef\u00ec\3\2\2\2\u00ef\u00ed\3\2\2\2")
-        buf.write("\u00ef\u00ee\3\2\2\2\u00f0\27\3\2\2\2\u00f1\u00f7\7!\2")
-        buf.write("\2\u00f2\u00f7\7\"\2\2\u00f3\u00f7\7#\2\2\u00f4\u00f7")
-        buf.write("\7$\2\2\u00f5\u00f7\7%\2\2\u00f6\u00f1\3\2\2\2\u00f6\u00f2")
-        buf.write("\3\2\2\2\u00f6\u00f3\3\2\2\2\u00f6\u00f4\3\2\2\2\u00f6")
-        buf.write("\u00f5\3\2\2\2\u00f7\31\3\2\2\2\u00f8\u00fe\5\2\2\2\u00f9")
-        buf.write("\u00fa\5\2\2\2\u00fa\u00fb\7&\2\2\u00fb\u00fc\5\2\2\2")
-        buf.write("\u00fc\u00fe\3\2\2\2\u00fd\u00f8\3\2\2\2\u00fd\u00f9\3")
-        buf.write("\2\2\2\u00fe\33\3\2\2\2\u00ff\u0100\5&\24\2\u0100\35\3")
-        buf.write("\2\2\2\u0101\u0102\7\'\2\2\u0102\u0107\5 \21\2\u0103\u0104")
-        buf.write("\7\25\2\2\u0104\u0106\5 \21\2\u0105\u0103\3\2\2\2\u0106")
-        buf.write("\u0109\3\2\2\2\u0107\u0105\3\2\2\2\u0107\u0108\3\2\2\2")
-        buf.write("\u0108\u010a\3\2\2\2\u0109\u0107\3\2\2\2\u010a\u010b\7")
-        buf.write("(\2\2\u010b\u010c\5\2\2\2\u010c\37\3\2\2\2\u010d\u0110")
-        buf.write("\5:\36\2\u010e\u010f\7\34\2\2\u010f\u0111\5\"\22\2\u0110")
-        buf.write("\u010e\3\2\2\2\u0110\u0111\3\2\2\2\u0111\u0112\3\2\2\2")
-        buf.write("\u0112\u0113\7\13\2\2\u0113\u0114\5\2\2\2\u0114!\3\2\2")
-        buf.write("\2\u0115\u0118\5&\24\2\u0116\u0118\5$\23\2\u0117\u0115")
-        buf.write("\3\2\2\2\u0117\u0116\3\2\2\2\u0118#\3\2\2\2\u0119\u011a")
-        buf.write("\b\23\1\2\u011a\u011b\5:\36\2\u011b\u0125\3\2\2\2\u011c")
-        buf.write("\u011f\f\3\2\2\u011d\u011e\7\3\2\2\u011e\u0120\5<\37\2")
-        buf.write("\u011f\u011d\3\2\2\2\u0120\u0121\3\2\2\2\u0121\u011f\3")
-        buf.write("\2\2\2\u0121\u0122\3\2\2\2\u0122\u0124\3\2\2\2\u0123\u011c")
-        buf.write("\3\2\2\2\u0124\u0127\3\2\2\2\u0125\u0123\3\2\2\2\u0125")
-        buf.write("\u0126\3\2\2\2\u0126%\3\2\2\2\u0127\u0125\3\2\2\2\u0128")
-        buf.write("\u012c\5\24\13\2\u0129\u012c\5\26\f\2\u012a\u012c\5(\25")
-        buf.write("\2\u012b\u0128\3\2\2\2\u012b\u0129\3\2\2\2\u012b\u012a")
-        buf.write("\3\2\2\2\u012c\'\3\2\2\2\u012d\u0144\7\31\2\2\u012e\u012f")
-        buf.write("\7\24\2\2\u012f\u0134\5*\26\2\u0130\u0131\7\25\2\2\u0131")
-        buf.write("\u0133\5*\26\2\u0132\u0130\3\2\2\2\u0133\u0136\3\2\2\2")
-        buf.write("\u0134\u0132\3\2\2\2\u0134\u0135\3\2\2\2\u0135\u0137\3")
-        buf.write("\2\2\2\u0136\u0134\3\2\2\2\u0137\u0138\7\26\2\2\u0138")
-        buf.write("\u0145\3\2\2\2\u0139\u013a\7\f\2\2\u013a\u013f\5*\26\2")
-        buf.write("\u013b\u013c\7\25\2\2\u013c\u013e\5*\26\2\u013d\u013b")
-        buf.write("\3\2\2\2\u013e\u0141\3\2\2\2\u013f\u013d\3\2\2\2\u013f")
-        buf.write("\u0140\3\2\2\2\u0140\u0142\3\2\2\2\u0141\u013f\3\2\2\2")
-        buf.write("\u0142\u0143\7\16\2\2\u0143\u0145\3\2\2\2\u0144\u012e")
-        buf.write("\3\2\2\2\u0144\u0139\3\2\2\2\u0144\u0145\3\2\2\2\u0145")
-        buf.write(")\3\2\2\2\u0146\u0147\5:\36\2\u0147\u0148\7\34\2\2\u0148")
-        buf.write("\u0149\5\"\22\2\u0149+\3\2\2\2\u014a\u014b\7)\2\2\u014b")
-        buf.write("\u014c\5\2\2\2\u014c\u014d\7*\2\2\u014d\u014e\5\2\2\2")
-        buf.write("\u014e\u014f\7+\2\2\u014f\u0150\5\2\2\2\u0150\u0151\7")
-        buf.write(",\2\2\u0151-\3\2\2\2\u0152\u0153\t\2\2\2\u0153/\3\2\2")
-        buf.write("\2\u0154\u0155\78\2\2\u0155\61\3\2\2\2\u0156\u0157\t\3")
-        buf.write("\2\2\u0157\63\3\2\2\2\u0158\u0159\7\b\2\2\u0159\65\3\2")
-        buf.write("\2\2\u015a\u015b\7/\2\2\u015b\67\3\2\2\2\u015c\u015d\7")
-        buf.write("\60\2\2\u015d9\3\2\2\2\u015e\u015f\n\4\2\2\u015f;\3\2")
-        buf.write("\2\2\u0160\u0161\n\5\2\2\u0161=\3\2\2\2\35FN\u0086\u0088")
-        buf.write("\u0091\u0094\u009d\u00a4\u00ae\u00bc\u00c5\u00cd\u00d9")
-        buf.write("\u00dc\u00e9\u00ef\u00f6\u00fd\u0107\u0110\u0117\u0121")
-        buf.write("\u0125\u012b\u0134\u013f\u0144")
-        return buf.getvalue()
-
+    return [
+        4,1,60,360,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
+        2,14,7,14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,
+        7,20,2,21,7,21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,26,
+        2,27,7,27,2,28,7,28,2,29,7,29,1,0,1,0,1,0,1,0,1,0,1,0,4,0,67,8,0,
+        11,0,12,0,68,1,0,1,0,1,0,1,0,1,0,1,0,3,0,77,8,0,1,0,1,0,1,0,1,0,
+        1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,
+        1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,
+        1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,
+        1,0,1,0,1,0,1,0,1,0,5,0,136,8,0,10,0,12,0,139,9,0,1,1,1,1,1,1,1,
+        1,5,1,145,8,1,10,1,12,1,148,9,1,3,1,150,8,1,1,1,1,1,1,1,1,1,1,1,
+        5,1,157,8,1,10,1,12,1,160,9,1,1,1,1,1,3,1,164,8,1,1,1,1,1,1,1,1,
+        1,3,1,170,8,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,3,2,180,8,2,1,3,1,
+        3,1,4,1,4,1,4,1,4,1,5,1,5,1,5,1,5,1,5,1,5,3,5,194,8,5,1,6,1,6,1,
+        6,1,6,1,6,5,6,201,8,6,10,6,12,6,204,9,6,1,6,1,6,1,7,1,7,1,7,3,7,
+        211,8,7,1,7,1,7,1,7,1,8,1,8,1,8,1,8,1,8,5,8,221,8,8,10,8,12,8,224,
+        9,8,3,8,226,8,8,1,8,1,8,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,3,9,
+        239,8,9,1,10,1,10,1,10,1,10,3,10,245,8,10,1,11,1,11,1,11,1,11,1,
+        11,3,11,252,8,11,1,12,1,12,1,12,1,12,1,12,3,12,259,8,12,1,13,1,13,
+        1,14,1,14,1,14,1,14,5,14,267,8,14,10,14,12,14,270,9,14,1,14,1,14,
+        1,14,1,15,1,15,1,15,3,15,278,8,15,1,15,1,15,1,15,1,16,1,16,3,16,
+        285,8,16,1,17,1,17,1,17,1,17,1,17,1,17,4,17,293,8,17,11,17,12,17,
+        294,5,17,297,8,17,10,17,12,17,300,9,17,1,18,1,18,1,18,3,18,305,8,
+        18,1,19,1,19,1,19,1,19,1,19,5,19,312,8,19,10,19,12,19,315,9,19,1,
+        19,1,19,1,19,1,19,1,19,1,19,5,19,323,8,19,10,19,12,19,326,9,19,1,
+        19,1,19,3,19,330,8,19,1,20,1,20,1,20,1,20,1,21,1,21,1,21,1,21,1,
+        21,1,21,1,21,1,21,1,22,1,22,1,23,1,23,1,24,1,24,1,25,1,25,1,26,1,
+        26,1,27,1,27,1,28,1,28,1,29,1,29,1,29,0,2,0,34,30,0,2,4,6,8,10,12,
+        14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,
+        58,0,4,1,0,58,59,1,0,44,45,6,0,5,5,15,19,21,21,24,25,28,36,38,54,
+        5,0,5,5,15,19,21,21,24,24,38,47,394,0,76,1,0,0,0,2,169,1,0,0,0,4,
+        179,1,0,0,0,6,181,1,0,0,0,8,183,1,0,0,0,10,193,1,0,0,0,12,195,1,
+        0,0,0,14,207,1,0,0,0,16,215,1,0,0,0,18,229,1,0,0,0,20,244,1,0,0,
+        0,22,251,1,0,0,0,24,258,1,0,0,0,26,260,1,0,0,0,28,262,1,0,0,0,30,
+        274,1,0,0,0,32,284,1,0,0,0,34,286,1,0,0,0,36,304,1,0,0,0,38,306,
+        1,0,0,0,40,331,1,0,0,0,42,335,1,0,0,0,44,343,1,0,0,0,46,345,1,0,
+        0,0,48,347,1,0,0,0,50,349,1,0,0,0,52,351,1,0,0,0,54,353,1,0,0,0,
+        56,355,1,0,0,0,58,357,1,0,0,0,60,61,6,0,-1,0,61,77,3,4,2,0,62,77,
+        3,56,28,0,63,64,3,56,28,0,64,65,5,1,0,0,65,67,1,0,0,0,66,63,1,0,
+        0,0,67,68,1,0,0,0,68,66,1,0,0,0,68,69,1,0,0,0,69,70,1,0,0,0,70,71,
+        3,58,29,0,71,77,1,0,0,0,72,73,5,4,0,0,73,77,3,0,0,16,74,75,5,5,0,
+        0,75,77,3,0,0,15,76,60,1,0,0,0,76,62,1,0,0,0,76,66,1,0,0,0,76,72,
+        1,0,0,0,76,74,1,0,0,0,77,137,1,0,0,0,78,79,10,14,0,0,79,80,5,6,0,
+        0,80,136,3,0,0,15,81,82,10,13,0,0,82,83,5,7,0,0,83,136,3,0,0,14,
+        84,85,10,12,0,0,85,86,5,8,0,0,86,136,3,0,0,13,87,88,10,11,0,0,88,
+        89,5,4,0,0,89,136,3,0,0,12,90,91,10,10,0,0,91,92,5,9,0,0,92,136,
+        3,0,0,11,93,94,10,9,0,0,94,95,5,10,0,0,95,136,3,0,0,10,96,97,10,
+        8,0,0,97,98,5,11,0,0,98,136,3,0,0,9,99,100,10,7,0,0,100,101,5,12,
+        0,0,101,136,3,0,0,8,102,103,10,6,0,0,103,104,5,13,0,0,104,136,3,
+        0,0,7,105,106,10,5,0,0,106,107,5,14,0,0,107,136,3,0,0,6,108,109,
+        10,4,0,0,109,110,5,15,0,0,110,136,3,0,0,5,111,112,10,3,0,0,112,113,
+        5,16,0,0,113,136,3,0,0,4,114,115,10,2,0,0,115,116,5,17,0,0,116,136,
+        3,0,0,3,117,118,10,1,0,0,118,119,5,18,0,0,119,136,3,0,0,2,120,121,
+        10,20,0,0,121,136,3,2,1,0,122,123,10,19,0,0,123,124,5,2,0,0,124,
+        125,3,56,28,0,125,126,3,2,1,0,126,136,1,0,0,0,127,128,10,18,0,0,
+        128,129,5,2,0,0,129,136,3,56,28,0,130,131,10,17,0,0,131,132,5,3,
+        0,0,132,133,3,56,28,0,133,134,3,2,1,0,134,136,1,0,0,0,135,78,1,0,
+        0,0,135,81,1,0,0,0,135,84,1,0,0,0,135,87,1,0,0,0,135,90,1,0,0,0,
+        135,93,1,0,0,0,135,96,1,0,0,0,135,99,1,0,0,0,135,102,1,0,0,0,135,
+        105,1,0,0,0,135,108,1,0,0,0,135,111,1,0,0,0,135,114,1,0,0,0,135,
+        117,1,0,0,0,135,120,1,0,0,0,135,122,1,0,0,0,135,127,1,0,0,0,135,
+        130,1,0,0,0,136,139,1,0,0,0,137,135,1,0,0,0,137,138,1,0,0,0,138,
+        1,1,0,0,0,139,137,1,0,0,0,140,149,5,19,0,0,141,146,3,0,0,0,142,143,
+        5,20,0,0,143,145,3,0,0,0,144,142,1,0,0,0,145,148,1,0,0,0,146,144,
+        1,0,0,0,146,147,1,0,0,0,147,150,1,0,0,0,148,146,1,0,0,0,149,141,
+        1,0,0,0,149,150,1,0,0,0,150,151,1,0,0,0,151,170,5,21,0,0,152,153,
+        5,19,0,0,153,158,3,58,29,0,154,155,5,20,0,0,155,157,3,58,29,0,156,
+        154,1,0,0,0,157,160,1,0,0,0,158,156,1,0,0,0,158,159,1,0,0,0,159,
+        163,1,0,0,0,160,158,1,0,0,0,161,162,5,22,0,0,162,164,3,32,16,0,163,
+        161,1,0,0,0,163,164,1,0,0,0,164,165,1,0,0,0,165,166,5,23,0,0,166,
+        167,3,0,0,0,167,168,5,21,0,0,168,170,1,0,0,0,169,140,1,0,0,0,169,
+        152,1,0,0,0,170,3,1,0,0,0,171,180,3,6,3,0,172,180,3,8,4,0,173,180,
+        3,10,5,0,174,180,3,12,6,0,175,180,3,16,8,0,176,180,3,26,13,0,177,
+        180,3,28,14,0,178,180,3,42,21,0,179,171,1,0,0,0,179,172,1,0,0,0,
+        179,173,1,0,0,0,179,174,1,0,0,0,179,175,1,0,0,0,179,176,1,0,0,0,
+        179,177,1,0,0,0,179,178,1,0,0,0,180,5,1,0,0,0,181,182,5,24,0,0,182,
+        7,1,0,0,0,183,184,5,19,0,0,184,185,3,0,0,0,185,186,5,21,0,0,186,
+        9,1,0,0,0,187,194,3,44,22,0,188,194,3,46,23,0,189,194,3,48,24,0,
+        190,194,3,50,25,0,191,194,3,52,26,0,192,194,3,54,27,0,193,187,1,
+        0,0,0,193,188,1,0,0,0,193,189,1,0,0,0,193,190,1,0,0,0,193,191,1,
+        0,0,0,193,192,1,0,0,0,194,11,1,0,0,0,195,196,5,25,0,0,196,197,5,
+        26,0,0,197,202,3,14,7,0,198,199,5,20,0,0,199,201,3,14,7,0,200,198,
+        1,0,0,0,201,204,1,0,0,0,202,200,1,0,0,0,202,203,1,0,0,0,203,205,
+        1,0,0,0,204,202,1,0,0,0,205,206,5,27,0,0,206,13,1,0,0,0,207,210,
+        3,56,28,0,208,209,5,22,0,0,209,211,3,32,16,0,210,208,1,0,0,0,210,
+        211,1,0,0,0,211,212,1,0,0,0,212,213,5,13,0,0,213,214,3,4,2,0,214,
+        15,1,0,0,0,215,216,3,18,9,0,216,225,5,26,0,0,217,222,3,24,12,0,218,
+        219,5,20,0,0,219,221,3,24,12,0,220,218,1,0,0,0,221,224,1,0,0,0,222,
+        220,1,0,0,0,222,223,1,0,0,0,223,226,1,0,0,0,224,222,1,0,0,0,225,
+        217,1,0,0,0,225,226,1,0,0,0,226,227,1,0,0,0,227,228,5,27,0,0,228,
+        17,1,0,0,0,229,238,3,22,11,0,230,231,5,19,0,0,231,232,3,32,16,0,
+        232,233,5,21,0,0,233,239,1,0,0,0,234,235,5,9,0,0,235,236,3,32,16,
+        0,236,237,5,10,0,0,237,239,1,0,0,0,238,230,1,0,0,0,238,234,1,0,0,
+        0,238,239,1,0,0,0,239,19,1,0,0,0,240,245,5,28,0,0,241,245,5,29,0,
+        0,242,245,5,30,0,0,243,245,5,31,0,0,244,240,1,0,0,0,244,241,1,0,
+        0,0,244,242,1,0,0,0,244,243,1,0,0,0,245,21,1,0,0,0,246,252,5,32,
+        0,0,247,252,5,33,0,0,248,252,5,34,0,0,249,252,5,35,0,0,250,252,5,
+        36,0,0,251,246,1,0,0,0,251,247,1,0,0,0,251,248,1,0,0,0,251,249,1,
+        0,0,0,251,250,1,0,0,0,252,23,1,0,0,0,253,259,3,0,0,0,254,255,3,0,
+        0,0,255,256,5,37,0,0,256,257,3,0,0,0,257,259,1,0,0,0,258,253,1,0,
+        0,0,258,254,1,0,0,0,259,25,1,0,0,0,260,261,3,36,18,0,261,27,1,0,
+        0,0,262,263,5,38,0,0,263,268,3,30,15,0,264,265,5,20,0,0,265,267,
+        3,30,15,0,266,264,1,0,0,0,267,270,1,0,0,0,268,266,1,0,0,0,268,269,
+        1,0,0,0,269,271,1,0,0,0,270,268,1,0,0,0,271,272,5,39,0,0,272,273,
+        3,0,0,0,273,29,1,0,0,0,274,277,3,56,28,0,275,276,5,22,0,0,276,278,
+        3,32,16,0,277,275,1,0,0,0,277,278,1,0,0,0,278,279,1,0,0,0,279,280,
+        5,13,0,0,280,281,3,0,0,0,281,31,1,0,0,0,282,285,3,36,18,0,283,285,
+        3,34,17,0,284,282,1,0,0,0,284,283,1,0,0,0,285,33,1,0,0,0,286,287,
+        6,17,-1,0,287,288,3,56,28,0,288,298,1,0,0,0,289,292,10,1,0,0,290,
+        291,5,1,0,0,291,293,3,58,29,0,292,290,1,0,0,0,293,294,1,0,0,0,294,
+        292,1,0,0,0,294,295,1,0,0,0,295,297,1,0,0,0,296,289,1,0,0,0,297,
+        300,1,0,0,0,298,296,1,0,0,0,298,299,1,0,0,0,299,35,1,0,0,0,300,298,
+        1,0,0,0,301,305,3,18,9,0,302,305,3,20,10,0,303,305,3,38,19,0,304,
+        301,1,0,0,0,304,302,1,0,0,0,304,303,1,0,0,0,305,37,1,0,0,0,306,329,
+        5,25,0,0,307,308,5,19,0,0,308,313,3,40,20,0,309,310,5,20,0,0,310,
+        312,3,40,20,0,311,309,1,0,0,0,312,315,1,0,0,0,313,311,1,0,0,0,313,
+        314,1,0,0,0,314,316,1,0,0,0,315,313,1,0,0,0,316,317,5,21,0,0,317,
+        330,1,0,0,0,318,319,5,9,0,0,319,324,3,40,20,0,320,321,5,20,0,0,321,
+        323,3,40,20,0,322,320,1,0,0,0,323,326,1,0,0,0,324,322,1,0,0,0,324,
+        325,1,0,0,0,325,327,1,0,0,0,326,324,1,0,0,0,327,328,5,10,0,0,328,
+        330,1,0,0,0,329,307,1,0,0,0,329,318,1,0,0,0,329,330,1,0,0,0,330,
+        39,1,0,0,0,331,332,3,56,28,0,332,333,5,22,0,0,333,334,3,32,16,0,
+        334,41,1,0,0,0,335,336,5,40,0,0,336,337,3,0,0,0,337,338,5,41,0,0,
+        338,339,3,0,0,0,339,340,5,42,0,0,340,341,3,0,0,0,341,342,5,43,0,
+        0,342,43,1,0,0,0,343,344,7,0,0,0,344,45,1,0,0,0,345,346,5,55,0,0,
+        346,47,1,0,0,0,347,348,7,1,0,0,348,49,1,0,0,0,349,350,5,6,0,0,350,
+        51,1,0,0,0,351,352,5,46,0,0,352,53,1,0,0,0,353,354,5,47,0,0,354,
+        55,1,0,0,0,355,356,8,2,0,0,356,57,1,0,0,0,357,358,8,3,0,0,358,59,
+        1,0,0,0,28,68,76,135,137,146,149,158,163,169,179,193,202,210,222,
+        225,238,244,251,258,268,277,284,294,298,304,313,324,329
+    ]
 
 class OclExpressionParser ( Parser ):
 
@@ -191,15 +153,15 @@ class OclExpressionParser ( Parser ):
     sharedContextCache = PredictionContextCache()
 
     literalNames = [ "<INVALID>", "'::'", "'.'", "'->'", "'-'", "'not'", 
-                     "'*'", "'/'", "'+'", "'='", "'<'", "'<='", "'>'", "'>='", 
-                     "'and'", "'or'", "'xor'", "'implies'", "'('", "','", 
-                     "')'", "'|'", "'self'", "'Tuple'", "'{'", "'}'", "':'", 
-                     "'String'", "'Integer'", "'UnlimitedNatural'", "'Boolean'", 
-                     "'Collection'", "'Bag'", "'OrderedSet'", "'Sequence'", 
-                     "'Set'", "'..'", "'let'", "'in'", "'if'", "'then'", 
-                     "'else'", "'endif'", "'true'", "'false'", "'invalid'", 
-                     "'null'", "'Lambda'", "'OclAny'", "'OclInvalid'", "'OclMessage'", 
-                     "'OclSelf'", "'OclVoid'", "'Real'" ]
+                     "'*'", "'/'", "'+'", "'<'", "'>'", "'<='", "'>='", 
+                     "'='", "'<>'", "'and'", "'or'", "'xor'", "'implies'", 
+                     "'('", "','", "')'", "':'", "'|'", "'self'", "'Tuple'", 
+                     "'{'", "'}'", "'String'", "'Integer'", "'UnlimitedNatural'", 
+                     "'Boolean'", "'Collection'", "'Bag'", "'OrderedSet'", 
+                     "'Sequence'", "'Set'", "'..'", "'let'", "'in'", "'if'", 
+                     "'then'", "'else'", "'endif'", "'true'", "'false'", 
+                     "'invalid'", "'null'", "'Lambda'", "'OclAny'", "'OclInvalid'", 
+                     "'OclMessage'", "'OclSelf'", "'OclVoid'", "'Real'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
@@ -214,7 +176,7 @@ class OclExpressionParser ( Parser ):
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "STRING", "SPECIAL_VARNAME", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "STRING", "SPECIAL_VARNAME", 
                       "VARNAME", "INT", "FLOAT", "WS" ]
 
     RULE_oclExp = 0
@@ -312,16 +274,17 @@ class OclExpressionParser ( Parser ):
     T__50=51
     T__51=52
     T__52=53
-    STRING=54
-    SPECIAL_VARNAME=55
-    VARNAME=56
-    INT=57
-    FLOAT=58
-    WS=59
+    T__53=54
+    STRING=55
+    SPECIAL_VARNAME=56
+    VARNAME=57
+    INT=58
+    FLOAT=59
+    WS=60
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.9.2")
+        self.checkVersion("4.13.2")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -731,7 +694,7 @@ class OclExpressionParser ( Parser ):
                 self.state = 72
                 localctx.operator = self.match(OclExpressionParser.T__3)
                 self.state = 73
-                localctx.expression = self.oclExp(15)
+                localctx.expression = self.oclExp(16)
                 pass
 
             elif la_ == 5:
@@ -741,12 +704,12 @@ class OclExpressionParser ( Parser ):
                 self.state = 74
                 localctx.operator = self.match(OclExpressionParser.T__4)
                 self.state = 75
-                localctx.expression = self.oclExp(14)
+                localctx.expression = self.oclExp(15)
                 pass
 
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 134
+            self.state = 137
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -754,7 +717,7 @@ class OclExpressionParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 132
+                    self.state = 135
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
                     if la_ == 1:
@@ -762,13 +725,13 @@ class OclExpressionParser ( Parser ):
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 78
-                        if not self.precpred(self._ctx, 13):
+                        if not self.precpred(self._ctx, 14):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 13)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 14)")
                         self.state = 79
                         localctx.operator = self.match(OclExpressionParser.T__5)
                         self.state = 80
-                        localctx.right = self.oclExp(14)
+                        localctx.right = self.oclExp(15)
                         pass
 
                     elif la_ == 2:
@@ -776,13 +739,13 @@ class OclExpressionParser ( Parser ):
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 81
-                        if not self.precpred(self._ctx, 12):
+                        if not self.precpred(self._ctx, 13):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 12)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 13)")
                         self.state = 82
                         localctx.operator = self.match(OclExpressionParser.T__6)
                         self.state = 83
-                        localctx.right = self.oclExp(13)
+                        localctx.right = self.oclExp(14)
                         pass
 
                     elif la_ == 3:
@@ -790,13 +753,13 @@ class OclExpressionParser ( Parser ):
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 84
-                        if not self.precpred(self._ctx, 11):
+                        if not self.precpred(self._ctx, 12):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 11)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 12)")
                         self.state = 85
                         localctx.operator = self.match(OclExpressionParser.T__7)
                         self.state = 86
-                        localctx.right = self.oclExp(12)
+                        localctx.right = self.oclExp(13)
                         pass
 
                     elif la_ == 4:
@@ -804,13 +767,13 @@ class OclExpressionParser ( Parser ):
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 87
-                        if not self.precpred(self._ctx, 10):
+                        if not self.precpred(self._ctx, 11):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 10)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 11)")
                         self.state = 88
                         localctx.operator = self.match(OclExpressionParser.T__3)
                         self.state = 89
-                        localctx.right = self.oclExp(11)
+                        localctx.right = self.oclExp(12)
                         pass
 
                     elif la_ == 5:
@@ -818,13 +781,13 @@ class OclExpressionParser ( Parser ):
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 90
-                        if not self.precpred(self._ctx, 9):
+                        if not self.precpred(self._ctx, 10):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 9)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 10)")
                         self.state = 91
                         localctx.operator = self.match(OclExpressionParser.T__8)
                         self.state = 92
-                        localctx.right = self.oclExp(10)
+                        localctx.right = self.oclExp(11)
                         pass
 
                     elif la_ == 6:
@@ -832,13 +795,13 @@ class OclExpressionParser ( Parser ):
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 93
-                        if not self.precpred(self._ctx, 8):
+                        if not self.precpred(self._ctx, 9):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 8)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 9)")
                         self.state = 94
                         localctx.operator = self.match(OclExpressionParser.T__9)
                         self.state = 95
-                        localctx.right = self.oclExp(9)
+                        localctx.right = self.oclExp(10)
                         pass
 
                     elif la_ == 7:
@@ -846,13 +809,13 @@ class OclExpressionParser ( Parser ):
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 96
-                        if not self.precpred(self._ctx, 7):
+                        if not self.precpred(self._ctx, 8):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 7)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 8)")
                         self.state = 97
                         localctx.operator = self.match(OclExpressionParser.T__10)
                         self.state = 98
-                        localctx.right = self.oclExp(8)
+                        localctx.right = self.oclExp(9)
                         pass
 
                     elif la_ == 8:
@@ -860,13 +823,13 @@ class OclExpressionParser ( Parser ):
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 99
-                        if not self.precpred(self._ctx, 6):
+                        if not self.precpred(self._ctx, 7):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 6)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 7)")
                         self.state = 100
                         localctx.operator = self.match(OclExpressionParser.T__11)
                         self.state = 101
-                        localctx.right = self.oclExp(7)
+                        localctx.right = self.oclExp(8)
                         pass
 
                     elif la_ == 9:
@@ -874,27 +837,27 @@ class OclExpressionParser ( Parser ):
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 102
-                        if not self.precpred(self._ctx, 5):
+                        if not self.precpred(self._ctx, 6):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 6)")
                         self.state = 103
                         localctx.operator = self.match(OclExpressionParser.T__12)
                         self.state = 104
-                        localctx.right = self.oclExp(6)
+                        localctx.right = self.oclExp(7)
                         pass
 
                     elif la_ == 10:
-                        localctx = OclExpressionParser.BooleanBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx = OclExpressionParser.ComparisonBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 105
-                        if not self.precpred(self._ctx, 4):
+                        if not self.precpred(self._ctx, 5):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
                         self.state = 106
                         localctx.operator = self.match(OclExpressionParser.T__13)
                         self.state = 107
-                        localctx.right = self.oclExp(5)
+                        localctx.right = self.oclExp(6)
                         pass
 
                     elif la_ == 11:
@@ -902,13 +865,13 @@ class OclExpressionParser ( Parser ):
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 108
-                        if not self.precpred(self._ctx, 3):
+                        if not self.precpred(self._ctx, 4):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
                         self.state = 109
                         localctx.operator = self.match(OclExpressionParser.T__14)
                         self.state = 110
-                        localctx.right = self.oclExp(4)
+                        localctx.right = self.oclExp(5)
                         pass
 
                     elif la_ == 12:
@@ -916,13 +879,13 @@ class OclExpressionParser ( Parser ):
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 111
-                        if not self.precpred(self._ctx, 2):
+                        if not self.precpred(self._ctx, 3):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
                         self.state = 112
                         localctx.operator = self.match(OclExpressionParser.T__15)
                         self.state = 113
-                        localctx.right = self.oclExp(3)
+                        localctx.right = self.oclExp(4)
                         pass
 
                     elif la_ == 13:
@@ -930,75 +893,89 @@ class OclExpressionParser ( Parser ):
                         localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 114
-                        if not self.precpred(self._ctx, 1):
+                        if not self.precpred(self._ctx, 2):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
                         self.state = 115
                         localctx.operator = self.match(OclExpressionParser.T__16)
                         self.state = 116
-                        localctx.right = self.oclExp(2)
+                        localctx.right = self.oclExp(3)
                         pass
 
                     elif la_ == 14:
-                        localctx = OclExpressionParser.CallExpressionContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
-                        localctx.expression = _prevctx
+                        localctx = OclExpressionParser.BooleanBinaryOperationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.left = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 117
-                        if not self.precpred(self._ctx, 19):
+                        if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 19)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                         self.state = 118
-                        self.argExp()
+                        localctx.operator = self.match(OclExpressionParser.T__17)
+                        self.state = 119
+                        localctx.right = self.oclExp(2)
                         pass
 
                     elif la_ == 15:
-                        localctx = OclExpressionParser.MethodCallContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx = OclExpressionParser.CallExpressionContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
                         localctx.expression = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
-                        self.state = 119
-                        if not self.precpred(self._ctx, 18):
-                            from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 18)")
                         self.state = 120
-                        self.match(OclExpressionParser.T__1)
+                        if not self.precpred(self._ctx, 20):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 20)")
                         self.state = 121
-                        localctx.attname = self.unrestrictedName()
-                        self.state = 122
                         self.argExp()
                         pass
 
                     elif la_ == 16:
-                        localctx = OclExpressionParser.AttributeNavigationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx = OclExpressionParser.MethodCallContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
                         localctx.expression = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
-                        self.state = 124
-                        if not self.precpred(self._ctx, 17):
+                        self.state = 122
+                        if not self.precpred(self._ctx, 19):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 17)")
-                        self.state = 125
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 19)")
+                        self.state = 123
                         self.match(OclExpressionParser.T__1)
-                        self.state = 126
+                        self.state = 124
                         localctx.attname = self.unrestrictedName()
+                        self.state = 125
+                        self.argExp()
                         pass
 
                     elif la_ == 17:
-                        localctx = OclExpressionParser.CollectionCallContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx = OclExpressionParser.AttributeNavigationContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
                         localctx.expression = _prevctx
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 127
-                        if not self.precpred(self._ctx, 16):
+                        if not self.precpred(self._ctx, 18):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 16)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 18)")
                         self.state = 128
-                        self.match(OclExpressionParser.T__2)
+                        self.match(OclExpressionParser.T__1)
                         self.state = 129
                         localctx.attname = self.unrestrictedName()
+                        pass
+
+                    elif la_ == 18:
+                        localctx = OclExpressionParser.CollectionCallContext(self, OclExpressionParser.OclExpContext(self, _parentctx, _parentState))
+                        localctx.expression = _prevctx
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_oclExp)
                         self.state = 130
+                        if not self.precpred(self._ctx, 17):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 17)")
+                        self.state = 131
+                        self.match(OclExpressionParser.T__2)
+                        self.state = 132
+                        localctx.attname = self.unrestrictedName()
+                        self.state = 133
                         self.argExp()
                         pass
 
              
-                self.state = 136
+                self.state = 139
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
 
@@ -1032,18 +1009,21 @@ class OclExpressionParser ( Parser ):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a OclExpressionParser.ArgExpContext
             super().__init__(parser)
-            self._unrestrictedName = None # UnrestrictedNameContext
-            self.varnames = list() # of UnrestrictedNameContexts
+            self._unreservedName = None # UnreservedNameContext
+            self.varnames = list() # of UnreservedNameContexts
             self.copyFrom(ctx)
 
         def oclExp(self):
             return self.getTypedRuleContext(OclExpressionParser.OclExpContext,0)
 
-        def unrestrictedName(self, i:int=None):
+        def unreservedName(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(OclExpressionParser.UnrestrictedNameContext)
+                return self.getTypedRuleContexts(OclExpressionParser.UnreservedNameContext)
             else:
-                return self.getTypedRuleContext(OclExpressionParser.UnrestrictedNameContext,i)
+                return self.getTypedRuleContext(OclExpressionParser.UnreservedNameContext,i)
+
+        def typeExpCS(self):
+            return self.getTypedRuleContext(OclExpressionParser.TypeExpCSContext,0)
 
 
         def enterRule(self, listener:ParseTreeListener):
@@ -1096,65 +1076,75 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 2, self.RULE_argExp)
         self._la = 0 # Token type
         try:
-            self.state = 162
+            self.state = 169
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,7,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
                 localctx = OclExpressionParser.ArgumentsExpContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 137
-                self.match(OclExpressionParser.T__17)
-                self.state = 146
+                self.state = 140
+                self.match(OclExpressionParser.T__18)
+                self.state = 149
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << OclExpressionParser.T__0) | (1 << OclExpressionParser.T__1) | (1 << OclExpressionParser.T__2) | (1 << OclExpressionParser.T__3) | (1 << OclExpressionParser.T__4) | (1 << OclExpressionParser.T__5) | (1 << OclExpressionParser.T__6) | (1 << OclExpressionParser.T__7) | (1 << OclExpressionParser.T__8) | (1 << OclExpressionParser.T__9) | (1 << OclExpressionParser.T__10) | (1 << OclExpressionParser.T__11) | (1 << OclExpressionParser.T__12) | (1 << OclExpressionParser.T__17) | (1 << OclExpressionParser.T__18) | (1 << OclExpressionParser.T__20) | (1 << OclExpressionParser.T__21) | (1 << OclExpressionParser.T__22) | (1 << OclExpressionParser.T__23) | (1 << OclExpressionParser.T__24) | (1 << OclExpressionParser.T__25) | (1 << OclExpressionParser.T__26) | (1 << OclExpressionParser.T__27) | (1 << OclExpressionParser.T__28) | (1 << OclExpressionParser.T__29) | (1 << OclExpressionParser.T__30) | (1 << OclExpressionParser.T__31) | (1 << OclExpressionParser.T__32) | (1 << OclExpressionParser.T__33) | (1 << OclExpressionParser.T__34) | (1 << OclExpressionParser.T__35) | (1 << OclExpressionParser.T__36) | (1 << OclExpressionParser.T__38) | (1 << OclExpressionParser.T__42) | (1 << OclExpressionParser.T__43) | (1 << OclExpressionParser.T__44) | (1 << OclExpressionParser.T__45) | (1 << OclExpressionParser.STRING) | (1 << OclExpressionParser.SPECIAL_VARNAME) | (1 << OclExpressionParser.VARNAME) | (1 << OclExpressionParser.INT) | (1 << OclExpressionParser.FLOAT) | (1 << OclExpressionParser.WS))) != 0):
-                    self.state = 138
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & 2270079744250249214) != 0):
+                    self.state = 141
                     self.oclExp(0)
-                    self.state = 143
+                    self.state = 146
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    while _la==OclExpressionParser.T__18:
-                        self.state = 139
-                        self.match(OclExpressionParser.T__18)
-                        self.state = 140
+                    while _la==20:
+                        self.state = 142
+                        self.match(OclExpressionParser.T__19)
+                        self.state = 143
                         self.oclExp(0)
-                        self.state = 145
+                        self.state = 148
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
 
 
 
-                self.state = 148
-                self.match(OclExpressionParser.T__19)
+                self.state = 151
+                self.match(OclExpressionParser.T__20)
                 pass
 
             elif la_ == 2:
                 localctx = OclExpressionParser.LambdaExpContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 149
-                self.match(OclExpressionParser.T__17)
-                self.state = 150
-                localctx._unrestrictedName = self.unrestrictedName()
-                localctx.varnames.append(localctx._unrestrictedName)
-                self.state = 155
+                self.state = 152
+                self.match(OclExpressionParser.T__18)
+                self.state = 153
+                localctx._unreservedName = self.unreservedName()
+                localctx.varnames.append(localctx._unreservedName)
+                self.state = 158
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==OclExpressionParser.T__18:
-                    self.state = 151
-                    self.match(OclExpressionParser.T__18)
-                    self.state = 152
-                    localctx._unrestrictedName = self.unrestrictedName()
-                    localctx.varnames.append(localctx._unrestrictedName)
-                    self.state = 157
+                while _la==20:
+                    self.state = 154
+                    self.match(OclExpressionParser.T__19)
+                    self.state = 155
+                    localctx._unreservedName = self.unreservedName()
+                    localctx.varnames.append(localctx._unreservedName)
+                    self.state = 160
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 158
-                self.match(OclExpressionParser.T__20)
-                self.state = 159
+                self.state = 163
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                if _la==22:
+                    self.state = 161
+                    self.match(OclExpressionParser.T__21)
+                    self.state = 162
+                    self.typeExpCS()
+
+
+                self.state = 165
+                self.match(OclExpressionParser.T__22)
+                self.state = 166
                 self.oclExp(0)
-                self.state = 160
-                self.match(OclExpressionParser.T__19)
+                self.state = 167
+                self.match(OclExpressionParser.T__20)
                 pass
 
 
@@ -1231,54 +1221,54 @@ class OclExpressionParser ( Parser ):
         localctx = OclExpressionParser.PrimaryExpContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_primaryExp)
         try:
-            self.state = 172
+            self.state = 179
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 164
+                self.state = 171
                 self.selfExp()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 165
+                self.state = 172
                 self.nestedExp()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 166
+                self.state = 173
                 self.primitiveLiteralExp()
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 167
+                self.state = 174
                 self.tupleLiteralExp()
                 pass
 
             elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 168
+                self.state = 175
                 self.collectionLiteralExp()
                 pass
 
             elif la_ == 6:
                 self.enterOuterAlt(localctx, 6)
-                self.state = 169
+                self.state = 176
                 self.typeLiteralExp()
                 pass
 
             elif la_ == 7:
                 self.enterOuterAlt(localctx, 7)
-                self.state = 170
+                self.state = 177
                 self.letExp()
                 pass
 
             elif la_ == 8:
                 self.enterOuterAlt(localctx, 8)
-                self.state = 171
+                self.state = 178
                 self.ifExp()
                 pass
 
@@ -1326,8 +1316,8 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_selfExp)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 174
-            self.match(OclExpressionParser.T__21)
+            self.state = 181
+            self.match(OclExpressionParser.T__23)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1375,12 +1365,12 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_nestedExp)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 176
-            self.match(OclExpressionParser.T__17)
-            self.state = 177
+            self.state = 183
+            self.match(OclExpressionParser.T__18)
+            self.state = 184
             localctx.nested = self.oclExp(0)
-            self.state = 178
-            self.match(OclExpressionParser.T__19)
+            self.state = 185
+            self.match(OclExpressionParser.T__20)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1563,43 +1553,43 @@ class OclExpressionParser ( Parser ):
         localctx = OclExpressionParser.PrimitiveLiteralExpContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_primitiveLiteralExp)
         try:
-            self.state = 186
+            self.state = 193
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [OclExpressionParser.INT, OclExpressionParser.FLOAT]:
+            if token in [58, 59]:
                 localctx = OclExpressionParser.NumberLiteralContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 180
+                self.state = 187
                 self.numberLiteralExpCS()
                 pass
-            elif token in [OclExpressionParser.STRING]:
+            elif token in [55]:
                 localctx = OclExpressionParser.StringLiteralContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 181
+                self.state = 188
                 self.stringLiteralExpCS()
                 pass
-            elif token in [OclExpressionParser.T__42, OclExpressionParser.T__43]:
+            elif token in [44, 45]:
                 localctx = OclExpressionParser.BooleanLiteralContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
-                self.state = 182
+                self.state = 189
                 self.booleanLiteralExpCS()
                 pass
-            elif token in [OclExpressionParser.T__5]:
+            elif token in [6]:
                 localctx = OclExpressionParser.UnlimitedNaturalLiteralContext(self, localctx)
                 self.enterOuterAlt(localctx, 4)
-                self.state = 183
+                self.state = 190
                 self.unlimitedNaturalLiteralCS()
                 pass
-            elif token in [OclExpressionParser.T__44]:
+            elif token in [46]:
                 localctx = OclExpressionParser.InvalidLiteralContext(self, localctx)
                 self.enterOuterAlt(localctx, 5)
-                self.state = 184
+                self.state = 191
                 self.invalidLiteralExpCS()
                 pass
-            elif token in [OclExpressionParser.T__45]:
+            elif token in [47]:
                 localctx = OclExpressionParser.NullLiteralContext(self, localctx)
                 self.enterOuterAlt(localctx, 6)
-                self.state = 185
+                self.state = 192
                 self.nullLiteralExpCS()
                 pass
             else:
@@ -1655,26 +1645,26 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 188
-            self.match(OclExpressionParser.T__22)
-            self.state = 189
-            self.match(OclExpressionParser.T__23)
-            self.state = 190
-            self.tupleLiteralPartCS()
             self.state = 195
+            self.match(OclExpressionParser.T__24)
+            self.state = 196
+            self.match(OclExpressionParser.T__25)
+            self.state = 197
+            self.tupleLiteralPartCS()
+            self.state = 202
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==OclExpressionParser.T__18:
-                self.state = 191
-                self.match(OclExpressionParser.T__18)
-                self.state = 192
+            while _la==20:
+                self.state = 198
+                self.match(OclExpressionParser.T__19)
+                self.state = 199
                 self.tupleLiteralPartCS()
-                self.state = 197
+                self.state = 204
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 198
-            self.match(OclExpressionParser.T__24)
+            self.state = 205
+            self.match(OclExpressionParser.T__26)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1730,21 +1720,21 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 200
+            self.state = 207
             self.unrestrictedName()
-            self.state = 203
+            self.state = 210
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==OclExpressionParser.T__25:
-                self.state = 201
-                self.match(OclExpressionParser.T__25)
-                self.state = 202
+            if _la==22:
+                self.state = 208
+                self.match(OclExpressionParser.T__21)
+                self.state = 209
                 self.typeExpCS()
 
 
-            self.state = 205
-            self.match(OclExpressionParser.T__8)
-            self.state = 206
+            self.state = 212
+            self.match(OclExpressionParser.T__12)
+            self.state = 213
             self.primaryExp()
         except RecognitionException as re:
             localctx.exception = re
@@ -1802,34 +1792,34 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 208
+            self.state = 215
             self.collectionTypeCS()
-            self.state = 209
-            self.match(OclExpressionParser.T__23)
-            self.state = 218
+            self.state = 216
+            self.match(OclExpressionParser.T__25)
+            self.state = 225
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
             if la_ == 1:
-                self.state = 210
+                self.state = 217
                 localctx._collectionLiteralPartCS = self.collectionLiteralPartCS()
                 localctx.expressions.append(localctx._collectionLiteralPartCS)
-                self.state = 215
+                self.state = 222
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==OclExpressionParser.T__18:
-                    self.state = 211
-                    self.match(OclExpressionParser.T__18)
-                    self.state = 212
+                while _la==20:
+                    self.state = 218
+                    self.match(OclExpressionParser.T__19)
+                    self.state = 219
                     localctx._collectionLiteralPartCS = self.collectionLiteralPartCS()
                     localctx.expressions.append(localctx._collectionLiteralPartCS)
-                    self.state = 217
+                    self.state = 224
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
 
 
-            self.state = 220
-            self.match(OclExpressionParser.T__24)
+            self.state = 227
+            self.match(OclExpressionParser.T__26)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1880,26 +1870,26 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_collectionTypeCS)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 222
+            self.state = 229
             self.collectionTypeIdentifier()
-            self.state = 231
+            self.state = 238
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,15,self._ctx)
             if la_ == 1:
-                self.state = 223
-                self.match(OclExpressionParser.T__17)
-                self.state = 224
+                self.state = 230
+                self.match(OclExpressionParser.T__18)
+                self.state = 231
                 self.typeExpCS()
-                self.state = 225
-                self.match(OclExpressionParser.T__19)
+                self.state = 232
+                self.match(OclExpressionParser.T__20)
 
             elif la_ == 2:
-                self.state = 227
-                self.match(OclExpressionParser.T__9)
-                self.state = 228
+                self.state = 234
+                self.match(OclExpressionParser.T__8)
+                self.state = 235
                 self.typeExpCS()
-                self.state = 229
-                self.match(OclExpressionParser.T__11)
+                self.state = 236
+                self.match(OclExpressionParser.T__9)
 
 
         except RecognitionException as re:
@@ -2022,32 +2012,32 @@ class OclExpressionParser ( Parser ):
         localctx = OclExpressionParser.PrimitiveTypeCSContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_primitiveTypeCS)
         try:
-            self.state = 237
+            self.state = 244
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [OclExpressionParser.T__26]:
+            if token in [28]:
                 localctx = OclExpressionParser.StringTypeContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 233
-                self.match(OclExpressionParser.T__26)
-                pass
-            elif token in [OclExpressionParser.T__27]:
-                localctx = OclExpressionParser.IntegerTypeContext(self, localctx)
-                self.enterOuterAlt(localctx, 2)
-                self.state = 234
+                self.state = 240
                 self.match(OclExpressionParser.T__27)
                 pass
-            elif token in [OclExpressionParser.T__28]:
-                localctx = OclExpressionParser.UnlimitedNaturalTypeContext(self, localctx)
-                self.enterOuterAlt(localctx, 3)
-                self.state = 235
+            elif token in [29]:
+                localctx = OclExpressionParser.IntegerTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 2)
+                self.state = 241
                 self.match(OclExpressionParser.T__28)
                 pass
-            elif token in [OclExpressionParser.T__29]:
+            elif token in [30]:
+                localctx = OclExpressionParser.UnlimitedNaturalTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 3)
+                self.state = 242
+                self.match(OclExpressionParser.T__29)
+                pass
+            elif token in [31]:
                 localctx = OclExpressionParser.BooleanTypeContext(self, localctx)
                 self.enterOuterAlt(localctx, 4)
-                self.state = 236
-                self.match(OclExpressionParser.T__29)
+                self.state = 243
+                self.match(OclExpressionParser.T__30)
                 pass
             else:
                 raise NoViableAltException(self)
@@ -2194,38 +2184,38 @@ class OclExpressionParser ( Parser ):
         localctx = OclExpressionParser.CollectionTypeIdentifierContext(self, self._ctx, self.state)
         self.enterRule(localctx, 22, self.RULE_collectionTypeIdentifier)
         try:
-            self.state = 244
+            self.state = 251
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [OclExpressionParser.T__30]:
+            if token in [32]:
                 localctx = OclExpressionParser.CollectionTypeContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 239
-                self.match(OclExpressionParser.T__30)
-                pass
-            elif token in [OclExpressionParser.T__31]:
-                localctx = OclExpressionParser.BagTypeContext(self, localctx)
-                self.enterOuterAlt(localctx, 2)
-                self.state = 240
+                self.state = 246
                 self.match(OclExpressionParser.T__31)
                 pass
-            elif token in [OclExpressionParser.T__32]:
-                localctx = OclExpressionParser.OrderedSetTypeContext(self, localctx)
-                self.enterOuterAlt(localctx, 3)
-                self.state = 241
+            elif token in [33]:
+                localctx = OclExpressionParser.BagTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 2)
+                self.state = 247
                 self.match(OclExpressionParser.T__32)
                 pass
-            elif token in [OclExpressionParser.T__33]:
-                localctx = OclExpressionParser.SequenceTypeContext(self, localctx)
-                self.enterOuterAlt(localctx, 4)
-                self.state = 242
+            elif token in [34]:
+                localctx = OclExpressionParser.OrderedSetTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 3)
+                self.state = 248
                 self.match(OclExpressionParser.T__33)
                 pass
-            elif token in [OclExpressionParser.T__34]:
+            elif token in [35]:
+                localctx = OclExpressionParser.SequenceTypeContext(self, localctx)
+                self.enterOuterAlt(localctx, 4)
+                self.state = 249
+                self.match(OclExpressionParser.T__34)
+                pass
+            elif token in [36]:
                 localctx = OclExpressionParser.SetTypeContext(self, localctx)
                 self.enterOuterAlt(localctx, 5)
-                self.state = 243
-                self.match(OclExpressionParser.T__34)
+                self.state = 250
+                self.match(OclExpressionParser.T__35)
                 pass
             else:
                 raise NoViableAltException(self)
@@ -2281,22 +2271,22 @@ class OclExpressionParser ( Parser ):
         localctx = OclExpressionParser.CollectionLiteralPartCSContext(self, self._ctx, self.state)
         self.enterRule(localctx, 24, self.RULE_collectionLiteralPartCS)
         try:
-            self.state = 251
+            self.state = 258
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,17,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,18,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 246
+                self.state = 253
                 self.oclExp(0)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 247
+                self.state = 254
                 localctx.inf = self.oclExp(0)
-                self.state = 248
-                localctx.isInterval = self.match(OclExpressionParser.T__35)
-                self.state = 249
+                self.state = 255
+                localctx.isInterval = self.match(OclExpressionParser.T__36)
+                self.state = 256
                 localctx.sup = self.oclExp(0)
                 pass
 
@@ -2347,7 +2337,7 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 26, self.RULE_typeLiteralExp)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 253
+            self.state = 260
             self.typeLiteralCS()
         except RecognitionException as re:
             localctx.exception = re
@@ -2405,27 +2395,27 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 255
-            self.match(OclExpressionParser.T__36)
-            self.state = 256
+            self.state = 262
+            self.match(OclExpressionParser.T__37)
+            self.state = 263
             localctx._letVariableCS = self.letVariableCS()
             localctx.variables.append(localctx._letVariableCS)
-            self.state = 261
+            self.state = 268
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==OclExpressionParser.T__18:
-                self.state = 257
-                self.match(OclExpressionParser.T__18)
-                self.state = 258
+            while _la==20:
+                self.state = 264
+                self.match(OclExpressionParser.T__19)
+                self.state = 265
                 localctx._letVariableCS = self.letVariableCS()
                 localctx.variables.append(localctx._letVariableCS)
-                self.state = 263
+                self.state = 270
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
-            self.state = 264
-            self.match(OclExpressionParser.T__37)
-            self.state = 265
+            self.state = 271
+            self.match(OclExpressionParser.T__38)
+            self.state = 272
             self.oclExp(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -2482,21 +2472,21 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 267
+            self.state = 274
             self.unrestrictedName()
-            self.state = 270
+            self.state = 277
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==OclExpressionParser.T__25:
-                self.state = 268
-                self.match(OclExpressionParser.T__25)
-                self.state = 269
+            if _la==22:
+                self.state = 275
+                self.match(OclExpressionParser.T__21)
+                self.state = 276
                 self.typeExpCS()
 
 
-            self.state = 272
-            self.match(OclExpressionParser.T__8)
-            self.state = 273
+            self.state = 279
+            self.match(OclExpressionParser.T__12)
+            self.state = 280
             self.oclExp(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -2547,17 +2537,17 @@ class OclExpressionParser ( Parser ):
         localctx = OclExpressionParser.TypeExpCSContext(self, self._ctx, self.state)
         self.enterRule(localctx, 32, self.RULE_typeExpCS)
         try:
-            self.state = 277
+            self.state = 284
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [OclExpressionParser.T__22, OclExpressionParser.T__26, OclExpressionParser.T__27, OclExpressionParser.T__28, OclExpressionParser.T__29, OclExpressionParser.T__30, OclExpressionParser.T__31, OclExpressionParser.T__32, OclExpressionParser.T__33, OclExpressionParser.T__34]:
+            if token in [25, 28, 29, 30, 31, 32, 33, 34, 35, 36]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 275
+                self.state = 282
                 self.typeLiteralCS()
                 pass
-            elif token in [OclExpressionParser.T__0, OclExpressionParser.T__1, OclExpressionParser.T__2, OclExpressionParser.T__3, OclExpressionParser.T__5, OclExpressionParser.T__6, OclExpressionParser.T__7, OclExpressionParser.T__8, OclExpressionParser.T__9, OclExpressionParser.T__10, OclExpressionParser.T__11, OclExpressionParser.T__12, OclExpressionParser.T__18, OclExpressionParser.T__20, OclExpressionParser.T__23, OclExpressionParser.T__24, OclExpressionParser.T__25, OclExpressionParser.T__35, OclExpressionParser.STRING, OclExpressionParser.SPECIAL_VARNAME, OclExpressionParser.VARNAME, OclExpressionParser.INT, OclExpressionParser.FLOAT, OclExpressionParser.WS]:
+            elif token in [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 20, 22, 23, 26, 27, 37, 55, 56, 57, 58, 59, 60]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 276
+                self.state = 283
                 self.typeNameExpCS(0)
                 pass
             else:
@@ -2622,12 +2612,12 @@ class OclExpressionParser ( Parser ):
         self.enterRecursionRule(localctx, 34, self.RULE_typeNameExpCS, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 280
+            self.state = 287
             self.unrestrictedName()
             self._ctx.stop = self._input.LT(-1)
-            self.state = 291
+            self.state = 298
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,22,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,23,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
@@ -2635,29 +2625,29 @@ class OclExpressionParser ( Parser ):
                     _prevctx = localctx
                     localctx = OclExpressionParser.TypeNameExpCSContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_typeNameExpCS)
-                    self.state = 282
+                    self.state = 289
                     if not self.precpred(self._ctx, 1):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
-                    self.state = 285 
+                    self.state = 292 
                     self._errHandler.sync(self)
                     _alt = 1
                     while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                         if _alt == 1:
-                            self.state = 283
+                            self.state = 290
                             self.match(OclExpressionParser.T__0)
-                            self.state = 284
+                            self.state = 291
                             self.unreservedName()
 
                         else:
                             raise NoViableAltException(self)
-                        self.state = 287 
+                        self.state = 294 
                         self._errHandler.sync(self)
-                        _alt = self._interp.adaptivePredict(self._input,21,self._ctx)
+                        _alt = self._interp.adaptivePredict(self._input,22,self._ctx)
              
-                self.state = 293
+                self.state = 300
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,22,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,23,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -2712,22 +2702,22 @@ class OclExpressionParser ( Parser ):
         localctx = OclExpressionParser.TypeLiteralCSContext(self, self._ctx, self.state)
         self.enterRule(localctx, 36, self.RULE_typeLiteralCS)
         try:
-            self.state = 297
+            self.state = 304
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [OclExpressionParser.T__30, OclExpressionParser.T__31, OclExpressionParser.T__32, OclExpressionParser.T__33, OclExpressionParser.T__34]:
+            if token in [32, 33, 34, 35, 36]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 294
+                self.state = 301
                 self.collectionTypeCS()
                 pass
-            elif token in [OclExpressionParser.T__26, OclExpressionParser.T__27, OclExpressionParser.T__28, OclExpressionParser.T__29]:
+            elif token in [28, 29, 30, 31]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 295
+                self.state = 302
                 self.primitiveTypeCS()
                 pass
-            elif token in [OclExpressionParser.T__22]:
+            elif token in [25]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 296
+                self.state = 303
                 self.tupleTypeCS()
                 pass
             else:
@@ -2783,50 +2773,50 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 299
-            self.match(OclExpressionParser.T__22)
-            self.state = 322
+            self.state = 306
+            self.match(OclExpressionParser.T__24)
+            self.state = 329
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,26,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,27,self._ctx)
             if la_ == 1:
-                self.state = 300
-                self.match(OclExpressionParser.T__17)
-                self.state = 301
+                self.state = 307
+                self.match(OclExpressionParser.T__18)
+                self.state = 308
                 self.tuplePartCS()
-                self.state = 306
+                self.state = 313
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==OclExpressionParser.T__18:
-                    self.state = 302
-                    self.match(OclExpressionParser.T__18)
-                    self.state = 303
+                while _la==20:
+                    self.state = 309
+                    self.match(OclExpressionParser.T__19)
+                    self.state = 310
                     self.tuplePartCS()
-                    self.state = 308
+                    self.state = 315
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 309
-                self.match(OclExpressionParser.T__19)
+                self.state = 316
+                self.match(OclExpressionParser.T__20)
 
             elif la_ == 2:
-                self.state = 311
-                self.match(OclExpressionParser.T__9)
-                self.state = 312
+                self.state = 318
+                self.match(OclExpressionParser.T__8)
+                self.state = 319
                 self.tuplePartCS()
-                self.state = 317
+                self.state = 324
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                while _la==OclExpressionParser.T__18:
-                    self.state = 313
-                    self.match(OclExpressionParser.T__18)
-                    self.state = 314
+                while _la==20:
+                    self.state = 320
+                    self.match(OclExpressionParser.T__19)
+                    self.state = 321
                     self.tuplePartCS()
-                    self.state = 319
+                    self.state = 326
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 320
-                self.match(OclExpressionParser.T__11)
+                self.state = 327
+                self.match(OclExpressionParser.T__9)
 
 
         except RecognitionException as re:
@@ -2879,11 +2869,11 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 40, self.RULE_tuplePartCS)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 324
+            self.state = 331
             self.unrestrictedName()
-            self.state = 325
-            self.match(OclExpressionParser.T__25)
-            self.state = 326
+            self.state = 332
+            self.match(OclExpressionParser.T__21)
+            self.state = 333
             self.typeExpCS()
         except RecognitionException as re:
             localctx.exception = re
@@ -2937,20 +2927,20 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 42, self.RULE_ifExp)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 328
-            self.match(OclExpressionParser.T__38)
-            self.state = 329
-            localctx.condition = self.oclExp(0)
-            self.state = 330
+            self.state = 335
             self.match(OclExpressionParser.T__39)
-            self.state = 331
-            localctx.body = self.oclExp(0)
-            self.state = 332
+            self.state = 336
+            localctx.condition = self.oclExp(0)
+            self.state = 337
             self.match(OclExpressionParser.T__40)
-            self.state = 333
-            localctx.else_ = self.oclExp(0)
-            self.state = 334
+            self.state = 338
+            localctx.body = self.oclExp(0)
+            self.state = 339
             self.match(OclExpressionParser.T__41)
+            self.state = 340
+            localctx.else_ = self.oclExp(0)
+            self.state = 341
+            self.match(OclExpressionParser.T__42)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3000,9 +2990,9 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 336
+            self.state = 343
             _la = self._input.LA(1)
-            if not(_la==OclExpressionParser.INT or _la==OclExpressionParser.FLOAT):
+            if not(_la==58 or _la==59):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3052,7 +3042,7 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 46, self.RULE_stringLiteralExpCS)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 338
+            self.state = 345
             self.match(OclExpressionParser.STRING)
         except RecognitionException as re:
             localctx.exception = re
@@ -3098,9 +3088,9 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 340
+            self.state = 347
             _la = self._input.LA(1)
-            if not(_la==OclExpressionParser.T__42 or _la==OclExpressionParser.T__43):
+            if not(_la==44 or _la==45):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3148,7 +3138,7 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 50, self.RULE_unlimitedNaturalLiteralCS)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 342
+            self.state = 349
             self.match(OclExpressionParser.T__5)
         except RecognitionException as re:
             localctx.exception = re
@@ -3193,8 +3183,8 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 52, self.RULE_invalidLiteralExpCS)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 344
-            self.match(OclExpressionParser.T__44)
+            self.state = 351
+            self.match(OclExpressionParser.T__45)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3238,8 +3228,8 @@ class OclExpressionParser ( Parser ):
         self.enterRule(localctx, 54, self.RULE_nullLiteralExpCS)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 346
-            self.match(OclExpressionParser.T__45)
+            self.state = 353
+            self.match(OclExpressionParser.T__46)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3284,9 +3274,9 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 348
+            self.state = 355
             _la = self._input.LA(1)
-            if _la <= 0 or (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << OclExpressionParser.T__4) | (1 << OclExpressionParser.T__13) | (1 << OclExpressionParser.T__14) | (1 << OclExpressionParser.T__15) | (1 << OclExpressionParser.T__16) | (1 << OclExpressionParser.T__17) | (1 << OclExpressionParser.T__19) | (1 << OclExpressionParser.T__21) | (1 << OclExpressionParser.T__22) | (1 << OclExpressionParser.T__26) | (1 << OclExpressionParser.T__27) | (1 << OclExpressionParser.T__28) | (1 << OclExpressionParser.T__29) | (1 << OclExpressionParser.T__30) | (1 << OclExpressionParser.T__31) | (1 << OclExpressionParser.T__32) | (1 << OclExpressionParser.T__33) | (1 << OclExpressionParser.T__34) | (1 << OclExpressionParser.T__36) | (1 << OclExpressionParser.T__37) | (1 << OclExpressionParser.T__38) | (1 << OclExpressionParser.T__39) | (1 << OclExpressionParser.T__40) | (1 << OclExpressionParser.T__41) | (1 << OclExpressionParser.T__42) | (1 << OclExpressionParser.T__43) | (1 << OclExpressionParser.T__44) | (1 << OclExpressionParser.T__45) | (1 << OclExpressionParser.T__46) | (1 << OclExpressionParser.T__47) | (1 << OclExpressionParser.T__48) | (1 << OclExpressionParser.T__49) | (1 << OclExpressionParser.T__50) | (1 << OclExpressionParser.T__51) | (1 << OclExpressionParser.T__52))) != 0):
+            if _la <= 0 or (((_la) & ~0x3f) == 0 and ((1 << _la) & 36028659365019680) != 0):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3335,9 +3325,9 @@ class OclExpressionParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 350
+            self.state = 357
             _la = self._input.LA(1)
-            if _la <= 0 or (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << OclExpressionParser.T__4) | (1 << OclExpressionParser.T__13) | (1 << OclExpressionParser.T__14) | (1 << OclExpressionParser.T__15) | (1 << OclExpressionParser.T__16) | (1 << OclExpressionParser.T__17) | (1 << OclExpressionParser.T__19) | (1 << OclExpressionParser.T__21) | (1 << OclExpressionParser.T__36) | (1 << OclExpressionParser.T__37) | (1 << OclExpressionParser.T__38) | (1 << OclExpressionParser.T__39) | (1 << OclExpressionParser.T__40) | (1 << OclExpressionParser.T__41) | (1 << OclExpressionParser.T__42) | (1 << OclExpressionParser.T__43) | (1 << OclExpressionParser.T__44) | (1 << OclExpressionParser.T__45))) != 0):
+            if _la <= 0 or (((_la) & ~0x3f) == 0 and ((1 << _la) & 281200118693920) != 0):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -3365,75 +3355,79 @@ class OclExpressionParser ( Parser ):
 
     def oclExp_sempred(self, localctx:OclExpContext, predIndex:int):
             if predIndex == 0:
-                return self.precpred(self._ctx, 13)
+                return self.precpred(self._ctx, 14)
          
 
             if predIndex == 1:
-                return self.precpred(self._ctx, 12)
+                return self.precpred(self._ctx, 13)
          
 
             if predIndex == 2:
-                return self.precpred(self._ctx, 11)
+                return self.precpred(self._ctx, 12)
          
 
             if predIndex == 3:
-                return self.precpred(self._ctx, 10)
+                return self.precpred(self._ctx, 11)
          
 
             if predIndex == 4:
-                return self.precpred(self._ctx, 9)
+                return self.precpred(self._ctx, 10)
          
 
             if predIndex == 5:
-                return self.precpred(self._ctx, 8)
+                return self.precpred(self._ctx, 9)
          
 
             if predIndex == 6:
-                return self.precpred(self._ctx, 7)
+                return self.precpred(self._ctx, 8)
          
 
             if predIndex == 7:
-                return self.precpred(self._ctx, 6)
+                return self.precpred(self._ctx, 7)
          
 
             if predIndex == 8:
-                return self.precpred(self._ctx, 5)
+                return self.precpred(self._ctx, 6)
          
 
             if predIndex == 9:
-                return self.precpred(self._ctx, 4)
+                return self.precpred(self._ctx, 5)
          
 
             if predIndex == 10:
-                return self.precpred(self._ctx, 3)
+                return self.precpred(self._ctx, 4)
          
 
             if predIndex == 11:
-                return self.precpred(self._ctx, 2)
+                return self.precpred(self._ctx, 3)
          
 
             if predIndex == 12:
-                return self.precpred(self._ctx, 1)
+                return self.precpred(self._ctx, 2)
          
 
             if predIndex == 13:
-                return self.precpred(self._ctx, 19)
+                return self.precpred(self._ctx, 1)
          
 
             if predIndex == 14:
-                return self.precpred(self._ctx, 18)
+                return self.precpred(self._ctx, 20)
          
 
             if predIndex == 15:
-                return self.precpred(self._ctx, 17)
+                return self.precpred(self._ctx, 19)
          
 
             if predIndex == 16:
-                return self.precpred(self._ctx, 16)
+                return self.precpred(self._ctx, 18)
+         
+
+            if predIndex == 17:
+                return self.precpred(self._ctx, 17)
          
 
     def typeNameExpCS_sempred(self, localctx:TypeNameExpCSContext, predIndex:int):
-            if predIndex == 17:
+            if predIndex == 18:
                 return self.precpred(self._ctx, 1)
          
 
