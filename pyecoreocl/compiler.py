@@ -271,14 +271,14 @@ class DummyVisitor(OclExpressionVisitor):
 rules = {}
 
 
-def collection_call_rule(fun):
+def call_rule(fun):
     names = fun.__name__[5:].split("_")
     function_name = "".join([names[0], *(f.capitalize() for f in names[1:])])
     rules[function_name] = fun
     return fun
 
 
-@collection_call_rule
+@call_rule
 def rule_collect(emitter, ctx):
     emitter.inline("(")
     emitter.visit(ctx.argExp().oclExp())
@@ -293,7 +293,7 @@ def rule_collect(emitter, ctx):
     emitter.inline(")")
 
 
-@collection_call_rule
+@call_rule
 def rule_for_all(emitter, ctx):
     emitter.inline(f"all(")
     emitter.visit(ctx.argExp().oclExp())
@@ -308,10 +308,10 @@ def rule_for_all(emitter, ctx):
     emitter.inline(")")
 
 
-@collection_call_rule
+@call_rule
 def rule_select(emitter, ctx):
     variables = [arg.text for arg in ctx.argExp().varnames]
-    varnames = ', '.join(variables)
+    varnames = ", ".join(variables)
     emitter.inline(f"({varnames}")
     emitter.inline(f" for {varnames} in ")
     if len(variables) > 1:
@@ -325,28 +325,52 @@ def rule_select(emitter, ctx):
     emitter.inline(")")
 
 
-@collection_call_rule
+@call_rule
+def rule_reject(emitter, ctx):
+    variables = [arg.text for arg in ctx.argExp().varnames]
+    varnames = ", ".join(variables)
+    emitter.inline(f"({varnames}")
+    emitter.inline(f" for {varnames} in ")
+    if len(variables) > 1:
+        emitter.inline("itertools.combinations_with_replacement(")
+        emitter.visit(ctx.expression)
+        emitter.inline(f", {len(variables)})")
+    else:
+        emitter.visit(ctx.expression)
+    emitter.inline(f" if not (")
+    emitter.visit(ctx.argExp().oclExp())
+    emitter.inline("))")
+
+
+@call_rule
 def rule_includes(emitter, ctx):
-    emitter.visit(ctx.argExp().oclExp()[0])
+    emitter.visit(ctx.argExp())
     emitter.inline(" in ")
     emitter.visit(ctx.expression)
 
 
-@collection_call_rule
-def rule_is_not_empty(emitter, ctx):
+@call_rule
+def rule_excludes(emitter, ctx):
+    emitter.visit(ctx.argExp())
+    emitter.inline(" not in ")
+    emitter.visit(ctx.expression)
+
+
+@call_rule
+def rule_not_empty(emitter, ctx):
     emitter.inline("len(")
     emitter.visit(ctx.expression)
     emitter.inline(") > 0")
 
 
-@collection_call_rule
+@call_rule
 def rule_is_empty(emitter, ctx):
     emitter.inline("len(")
     emitter.visit(ctx.expression)
     emitter.inline(") == 0")
 
 
-@collection_call_rule
+@call_rule
 def rule_at(emitter, ctx):
     emitter.visit(ctx.expression)
     emitter.inline("[")
@@ -354,24 +378,65 @@ def rule_at(emitter, ctx):
     emitter.inline("]")
 
 
-@collection_call_rule
+@call_rule
 def rule_size(emitter, ctx):
     emitter.inline("len(")
     emitter.visit(ctx.expression)
     emitter.inline(")")
 
 
-@collection_call_rule
+@call_rule
 def rule_is_unique(emitter, ctx):
     emitter.inline("ocl.is_unique(")
     emitter.visit(ctx.expression)
     emitter.inline(")")
 
 
-@collection_call_rule
+@call_rule
 def rule_sum(emitter, ctx):
     emitter.inline("sum(")
     emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+@call_rule
+def rule_min(emitter, ctx):
+    emitter.inline("min(")
+    emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+@call_rule
+def rule_max(emitter, ctx):
+    emitter.inline("max(")
+    emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+@call_rule
+def rule_count(emitter, ctx):
+    emitter.inline("list(")
+    emitter.visit(ctx.expression)
+    emitter.inline(").count(")
+    emitter.visit(ctx.argExp())
+    emitter.inline(")")
+
+
+@call_rule
+def rule_includes_all(emitter, ctx):
+    emitter.inline("all(e in ")
+    emitter.visit(ctx.expression)
+    emitter.inline(" for e in ")
+    emitter.visit(ctx.argExp())
+    emitter.inline(")")
+
+
+@call_rule
+def rule_excludes_all(emitter, ctx):
+    emitter.inline("all(e not in ")
+    emitter.visit(ctx.expression)
+    emitter.inline(" for e in ")
+    emitter.visit(ctx.argExp())
     emitter.inline(")")
 
 
