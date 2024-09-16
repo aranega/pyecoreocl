@@ -1,18 +1,12 @@
-from io import StringIO
 from antlr4 import CommonTokenStream, InputStream
 from .parser import OclExpressionVisitor, OclExpressionParser, OclExpressionLexer
 
 
-class OCLTuple(object):
-    def __init__(self, **kwargs):
-        for k, v in kwargs.items():
-            setattr(self, k, v)
-
-
 class DummyVisitor(OclExpressionVisitor):
-    def __init__(self):
+    def __init__(self, mode="normal"):
         self.ind = ""
         self.result = ""
+        self.mode = mode
 
     def line(self, s):
         self.result += self.ind + s + "\n"
@@ -30,8 +24,15 @@ class DummyVisitor(OclExpressionVisitor):
         self.inline(ctx.text)
 
     def visitAttributeNavigation(self, ctx):
+        if self.mode == "strict":
+            # In strict mode, we don't accept implicit collect
+            self.visit(ctx.expression)
+            self.inline(f".{ctx.attname.text}")
+            return
+
+        self.inline(f"ocl.geta(")
         self.visit(ctx.expression)
-        self.inline(f".{ctx.attname.text}")
+        self.inline(f", '{ctx.attname.text}')")
 
     def visitPrimaryExpression(self, ctx):
         return self.visitChildren(ctx)
@@ -45,73 +46,33 @@ class DummyVisitor(OclExpressionVisitor):
         self.inline(ctx.text)
 
     def visitFullQualifiedName(self, ctx):
-        self.inline(ctx.text.replace('::', '.'))
+        self.inline(ctx.text.replace("::", "."))
 
     def visitComparisonBinaryOperation(self, ctx):
         self.visit(ctx.left)
         operator = ctx.operator.text
-        operator = operator if operator != '=' else '=='
+        operator = operator if operator != "=" else "=="
+        operator = operator if operator != "<>" else "!="
         self.inline(f" {operator} ")
         self.visit(ctx.right)
 
     def visitCollectionCall(self, ctx):
+        # We currently don't support implicity collection wrapping
         operation = ctx.attname.text
-        if operation == 'collect':
-            self.visitCollect(ctx)
-            return
-        if operation == 'select':
-            self.visitSelect(ctx)
-            return
-        if operation == 'includes':
-            self.visit(ctx.argExp().oclExp()[0])
-            self.inline(' in ')
-            self.visit(ctx.expression)
-            return
-        if operation == 'isNotEmpty':
-            self.inline('len(')
-            self.visit(ctx.expression)
-            self.inline(') > 0')
-            return
-        if operation == 'isEmpty':
-            self.inline('len(')
-            self.visit(ctx.expression)
-            self.inline(') == 0')
-            return
-        if operation == 'at':
-            self.visit(ctx.expression)
-            self.inline('[')
-            self.visit(ctx.argExp().oclExp()[0])
-            self.inline(']')
-            return
-        if operation == 'size':
-            self.inline('len(')
-            self.visit(ctx.expression)
-            self.inline(')')
-            return
-
-        self.visit(ctx.expression)
-        self.inline(f".{operation}(")
-        self.visit(ctx.argExp())
-        self.inline(")")
-
-    def visitCollect(self, ctx):
-        self.inline("(")
-        self.visit(ctx.argExp().oclExp())
-        self.inline(f" for {ctx.argExp().varnames[0].text} in ")
-        self.visit(ctx.expression)
-        self.inline(")")
-
-    def visitSelect(self, ctx):
-        self.inline(f"({ctx.argExp().varnames[0].text}")
-        self.inline(f" for {ctx.argExp().varnames[0].text} in ")
-        self.visit(ctx.expression)
-        self.inline(f" if ")
-        self.visit(ctx.argExp().oclExp())
-        self.inline(")")
+        rule = rules.get(operation, default_collection_call)
+        rule(self, ctx)
 
     def visitBooleanBinaryOperation(self, ctx):
+        operator = ctx.operator.text
+        if operator == "implies":
+            self.inline("((not ")
+            self.visit(ctx.left)
+            self.inline(") or ")
+            self.visit(ctx.right)
+            self.inline(")")
+            return
         self.visit(ctx.left)
-        self.inline(f" {ctx.operator.text} ")
+        self.inline(f" {operator} ")
         self.visit(ctx.right)
 
     def visitCallExpression(self, ctx):
@@ -121,15 +82,15 @@ class DummyVisitor(OclExpressionVisitor):
         self.inline(")")
 
     def visitMethodCall(self, ctx):
-        if ctx.attname.text == 'oclAsType':
+        if ctx.attname.text == "oclAsType":
             self.visit(ctx.expression)
             return
-        if ctx.attname.text == 'oclIsKindOf':
-            self.inline('isinstance(')
+        if ctx.attname.text == "oclIsKindOf":
+            self.inline("isinstance(")
             self.visit(ctx.expression)
-            self.inline(', ')
+            self.inline(", ")
             self.visit(ctx.argExp())
-            self.inline(')')
+            self.inline(")")
             return
         self.visit(ctx.expression)
         self.inline(f".{ctx.attname.text}(")
@@ -140,18 +101,18 @@ class DummyVisitor(OclExpressionVisitor):
         for exp in ctx.oclExp():
             self.visit(exp)
             if exp is not ctx.oclExp()[-1]:
-                self.inline(', ')
+                self.inline(", ")
 
     def visitLambdaExp(self, ctx):
         return self.visitChildren(ctx)
 
     def visitNestedExp(self, ctx):
-        self.inline('(')
+        self.inline("(")
         self.visit(ctx.nested)
-        self.inline(')')
+        self.inline(")")
 
     def visitSelfExp(self, ctx):
-        self.inline('self')
+        self.inline("self")
 
     def visitNumberLiteral(self, ctx):
         self.inline(ctx.text)
@@ -172,12 +133,12 @@ class DummyVisitor(OclExpressionVisitor):
         self.inline("None")
 
     def visitTupleLiteralExp(self, ctx):
-        self.inline('OCLTuple(')
+        self.inline("OCLTuple(")
         for part in ctx.tupleLiteralPartCS():
             self.visit(part)
             if part is not ctx.tupleLiteralPartCS()[-1]:
                 self.inline(", ")
-        self.inline(')')
+        self.inline(")")
 
     def visitTupleLiteralPartCS(self, ctx):
         self.inline(f"{ctx.unrestrictedName().text}=")
@@ -185,20 +146,20 @@ class DummyVisitor(OclExpressionVisitor):
 
     def visitCollectionLiteralExp(self, ctx):
         ctype = ctx.collectionTypeCS().text
-        if ctype == 'Sequence' or ctype == 'Bag':
-            opening = '['
-            ending = ']'
-        elif ctype == 'Set' and len(ctx.expressions) > 0:
-            opening = '{'
-            ending = '}'
-        elif ctype == 'Set':
-            opening = 'set('
-            ending = ')'
+        if ctype == "Sequence" or ctype == "Bag":
+            opening = "["
+            ending = "]"
+        elif ctype == "Set" and len(ctx.expressions) > 0:
+            opening = "{"
+            ending = "}"
+        elif ctype == "Set":
+            opening = "set("
+            ending = ")"
         self.inline(opening)
         for exp in ctx.expressions:
             self.visit(exp)
             if exp is not ctx.expressions[-1]:
-                self.inline(', ')
+                self.inline(", ")
         self.inline(ending)
 
     def visitCollectionTypeCS(self, ctx):
@@ -245,8 +206,7 @@ class DummyVisitor(OclExpressionVisitor):
         return self.visitChildren(ctx)
 
     def visitLetExp(self, ctx):
-        args = ', '.join(x.unrestrictedName().text for x in ctx.variables)
-        call_params = ', '.join(x.unrestrictedName().text for x in ctx.variables)
+        args = ", ".join(x.unrestrictedName().text for x in ctx.variables)
         self.inline(f"(lambda {args}: ")
         self.visit(ctx.oclExp())
         self.inline(")(")
@@ -308,12 +268,127 @@ class DummyVisitor(OclExpressionVisitor):
         return self.visitChildren(ctx)
 
 
-def dummy_compiler(s):
+rules = {}
+
+
+def collection_call_rule(fun):
+    names = fun.__name__[5:].split("_")
+    function_name = "".join([names[0], *(f.capitalize() for f in names[1:])])
+    rules[function_name] = fun
+    return fun
+
+
+@collection_call_rule
+def rule_collect(emitter, ctx):
+    emitter.inline("(")
+    emitter.visit(ctx.argExp().oclExp())
+    variables = [arg.text for arg in ctx.argExp().varnames]
+    emitter.inline(f" for {', '.join(variables)} in ")
+    if len(variables) > 1:
+        emitter.inline("itertools.combinations_with_replacement(")
+        emitter.visit(ctx.expression)
+        emitter.inline(f", {len(variables)})")
+    else:
+        emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+@collection_call_rule
+def rule_for_all(emitter, ctx):
+    emitter.inline(f"all(")
+    emitter.visit(ctx.argExp().oclExp())
+    variables = [arg.text for arg in ctx.argExp().varnames]
+    emitter.inline(f" for {', '.join(variables)} in ")
+    if len(variables) > 1:
+        emitter.inline("itertools.combinations_with_replacement(")
+        emitter.visit(ctx.expression)
+        emitter.inline(f", {len(variables)})")
+    else:
+        emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+@collection_call_rule
+def rule_select(emitter, ctx):
+    variables = [arg.text for arg in ctx.argExp().varnames]
+    varnames = ', '.join(variables)
+    emitter.inline(f"({varnames}")
+    emitter.inline(f" for {varnames} in ")
+    if len(variables) > 1:
+        emitter.inline("itertools.combinations_with_replacement(")
+        emitter.visit(ctx.expression)
+        emitter.inline(f", {len(variables)})")
+    else:
+        emitter.visit(ctx.expression)
+    emitter.inline(f" if ")
+    emitter.visit(ctx.argExp().oclExp())
+    emitter.inline(")")
+
+
+@collection_call_rule
+def rule_includes(emitter, ctx):
+    emitter.visit(ctx.argExp().oclExp()[0])
+    emitter.inline(" in ")
+    emitter.visit(ctx.expression)
+
+
+@collection_call_rule
+def rule_is_not_empty(emitter, ctx):
+    emitter.inline("len(")
+    emitter.visit(ctx.expression)
+    emitter.inline(") > 0")
+
+
+@collection_call_rule
+def rule_is_empty(emitter, ctx):
+    emitter.inline("len(")
+    emitter.visit(ctx.expression)
+    emitter.inline(") == 0")
+
+
+@collection_call_rule
+def rule_at(emitter, ctx):
+    emitter.visit(ctx.expression)
+    emitter.inline("[")
+    emitter.visit(ctx.argExp().oclExp()[0])
+    emitter.inline("]")
+
+
+@collection_call_rule
+def rule_size(emitter, ctx):
+    emitter.inline("len(")
+    emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+@collection_call_rule
+def rule_is_unique(emitter, ctx):
+    emitter.inline("ocl.is_unique(")
+    emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+@collection_call_rule
+def rule_sum(emitter, ctx):
+    emitter.inline("sum(")
+    emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+def default_collection_call(emitter, ctx):
+    operation = ctx.attname.text
+    emitter.visit(ctx.expression)
+    emitter.inline(f".{operation}(")
+    emitter.visit(ctx.argExp())
+    emitter.inline(")")
+
+
+def dummy_compiler(s, mode="normal"):
     input_stream = InputStream(s)
     lexer = OclExpressionLexer(input_stream)
     stream = CommonTokenStream(lexer)
     parser = OclExpressionParser(stream)
     tree = parser.oclExp()
-    visitor = DummyVisitor()
+    visitor = DummyVisitor(mode=mode)
     tree.accept(visitor)
     return visitor.result
