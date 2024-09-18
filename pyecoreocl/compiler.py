@@ -107,7 +107,12 @@ class DummyVisitor(OclExpressionVisitor):
                 self.inline(", ")
 
     def visitLambdaExp(self, ctx):
-        return self.visitChildren(ctx)
+        # return self.visitChildren(ctx)
+        variables = [arg.text for arg in ctx.varnames]
+        varnames = ", ".join(variables)
+        self.inline(f"(lambda {varnames}: ")
+        self.visit(ctx.oclExp())
+        self.inline(")")
 
     def visitNestedExp(self, ctx):
         self.inline("(")
@@ -494,6 +499,15 @@ def rule_any(emitter, ctx):
     emitter.inline("next(iter(")
     emitter.visit(ctx.expression)
     emitter.inline("), None)")
+
+
+@call_rule
+def rule_sorted_by(emitter, ctx):
+    emitter.inline("sorted(")
+    emitter.visit(ctx.expression)
+    emitter.inline(", key=")
+    emitter.visit(ctx.argExp())
+    emitter.inline(")")
 
 
 def default_collection_call(emitter, ctx):

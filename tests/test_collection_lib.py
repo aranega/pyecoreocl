@@ -69,3 +69,8 @@ def test__one():
     assert !l->one(e | e = 3)! is True
 
     assert !Bag{3, 4, 5}->collect(e | e + 1)->one(e | e = 3)! is False
+
+
+def test__sorted_by():
+    l = [3, 4, 5]
+    assert !l->sortedBy(e | -e)! == [5, 4, 3]
