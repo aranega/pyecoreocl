@@ -22,7 +22,7 @@ class DummyVisitor(OclExpressionVisitor):
 
     def visitUnaryOperation(self, ctx):
         operator = ctx.operator.text
-        space = '' if operator == '-' else " "
+        space = "" if operator == "-" else " "
         self.inline(f"{operator}{space}")
         self.visit(ctx.expression)
 
@@ -148,7 +148,7 @@ class DummyVisitor(OclExpressionVisitor):
         self.visit(ctx.primaryExp())
 
     def visitCollectionLiteralExp(self, ctx):
-        ctype = ctx.collectionTypeCS().text
+        ctype = ctx.collectionTypeCS().collectionTypeIdentifier().text
         if ctype == "Sequence" or ctype == "Bag":
             opening = "["
             ending = "]"
@@ -158,6 +158,9 @@ class DummyVisitor(OclExpressionVisitor):
         elif ctype == "Set":
             opening = "set("
             ending = ")"
+        elif ctype == "OrderedSet":  # TODO provide a simple light implementation
+            opening = "["
+            ending = "]"
         self.inline(opening)
         for exp in ctx.expressions:
             self.visit(exp)
@@ -445,6 +448,20 @@ def rule_excludes_all(emitter, ctx):
 
 @call_rule
 def rule_as_sequence(emitter, ctx):
+    emitter.inline("list(")
+    emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+@call_rule
+def rule_as_set(emitter, ctx):
+    emitter.inline("set(")
+    emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+@call_rule
+def rule_as_bag(emitter, ctx):
     emitter.inline("list(")
     emitter.visit(ctx.expression)
     emitter.inline(")")
