@@ -28,7 +28,7 @@ oclExp:
 
 argExp:
     '(' (body+=oclExp (',' body+=oclExp)*)? ')'           # ArgumentsExp
-|   '(' varnames+=unreservedName (',' varnames+=unreservedName )* (':' typeExpCS)? ( ';' iterator=unreservedName (':' typeExpCS)? ('=' initializer=oclExp)?)? '|' body=oclExp ')'      # LambdaExp
+|   '(' varnames+=unreservedName (',' varnames+=unreservedName )* (':' typeExpCS)? ( ';' iterator=unreservedName (':' typeExpCS)? '=' initializer=oclExp)? '|' body=oclExp ')'      # LambdaExp
 ;
 
 primaryExp:
@@ -80,6 +80,12 @@ primitiveTypeCS:
 |   'Integer'           # IntegerType
 |   'UnlimitedNatural'  # UnlimitedNaturalType
 |   'Boolean'           # BooleanType
+|   'Real'              # RealType
+|   'OclAny'            # OCLAnyType
+|   'OclInvalid'        # OCLInvalidType
+|   'OclMessage'        # OCLMessage
+|   'OclSelf'           # OCLSelf
+|   'OclVoid'           # OCLVoid
 ;
 
 collectionTypeIdentifier:

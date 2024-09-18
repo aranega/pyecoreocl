@@ -159,6 +159,36 @@ class OclExpressionVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by OclExpressionParser#RealType.
+    def visitRealType(self, ctx:OclExpressionParser.RealTypeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by OclExpressionParser#OCLAnyType.
+    def visitOCLAnyType(self, ctx:OclExpressionParser.OCLAnyTypeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by OclExpressionParser#OCLInvalidType.
+    def visitOCLInvalidType(self, ctx:OclExpressionParser.OCLInvalidTypeContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by OclExpressionParser#OCLMessage.
+    def visitOCLMessage(self, ctx:OclExpressionParser.OCLMessageContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by OclExpressionParser#OCLSelf.
+    def visitOCLSelf(self, ctx:OclExpressionParser.OCLSelfContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by OclExpressionParser#OCLVoid.
+    def visitOCLVoid(self, ctx:OclExpressionParser.OCLVoidContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by OclExpressionParser#CollectionType.
     def visitCollectionType(self, ctx:OclExpressionParser.CollectionTypeContext):
         return self.visitChildren(ctx)

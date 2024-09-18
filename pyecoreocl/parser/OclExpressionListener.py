@@ -278,6 +278,60 @@ class OclExpressionListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by OclExpressionParser#RealType.
+    def enterRealType(self, ctx:OclExpressionParser.RealTypeContext):
+        pass
+
+    # Exit a parse tree produced by OclExpressionParser#RealType.
+    def exitRealType(self, ctx:OclExpressionParser.RealTypeContext):
+        pass
+
+
+    # Enter a parse tree produced by OclExpressionParser#OCLAnyType.
+    def enterOCLAnyType(self, ctx:OclExpressionParser.OCLAnyTypeContext):
+        pass
+
+    # Exit a parse tree produced by OclExpressionParser#OCLAnyType.
+    def exitOCLAnyType(self, ctx:OclExpressionParser.OCLAnyTypeContext):
+        pass
+
+
+    # Enter a parse tree produced by OclExpressionParser#OCLInvalidType.
+    def enterOCLInvalidType(self, ctx:OclExpressionParser.OCLInvalidTypeContext):
+        pass
+
+    # Exit a parse tree produced by OclExpressionParser#OCLInvalidType.
+    def exitOCLInvalidType(self, ctx:OclExpressionParser.OCLInvalidTypeContext):
+        pass
+
+
+    # Enter a parse tree produced by OclExpressionParser#OCLMessage.
+    def enterOCLMessage(self, ctx:OclExpressionParser.OCLMessageContext):
+        pass
+
+    # Exit a parse tree produced by OclExpressionParser#OCLMessage.
+    def exitOCLMessage(self, ctx:OclExpressionParser.OCLMessageContext):
+        pass
+
+
+    # Enter a parse tree produced by OclExpressionParser#OCLSelf.
+    def enterOCLSelf(self, ctx:OclExpressionParser.OCLSelfContext):
+        pass
+
+    # Exit a parse tree produced by OclExpressionParser#OCLSelf.
+    def exitOCLSelf(self, ctx:OclExpressionParser.OCLSelfContext):
+        pass
+
+
+    # Enter a parse tree produced by OclExpressionParser#OCLVoid.
+    def enterOCLVoid(self, ctx:OclExpressionParser.OCLVoidContext):
+        pass
+
+    # Exit a parse tree produced by OclExpressionParser#OCLVoid.
+    def exitOCLVoid(self, ctx:OclExpressionParser.OCLVoidContext):
+        pass
+
+
     # Enter a parse tree produced by OclExpressionParser#CollectionType.
     def enterCollectionType(self, ctx:OclExpressionParser.CollectionTypeContext):
         pass
