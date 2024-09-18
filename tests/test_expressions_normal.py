@@ -3,7 +3,6 @@
 This test module goal is to test all basic constructions of the language.
 """
 import builtins
-
 import pytest
 
 
