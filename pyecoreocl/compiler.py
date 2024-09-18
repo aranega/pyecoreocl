@@ -133,7 +133,7 @@ class DummyVisitor(OclExpressionVisitor):
         self.inline("None")
 
     def visitTupleLiteralExp(self, ctx):
-        self.inline("OCLTuple(")
+        self.inline("ocl.OCLTuple(")
         for part in ctx.tupleLiteralPartCS():
             self.visit(part)
             if part is not ctx.tupleLiteralPartCS()[-1]:
@@ -437,6 +437,13 @@ def rule_excludes_all(emitter, ctx):
     emitter.visit(ctx.expression)
     emitter.inline(" for e in ")
     emitter.visit(ctx.argExp())
+    emitter.inline(")")
+
+
+@call_rule
+def rule_as_sequence(emitter, ctx):
+    emitter.inline("list(")
+    emitter.visit(ctx.expression)
     emitter.inline(")")
 
 
