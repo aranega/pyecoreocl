@@ -315,6 +315,28 @@ def rule_for_all(emitter, ctx):
 
 
 @call_rule
+def rule_exists(emitter, ctx):
+    emitter.inline(f"any(")
+    emitter.visit(ctx.argExp().oclExp())
+    variables = [arg.text for arg in ctx.argExp().varnames]
+    emitter.inline(f" for {', '.join(variables)} in ")
+    if len(variables) > 1:
+        emitter.inline("itertools.combinations_with_replacement(")
+        emitter.visit(ctx.expression)
+        emitter.inline(f", {len(variables)})")
+    else:
+        emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+@call_rule
+def rule_one(emitter, ctx):
+    emitter.inline("(len(list(")
+    rule_select(emitter, ctx)
+    emitter.inline(")) == 1)")
+
+
+@call_rule
 def rule_select(emitter, ctx):
     variables = [arg.text for arg in ctx.argExp().varnames]
     varnames = ", ".join(variables)
@@ -465,6 +487,13 @@ def rule_as_bag(emitter, ctx):
     emitter.inline("list(")
     emitter.visit(ctx.expression)
     emitter.inline(")")
+
+
+@call_rule
+def rule_any(emitter, ctx):
+    emitter.inline("next(iter(")
+    emitter.visit(ctx.expression)
+    emitter.inline("), None)")
 
 
 def default_collection_call(emitter, ctx):

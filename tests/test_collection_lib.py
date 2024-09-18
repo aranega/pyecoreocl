@@ -48,3 +48,24 @@ def test__collect():
 
     l = !Sequence{Tuple{value=3}, Tuple{value=4}, Tuple{value='stuff'}}!
     assert !l->collect(e | e.value)->asSequence()! == [3, 4, "stuff"]
+
+
+def test__any():
+    l = [3, 4, 5]
+    assert !l->any()! == 3
+
+    assert !Bag{3, 4, 5}->collect(e | e + 1)->any()! == 4
+
+
+def test__exists():
+    l = [3, 4, 5]
+    assert !l->exists(e | e = 3)! is True
+
+    assert !Bag{3, 4, 5}->collect(e | e + 1)->exists(e | e = 3)! is False
+
+
+def test__one():
+    l = [3, 4, 5]
+    assert !l->one(e | e = 3)! is True
+
+    assert !Bag{3, 4, 5}->collect(e | e + 1)->one(e | e = 3)! is False
