@@ -158,3 +158,19 @@ def test__select_by_type():
     assert !l->selectByType(A)->asSequence()! == l[:2]
     assert !l->selectByType(B)->asSequence()! == l[2:]
     assert !l->selectByType(X)->asSequence()! == []
+
+
+def test__append():
+    assert !Set{1, 2}->append(1)->asSet()! == {1, 2}
+    assert !Set{1, 2}->append(3)->asSet()! == {1, 2, 3}
+
+    assert !Set{1, 2}->append(1)->asSequence()! == [1, 2, 1]
+    assert !Set{1, 2}->append(3)->asSequence()! == [1, 2, 3]
+
+
+def test__prepend():
+    assert !Set{1, 2}->prepend(1)->asSet()! == {1, 2}
+    assert !Set{1, 2}->prepend(3)->asSet()! == {1, 2, 3}
+
+    assert !Set{1, 2}->prepend(1)->asSequence()! == [1, 1, 2]
+    assert !Set{1, 2}->prepend(3)->asSequence()! == [3, 1, 2]

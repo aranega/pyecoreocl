@@ -546,6 +546,20 @@ def rule_including(emitter, ctx):
 
 
 @call_rule
+def rule_append(emitter, ctx):
+    rule_including(emitter, ctx)
+
+
+@call_rule
+def rule_prepend(emitter, ctx):
+    emitter.inline("itertools.chain((")
+    emitter.visit(ctx.argExp())
+    emitter.inline(",), ")
+    emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+@call_rule
 def rule_excluding(emitter, ctx):
     emitter.inline("_e for _e in ")
     emitter.visit(ctx.expression)
