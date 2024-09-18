@@ -107,8 +107,9 @@ class DummyVisitor(OclExpressionVisitor):
                 self.inline(", ")
 
     def visitLambdaExp(self, ctx):
-        # return self.visitChildren(ctx)
         variables = [arg.text for arg in ctx.varnames]
+        if ctx.iterator:
+            variables.append(ctx.iterator.text)
         varnames = ", ".join(variables)
         self.inline(f"(lambda {varnames}: ")
         self.visit(ctx.body)

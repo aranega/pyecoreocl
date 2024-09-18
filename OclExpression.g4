@@ -28,7 +28,7 @@ oclExp:
 
 argExp:
     '(' (body+=oclExp (',' body+=oclExp)*)? ')'           # ArgumentsExp
-|   '(' varnames+=unreservedName (',' varnames+=unreservedName )* (':' typeExpCS)? ('=' initializer=oclExp)? '|' body=oclExp ')'      # LambdaExp
+|   '(' varnames+=unreservedName (',' varnames+=unreservedName )* (':' typeExpCS)? ( ';' iterator=unreservedName (':' typeExpCS)? ('=' initializer=oclExp)?)? '|' body=oclExp ')'      # LambdaExp
 ;
 
 primaryExp:

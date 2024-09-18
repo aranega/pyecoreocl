@@ -117,7 +117,7 @@ def test__excluding():
 
 
 def test__iterate():
-    assert !Sequence{1, 2, 3}->iterate(e, acc = Sequence{} | acc->including(e + 1))->asSequence()! == [2, 3, 4]
+    assert !Sequence{1, 2, 3}->iterate(e; acc = Sequence{} | acc->including(e + 1))->asSequence()! == [2, 3, 4]
 
 
 def test__select_by_kind():
@@ -191,3 +191,15 @@ def test__last():
 def test__index_of():
     assert !Sequence{1, 2}->indexOf(2)! == 1
     assert !Sequence{1, 2}->collect(e | e + 1)->indexOf(2)! == 0
+
+
+# anonSources->iterate(iterator : T; anonAcc : Result(T) = anonInit |
+#  if anonAcc->includes(iterator)
+#  then anonAcc
+#  else let anonBody : OclAny = body in
+#  let anonResults : Result(T) = anonAcc->add(iterator) in
+#  if anonBody.oclIsKindOf(CollectionType)
+#  then anonRecurse(anonBody.oclAsType(Collection(T)), anonResults)
+#  else anonRecurse(anonBody.oclAsType(T)->asSet(), anonResults)
+#  endif
+#  endif)
