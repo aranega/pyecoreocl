@@ -18,9 +18,9 @@ class OCLExpression:
             for token in self.tokens
         )
 
-    def compile(self, debug=False):
+    def compile(self, mode="normal", debug=False):
         ocl_code = self.as_string()
-        python_code = dummy_compiler(ocl_code)
+        python_code = dummy_compiler(ocl_code, mode=mode)
         if debug:
             print("TRACE:")
             print(" * Compiles", ocl_code)
@@ -47,7 +47,7 @@ def adjust_position(token, line=None, offset=0):
     )
 
 
-def ocl2python(tokens: Iterable[TokenInfo]):
+def ocl2python(tokens: Iterable[TokenInfo], mode: str):
     current = None
     state = "end"
     for token in tokens:
@@ -57,7 +57,7 @@ def ocl2python(tokens: Iterable[TokenInfo]):
                 current = OCLExpression(start=t.start, tokens=[])
             case TokenInfo(type=OP, string="!") as t, "start":
                 state = "end"
-                yield from current.compile(debug=False)
+                yield from current.compile(debug=False, mode=mode)
             case tok, "start":
                 assert current
                 current.tokens.append(tok)
@@ -72,10 +72,9 @@ def ocl2python(tokens: Iterable[TokenInfo]):
                 yield token
 
 
-def preprocess(data: str):
-    fff = ocl2python(generate_tokens(StringIO(data).readline))
+def preprocess(data: str, mode: str="normal"):
     return f"""
 import itertools, collections
 import pyecoreocl.runtime as ocl
-{untokenize(ocl2python(generate_tokens(StringIO(data).readline)))}
+{untokenize(ocl2python(generate_tokens(StringIO(data).readline), mode=mode))}
 """

@@ -1,3 +1,3 @@
 from .main import preprocess
 
-__all__ = ["extension"]
+__all__ = ["preprocess"]

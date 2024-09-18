@@ -73,6 +73,10 @@ Persons.allInstances().name
 
 To inline some OCL in Python code, you need to define first `# coding: magic_ocl` as encoding as first line of your Python file.
 This will enable the special codec that is responsible for extracting the OCL expressions, to compile them, and inline them in the Python code.
+By default, the `normal` dummy compiler is ued.
+You can change the compiler you want for a whole file by postfixing the codec name with `.<mode>`:
+    * `# coding: magic_ocl.strict` to enable the strict mode,
+    * `# coding: magic_ocl` or `# coding: magic_ocl` to enable the normal mode.
 
 Here is a simple example using a Python dataclass, defining some operations on the dataclass:
 
