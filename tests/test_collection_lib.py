@@ -193,13 +193,15 @@ def test__index_of():
     assert !Sequence{1, 2}->collect(e | e + 1)->indexOf(2)! == 0
 
 
-# anonSources->iterate(iterator : T; anonAcc : Result(T) = anonInit |
-#  if anonAcc->includes(iterator)
-#  then anonAcc
-#  else let anonBody : OclAny = body in
-#  let anonResults : Result(T) = anonAcc->add(iterator) in
-#  if anonBody.oclIsKindOf(CollectionType)
-#  then anonRecurse(anonBody.oclAsType(Collection(T)), anonResults)
-#  else anonRecurse(anonBody.oclAsType(T)->asSet(), anonResults)
-#  endif
-#  endif)
+
+
+def test__closure():
+    @dataclass
+    class A:
+        children: list["A"] | None
+
+    x1, x2 = A(children=[]), A(children=None)
+    a = A(children=[x1, x2])
+
+    print(!Sequence{a}->closure(e | e.children)->asSequence()!)
+    assert !Sequence{a}->closure(e | e.children)->asSequence()! == [x1, x2]

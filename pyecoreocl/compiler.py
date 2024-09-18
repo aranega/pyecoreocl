@@ -606,6 +606,14 @@ def rule_index_of(emitter, ctx):
     emitter.visit(ctx.argExp().body[0])
     emitter.inline(")")
 
+@call_rule
+def rule_closure(emitter, ctx):
+    emitter.inline("ocl.closure(")
+    emitter.visit(ctx.expression)
+    emitter.inline(", ")
+    emitter.visit(ctx.argExp())
+    emitter.inline(")")
+
 
 def default_collection_call(emitter, ctx):
     operation = ctx.attname.text
