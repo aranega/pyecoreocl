@@ -4,7 +4,9 @@ This test module goal is to test all functions over collections
 """
 
 from dataclasses import dataclass
+from gc import collect
 import itertools
+from operator import indexOf
 from typing import Sequence
 
 
@@ -174,3 +176,18 @@ def test__prepend():
 
     assert !Set{1, 2}->prepend(1)->asSequence()! == [1, 1, 2]
     assert !Set{1, 2}->prepend(3)->asSequence()! == [3, 1, 2]
+
+
+def test__first():
+    assert !Sequence{1, 2}->first()! == 1
+    assert !Sequence{1, 2}->collect(e | e + 1)->first()! == 2
+
+
+def test__last():
+    assert !Sequence{1, 2}->last()! == 2
+    assert !Sequence{1, 2}->collect(e | e + 1)->last()! == 3
+
+
+def test__index_of():
+    assert !Sequence{1, 2}->indexOf(2)! == 1
+    assert !Sequence{1, 2}->collect(e | e + 1)->indexOf(2)! == 0

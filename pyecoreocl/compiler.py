@@ -583,6 +583,28 @@ def rule_select_by_type(emitter, ctx):
     emitter.inline(" if type(_e) == ")
     emitter.visit(ctx.argExp())
 
+@call_rule
+def rule_first(emitter, ctx):
+    emitter.inline("next(iter(")
+    emitter.visit(ctx.expression)
+    emitter.inline("))")
+
+
+@call_rule
+def rule_last(emitter, ctx):
+    emitter.inline("list(")
+    emitter.visit(ctx.expression)
+    emitter.inline(")[-1]")
+
+
+@call_rule
+def rule_index_of(emitter, ctx):
+    emitter.inline("next(_i for _i, _e in enumerate(")
+    emitter.visit(ctx.expression)
+    emitter.inline(") if _e == ")
+    emitter.visit(ctx.argExp().body[0])
+    emitter.inline(")")
+
 
 def default_collection_call(emitter, ctx):
     operation = ctx.attname.text
