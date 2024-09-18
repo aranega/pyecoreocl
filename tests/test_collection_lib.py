@@ -3,7 +3,9 @@
 This test module goal is to test all functions over collections
 """
 
+from dataclasses import dataclass
 import itertools
+from typing import Sequence
 
 
 def test__basic_collections():
@@ -114,3 +116,45 @@ def test__excluding():
 
 def test__iterate():
     assert !Sequence{1, 2, 3}->iterate(e, acc = Sequence{} | acc->including(e + 1))->asSequence()! == [2, 3, 4]
+
+
+def test__select_by_kind():
+    assert !Sequence{'c', 1, 3, 'd'}->selectByKind(str)->asSequence()! == ['c', 'd']
+
+    @dataclass
+    class X:
+        ...
+
+    @dataclass
+    class A(X):
+        ...
+
+    @dataclass
+    class B(X):
+        ...
+
+    l = [A(), A(), B(), B()]
+    assert !l->selectByKind(A)->asSequence()! == l[:2]
+    assert !l->selectByKind(B)->asSequence()! == l[2:]
+    assert !l->selectByKind(X)->asSequence()! == l
+
+
+def test__select_by_type():
+    assert !Sequence{'c', 1, 3, 'd'}->selectByType(str)->asSequence()! == ['c', 'd']
+
+    @dataclass
+    class X:
+        ...
+
+    @dataclass
+    class A(X):
+        ...
+
+    @dataclass
+    class B(X):
+        ...
+
+    l = [A(), A(), B(), B()]
+    assert !l->selectByType(A)->asSequence()! == l[:2]
+    assert !l->selectByType(B)->asSequence()! == l[2:]
+    assert !l->selectByType(X)->asSequence()! == []

@@ -553,6 +553,23 @@ def rule_excluding(emitter, ctx):
     emitter.visit(ctx.argExp())
 
 
+@call_rule
+def rule_select_by_kind(emitter, ctx):
+    emitter.inline("_e for _e in ")
+    emitter.visit(ctx.expression)
+    emitter.inline(" if isinstance(_e, ")
+    emitter.visit(ctx.argExp())
+    emitter.inline(")")
+
+
+@call_rule
+def rule_select_by_type(emitter, ctx):
+    emitter.inline("_e for _e in ")
+    emitter.visit(ctx.expression)
+    emitter.inline(" if type(_e) == ")
+    emitter.visit(ctx.argExp())
+
+
 def default_collection_call(emitter, ctx):
     operation = ctx.attname.text
     emitter.visit(ctx.expression)
