@@ -50,10 +50,12 @@ def adjust_position(token, line=None, offset=0):
 def ocl2python(tokens: Iterable[TokenInfo], mode: str):
     current = None
     state = "end"
+    shift = None
     for token in tokens:
         match token, state:
             case TokenInfo(type=OP, string="!") as t, "end":
                 state = "start"
+                shift = None
                 current = OCLExpression(start=t.start, tokens=[])
             case TokenInfo(type=OP, string="!") as t, "start":
                 state = "end"
@@ -66,8 +68,10 @@ def ocl2python(tokens: Iterable[TokenInfo], mode: str):
                 if current and current.start[0] == tok.start[0]:
                     ocl_offset = current.end[1]
 
-                    if ocl_offset > tok.start[1]:
-                        token = adjust_position(tok, offset=ocl_offset - tok.start[1])
+                    if ocl_offset > tok.start[1] or shift:
+                        if shift is None:
+                            shift = ocl_offset - tok.start[1]
+                        token = adjust_position(tok, offset=shift)
                         current.end = token.end
                 yield token
 

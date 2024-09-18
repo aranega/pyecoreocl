@@ -87,7 +87,7 @@ def serializedATN():
         179,173,1,0,0,0,179,174,1,0,0,0,179,175,1,0,0,0,179,176,1,0,0,0,
         179,177,1,0,0,0,179,178,1,0,0,0,180,5,1,0,0,0,181,182,5,24,0,0,182,
         7,1,0,0,0,183,184,5,19,0,0,184,185,3,0,0,0,185,186,5,21,0,0,186,
-        9,1,0,0,0,187,194,3,44,22,0,188,194,3,46,23,0,189,194,3,48,24,0,
+        9,1,0,0,0,187,194,3,44,22,0,188,194,3,48,24,0,189,194,3,46,23,0,
         190,194,3,50,25,0,191,194,3,52,26,0,192,194,3,54,27,0,193,187,1,
         0,0,0,193,188,1,0,0,0,193,189,1,0,0,0,193,190,1,0,0,0,193,191,1,
         0,0,0,193,192,1,0,0,0,194,11,1,0,0,0,195,196,5,25,0,0,196,197,5,
@@ -1562,17 +1562,17 @@ class OclExpressionParser ( Parser ):
                 self.state = 187
                 self.numberLiteralExpCS()
                 pass
-            elif token in [55]:
-                localctx = OclExpressionParser.StringLiteralContext(self, localctx)
-                self.enterOuterAlt(localctx, 2)
-                self.state = 188
-                self.stringLiteralExpCS()
-                pass
             elif token in [44, 45]:
                 localctx = OclExpressionParser.BooleanLiteralContext(self, localctx)
+                self.enterOuterAlt(localctx, 2)
+                self.state = 188
+                self.booleanLiteralExpCS()
+                pass
+            elif token in [55]:
+                localctx = OclExpressionParser.StringLiteralContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
                 self.state = 189
-                self.booleanLiteralExpCS()
+                self.stringLiteralExpCS()
                 pass
             elif token in [6]:
                 localctx = OclExpressionParser.UnlimitedNaturalLiteralContext(self, localctx)

@@ -161,21 +161,21 @@ class OclExpressionListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by OclExpressionParser#StringLiteral.
-    def enterStringLiteral(self, ctx:OclExpressionParser.StringLiteralContext):
-        pass
-
-    # Exit a parse tree produced by OclExpressionParser#StringLiteral.
-    def exitStringLiteral(self, ctx:OclExpressionParser.StringLiteralContext):
-        pass
-
-
     # Enter a parse tree produced by OclExpressionParser#BooleanLiteral.
     def enterBooleanLiteral(self, ctx:OclExpressionParser.BooleanLiteralContext):
         pass
 
     # Exit a parse tree produced by OclExpressionParser#BooleanLiteral.
     def exitBooleanLiteral(self, ctx:OclExpressionParser.BooleanLiteralContext):
+        pass
+
+
+    # Enter a parse tree produced by OclExpressionParser#StringLiteral.
+    def enterStringLiteral(self, ctx:OclExpressionParser.StringLiteralContext):
+        pass
+
+    # Exit a parse tree produced by OclExpressionParser#StringLiteral.
+    def exitStringLiteral(self, ctx:OclExpressionParser.StringLiteralContext):
         pass
 
 

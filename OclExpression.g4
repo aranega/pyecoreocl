@@ -52,8 +52,8 @@ nestedExp:
 
 primitiveLiteralExp:
 	    numberLiteralExpCS          # NumberLiteral
-|	    stringLiteralExpCS          # StringLiteral
 |	    booleanLiteralExpCS         # BooleanLiteral
+|	    stringLiteralExpCS          # StringLiteral
 |	    unlimitedNaturalLiteralCS   # UnlimitedNaturalLiteral
 |	    invalidLiteralExpCS         # InvalidLiteral
 |	    nullLiteralExpCS            # NullLiteral

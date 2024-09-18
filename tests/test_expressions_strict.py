@@ -38,6 +38,27 @@ def test__implicit_collect():
 
 
 def test__if_then_else():
-    assert (!if true then false else true!) is False
-    assert (!if true or false then 3 else 4!) == 3
-    assert (!if 3 <> 3 then 3 else 4!) == 4
+    assert (!if true then false else true endif!) is False
+    assert (!if true or false then 3 else 4 endif!) == 3
+    assert (!if 3 <> 3 then 3 else 4 endif!) == 4
+
+
+def test__booleans():
+    assert !true! is True
+    assert !false! is False
+
+    assert (!not true!) is False
+    assert (!not false!) is True
+
+    assert !(true or true)! is True
+    assert !(true or false)! is True
+    assert !(false or true)! is True
+    assert !(false or false)! is False
+
+    assert (!true and true!) is True
+    assert (!true and false!) is False
+    assert (!false and true!) is False
+    assert (!false and false!) is False
+
+    assert (!true implies false!) is False
+    assert (!false implies true!) is True

@@ -94,13 +94,13 @@ class OclExpressionVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by OclExpressionParser#StringLiteral.
-    def visitStringLiteral(self, ctx:OclExpressionParser.StringLiteralContext):
+    # Visit a parse tree produced by OclExpressionParser#BooleanLiteral.
+    def visitBooleanLiteral(self, ctx:OclExpressionParser.BooleanLiteralContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by OclExpressionParser#BooleanLiteral.
-    def visitBooleanLiteral(self, ctx:OclExpressionParser.BooleanLiteralContext):
+    # Visit a parse tree produced by OclExpressionParser#StringLiteral.
+    def visitStringLiteral(self, ctx:OclExpressionParser.StringLiteralContext):
         return self.visitChildren(ctx)
 
 

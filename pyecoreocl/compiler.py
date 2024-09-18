@@ -21,7 +21,10 @@ class DummyVisitor(OclExpressionVisitor):
         self.ind = self.ind[2:]
 
     def visitUnaryOperation(self, ctx):
-        self.inline(ctx.text)
+        operator = ctx.operator.text
+        space = '' if operator == '-' else " "
+        self.inline(f"{operator}{space}")
+        self.visit(ctx.expression)
 
     def visitAttributeNavigation(self, ctx):
         if self.mode == "strict":
