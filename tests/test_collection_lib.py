@@ -49,6 +49,23 @@ def test__collect():
     l = !Sequence{Tuple{value=3}, Tuple{value=4}, Tuple{value='stuff'}}!
     assert !l->collect(e | e.value)->asSequence()! == [3, 4, "stuff"]
 
+    l = [3, 4, 5]
+    assert !l->collect(e: int | Sequence{e})->asSequence()! == [3, 4, 5]
+
+
+def test__collect_nested():
+    l = [3, 4, 5]
+    assert !l->collectNested(e: int | e + 1)->asSequence()! == [4, 5, 6]
+
+    l = !Sequence{Tuple{value=3}, Tuple{value=4}, Tuple{value='stuff'}}!
+    assert !l->collectNested(e | e.value)->asSequence()! == [3, 4, "stuff"]
+
+    l = [3, 4, 5]
+    assert !l->collectNested(e: int | Sequence{e})->asSequence()! == [[3], [4], [5]]
+
+    l = [3, 4, 5]
+    assert !l->collectNested(e: int | Sequence{Sequence{e}})->asSequence()! == [[[3]], [[4]], [[5]]]
+
 
 def test__any():
     l = [3, 4, 5]

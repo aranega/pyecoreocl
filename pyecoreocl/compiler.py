@@ -290,8 +290,23 @@ def call_rule(fun):
 
 
 @call_rule
-def rule_collect(emitter, ctx):
+def rule_collect_nested(emitter, ctx):
     emitter.inline("(")
+    emitter.visit(ctx.argExp().oclExp())
+    variables = [arg.text for arg in ctx.argExp().varnames]
+    emitter.inline(f" for {', '.join(variables)} in ")
+    if len(variables) > 1:
+        emitter.inline("itertools.combinations_with_replacement(")
+        emitter.visit(ctx.expression)
+        emitter.inline(f", {len(variables)})")
+    else:
+        emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+@call_rule
+def rule_collect(emitter, ctx):
+    emitter.inline("ocl.flatten(")
     emitter.visit(ctx.argExp().oclExp())
     variables = [arg.text for arg in ctx.argExp().varnames]
     emitter.inline(f" for {', '.join(variables)} in ")
