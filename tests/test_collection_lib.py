@@ -203,5 +203,4 @@ def test__closure():
     x1, x2 = A(children=[]), A(children=None)
     a = A(children=[x1, x2])
 
-    print(!Sequence{a}->closure(e | e.children)->asSequence()!)
     assert !Sequence{a}->closure(e | e.children)->asSequence()! == [x1, x2]
