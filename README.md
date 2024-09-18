@@ -76,7 +76,7 @@ This will enable the special codec that is responsible for extracting the OCL ex
 By default, the `normal` dummy compiler is ued.
 You can change the compiler you want for a whole file by postfixing the codec name with `.<mode>`:
     * `# coding: magic_ocl.strict` to enable the strict mode,
-    * `# coding: magic_ocl` or `# coding: magic_ocl` to enable the normal mode.
+    * `# coding: magic_ocl` or `# coding: magic_ocl.normal` to enable the normal mode.
 
 Here is a simple example using a Python dataclass, defining some operations on the dataclass:
 
