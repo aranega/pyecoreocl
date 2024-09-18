@@ -111,7 +111,7 @@ class DummyVisitor(OclExpressionVisitor):
         variables = [arg.text for arg in ctx.varnames]
         varnames = ", ".join(variables)
         self.inline(f"(lambda {varnames}: ")
-        self.visit(ctx.oclExp())
+        self.visit(ctx.body)
         self.inline(")")
 
     def visitNestedExp(self, ctx):
@@ -292,7 +292,7 @@ def call_rule(fun):
 @call_rule
 def rule_collect_nested(emitter, ctx):
     emitter.inline("(")
-    emitter.visit(ctx.argExp().oclExp())
+    emitter.visit(ctx.argExp().body)
     variables = [arg.text for arg in ctx.argExp().varnames]
     emitter.inline(f" for {', '.join(variables)} in ")
     if len(variables) > 1:
@@ -307,7 +307,7 @@ def rule_collect_nested(emitter, ctx):
 @call_rule
 def rule_collect(emitter, ctx):
     emitter.inline("ocl.flatten(")
-    emitter.visit(ctx.argExp().oclExp())
+    emitter.visit(ctx.argExp().body)
     variables = [arg.text for arg in ctx.argExp().varnames]
     emitter.inline(f" for {', '.join(variables)} in ")
     if len(variables) > 1:
@@ -322,7 +322,7 @@ def rule_collect(emitter, ctx):
 @call_rule
 def rule_for_all(emitter, ctx):
     emitter.inline(f"all(")
-    emitter.visit(ctx.argExp().oclExp())
+    emitter.visit(ctx.argExp().body)
     variables = [arg.text for arg in ctx.argExp().varnames]
     emitter.inline(f" for {', '.join(variables)} in ")
     if len(variables) > 1:
@@ -337,7 +337,7 @@ def rule_for_all(emitter, ctx):
 @call_rule
 def rule_exists(emitter, ctx):
     emitter.inline(f"any(")
-    emitter.visit(ctx.argExp().oclExp())
+    emitter.visit(ctx.argExp().body)
     variables = [arg.text for arg in ctx.argExp().varnames]
     emitter.inline(f" for {', '.join(variables)} in ")
     if len(variables) > 1:
@@ -369,7 +369,7 @@ def rule_select(emitter, ctx):
     else:
         emitter.visit(ctx.expression)
     emitter.inline(f" if ")
-    emitter.visit(ctx.argExp().oclExp())
+    emitter.visit(ctx.argExp().body)
     emitter.inline(")")
 
 
@@ -386,7 +386,7 @@ def rule_reject(emitter, ctx):
     else:
         emitter.visit(ctx.expression)
     emitter.inline(f" if not (")
-    emitter.visit(ctx.argExp().oclExp())
+    emitter.visit(ctx.argExp().body)
     emitter.inline("))")
 
 
@@ -422,7 +422,7 @@ def rule_is_empty(emitter, ctx):
 def rule_at(emitter, ctx):
     emitter.visit(ctx.expression)
     emitter.inline("[")
-    emitter.visit(ctx.argExp().oclExp()[0])
+    emitter.visit(ctx.argExp().body[0])
     emitter.inline("]")
 
 
@@ -523,6 +523,34 @@ def rule_sorted_by(emitter, ctx):
     emitter.inline(", key=")
     emitter.visit(ctx.argExp())
     emitter.inline(")")
+
+
+@call_rule
+def rule_iterate(emitter, ctx):
+    emitter.inline("ocl.flatten(")
+    emitter.visit(ctx.argExp())
+    emitter.inline("(_e, ")
+    emitter.visit(ctx.argExp().initializer)
+    emitter.inline(") for _e in ")
+    emitter.visit(ctx.expression)
+    emitter.inline(")")
+
+
+@call_rule
+def rule_including(emitter, ctx):
+    emitter.inline("itertools.chain(")
+    emitter.visit(ctx.expression)
+    emitter.inline(", (")
+    emitter.visit(ctx.argExp())
+    emitter.inline(",))")
+
+
+@call_rule
+def rule_excluding(emitter, ctx):
+    emitter.inline("_e for _e in ")
+    emitter.visit(ctx.expression)
+    emitter.inline(" if _e != ")
+    emitter.visit(ctx.argExp())
 
 
 def default_collection_call(emitter, ctx):

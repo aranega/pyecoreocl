@@ -3,6 +3,9 @@
 This test module goal is to test all functions over collections
 """
 
+import itertools
+
+
 def test__basic_collections():
     assert !Sequence{3}! == [3]
     assert !Bag{3}! == [3]
@@ -91,3 +94,23 @@ def test__one():
 def test__sorted_by():
     l = [3, 4, 5]
     assert !l->sortedBy(e | -e)! == [5, 4, 3]
+
+
+def test__including():
+    assert !Set{1, 2}->including(1)->asSet()! == {1, 2}
+    assert !Set{1, 2}->including(3)->asSet()! == {1, 2, 3}
+
+    assert !Set{1, 2}->including(1)->asSequence()! == [1, 2, 1]
+    assert !Set{1, 2}->including(3)->asSequence()! == [1, 2, 3]
+
+
+def test__excluding():
+    assert !Set{1, 2}->excluding(1)->asSet()! == {2}
+    assert !Set{1, 2}->excluding(3)->asSet()! == {1, 2}
+
+    assert !Set{1, 2}->excluding(2)->asSequence()! == [1]
+    assert !Set{1, 2}->excluding(3)->asSequence()! == [1, 2]
+
+
+def test__iterate():
+    assert !Sequence{1, 2, 3}->iterate(e, acc = Sequence{} | acc->including(e + 1))->asSequence()! == [2, 3, 4]

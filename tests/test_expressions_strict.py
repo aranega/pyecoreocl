@@ -26,7 +26,6 @@ def test__let_with_objects():
 
 
 def test__implicit_collect():
-
     l = !Sequence{Tuple{value=3}, Tuple{value=4}, Tuple{value='stuff'}}!
     assert !l->at(0).value! == 3
     assert !l->at(1).value! == 4
