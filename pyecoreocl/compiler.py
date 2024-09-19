@@ -76,9 +76,11 @@ class DummyVisitor(OclExpressionVisitor):
             self.visit(ctx.right)
             self.inline(")")
             return
+        self.inline("(")
         self.visit(ctx.left)
         self.inline(f" {operator} ")
         self.visit(ctx.right)
+        self.inline(")")
 
     def visitCallExpression(self, ctx):
         self.visit(ctx.expression)

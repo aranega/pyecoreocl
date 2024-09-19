@@ -45,11 +45,11 @@ def test__booleans():
     assert !true! is True
     assert !false! is False
 
-    assert (!not true!) is False
-    assert (!not false!) is True
+    assert !not true! is False
+    assert !not false! is True
 
     assert !(true or true)! is True
-    assert !(true or false)! is True
+    assert !true or false! is True
     assert !(false or true)! is True
     assert !(false or false)! is False
 
