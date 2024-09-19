@@ -182,10 +182,10 @@ Python: (lambda x: x.foo)(OCLTuple(foo='abc'))
 OCL:    ParameterDirectionKind::inout
 Python: ParameterDirectionKind.inout
 
-OCL:    (if nestingClass > null then null
+OCL:    (if nestingClass <> null then null
         else
         let b:BehavioredClassifier = self.behavioredClassifier(self.owner) in
-                if b.oclIsKindOf(Behavior) and b.oclAsType(Behavior).context > null then
+                if b.oclIsKindOf(Behavior) and b.oclAsType(Behavior).context <>> null then
                         b.oclAsType(Behavior).context
                                 else b endif endif)
 Python: (None if nestingClass > None else (lambda b: b.context if isinstance(b, Behavior) and b.context > None else b)(self.behavioredClassifier(self.owner)))
@@ -216,5 +216,5 @@ Here is a demo on how to use it.
 
 Currently, some expressions are not well recognized, or not properly compiled:
 
-* `obj->operation()`: in the specification, `->` acts as an automatic wrapper to a `Sequence` if `obj` is not a collection. Currently, PyEcoreOCL doesn't consider this automatic wrapping.
+* `obj->operation()`: in the specification, `->` acts as an automatic wrapper to a `Sequence` if `obj` is not a collection. Currently, PyEcoreOCL doesn't consider this automatic wrapping for strict mode, but partially implement it for the normal mode.
 * `collection->collect(attr)`: when there is no variable that is considered by the lambda inside collection operations, by default `attr` should be considered as attribute of an implicit `self` variable representing at each iteration one of the elements of `collection`. Currently, this is not supported, and it's not sure it will be for inline OCL. To overcome this, it's currently necessary to explicitally name the variable inside the lambda `collection->collect(e | e.attr)`.

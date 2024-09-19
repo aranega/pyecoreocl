@@ -205,24 +205,34 @@ def rule_excludes_all(emitter, ctx):
     emitter.inline(")")
 
 
+def dispatch_iterable(emitter, expression):
+    if emitter.mode == "strict":
+        emitter.visit(expression)
+        return
+
+    emitter.inline("((lambda x: x if isinstance(x, typing.Iterable) and not isinstance(x, (bytes, str)) else (x,))(")
+    emitter.visit(expression)
+    emitter.inline("))")
+
+
 @collection_rule
 def rule_as_sequence(emitter, ctx):
     emitter.inline("list(")
-    emitter.visit(ctx.expression)
+    dispatch_iterable(emitter, ctx.expression)
     emitter.inline(")")
 
 
 @collection_rule
 def rule_as_set(emitter, ctx):
     emitter.inline("set(")
-    emitter.visit(ctx.expression)
+    dispatch_iterable(emitter, ctx.expression)
     emitter.inline(")")
 
 
 @collection_rule
 def rule_as_bag(emitter, ctx):
     emitter.inline("list(")
-    emitter.visit(ctx.expression)
+    dispatch_iterable(emitter, ctx.expression)
     emitter.inline(")")
 
 

@@ -78,7 +78,7 @@ def ocl2python(tokens: Iterable[TokenInfo], mode: str):
 
 def preprocess(data: str, mode: str="normal"):
     return f"""
-import itertools, collections
+import itertools, collections, typing
 import pyecoreocl.runtime as ocl
 {untokenize(ocl2python(generate_tokens(StringIO(data).readline), mode=mode))}
 """
