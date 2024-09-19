@@ -4,10 +4,6 @@ This test module goal is to test all functions over collections
 """
 
 from dataclasses import dataclass
-from gc import collect
-import itertools
-from operator import indexOf
-from typing import Sequence
 
 
 def test__basic_collections():
