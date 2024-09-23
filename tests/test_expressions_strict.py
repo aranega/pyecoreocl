@@ -60,3 +60,7 @@ def test__booleans():
 
     assert (!true implies false!) is False
     assert (!false implies true!) is True
+
+
+def test__int_constant_eval():
+    assert !(4 + 5) - 1! == 8

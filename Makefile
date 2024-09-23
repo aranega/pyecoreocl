@@ -6,3 +6,9 @@ pyecoreocl/parser/OclExpressionParser.py: OclExpression.g4
 
 clean:
 	rm -f pyecoreocl/parser/OclExpression*
+
+test:
+	python -m pytest -s
+
+cache_clean_test:
+	rm -rf tests/__pycache__ && python -m pytest -s

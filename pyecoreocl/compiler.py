@@ -2,6 +2,7 @@ from antlr4 import CommonTokenStream, InputStream
 
 from .dummy_rules import RuleSet, default_collection_call, default_primitive_call
 from .parser import OclExpressionVisitor, OclExpressionParser, OclExpressionLexer
+from .parser.OclExpressionParser import CANNOT_EVAL, has_result
 
 
 class DummyVisitor(OclExpressionVisitor):
@@ -23,6 +24,9 @@ class DummyVisitor(OclExpressionVisitor):
         self.ind = self.ind[2:]
 
     def visitUnaryOperation(self, ctx):
+        if has_result(ctx):
+            self.inline(f"{ctx.r}")
+            return
         operator = ctx.operator.text
         space = "" if operator == "-" else " "
         self.inline(f"{operator}{space}")
@@ -43,6 +47,9 @@ class DummyVisitor(OclExpressionVisitor):
         return self.visitChildren(ctx)
 
     def visitArithmeticBinaryOperation(self, ctx):
+        if has_result(ctx):
+            self.inline(f"{ctx.r}")
+            return
         self.visit(ctx.left)
         self.inline(f" {ctx.operator.text} ")
         self.visit(ctx.right)
@@ -54,6 +61,9 @@ class DummyVisitor(OclExpressionVisitor):
         self.inline(ctx.text.replace("::", "."))
 
     def visitComparisonBinaryOperation(self, ctx):
+        if has_result(ctx):
+            self.inline(f"{ctx.r}")
+            return
         self.visit(ctx.left)
         operator = ctx.operator.text
         operator = operator if operator != "=" else "=="
@@ -68,6 +78,9 @@ class DummyVisitor(OclExpressionVisitor):
         rule(self, ctx)
 
     def visitBooleanBinaryOperation(self, ctx):
+        if has_result(ctx):
+            self.inline(f"{ctx.r}")
+            return
         operator = ctx.operator.text
         if operator == "implies":
             self.inline("((not ")
@@ -117,13 +130,13 @@ class DummyVisitor(OclExpressionVisitor):
         self.inline("self")
 
     def visitNumberLiteral(self, ctx):
-        self.inline(ctx.text)
+        self.inline(f"{ctx.r}")
 
     def visitStringLiteral(self, ctx):
         self.inline(ctx.text)
 
     def visitBooleanLiteral(self, ctx):
-        self.inline(ctx.text.capitalize())
+        self.inline(f"{ctx.r}")
 
     def visitUnlimitedNaturalLiteral(self, ctx):
         return self.visitChildren(ctx)
@@ -242,6 +255,14 @@ class DummyVisitor(OclExpressionVisitor):
         return self.visitChildren(ctx)
 
     def visitIfExp(self, ctx):
+        if isinstance(ctx.condition.r, bool):
+            if ctx.condition.r:
+                self.visit(ctx.body)
+                ctx.r = ctx.body.r
+            else:
+                self.visit(ctx.else_)
+                ctx.r = ctx.else_.r
+            return
         self.visit(ctx.body)
         self.inline(" if ")
         self.visit(ctx.condition)
